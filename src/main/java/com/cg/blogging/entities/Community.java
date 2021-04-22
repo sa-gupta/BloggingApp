@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 //import javax.persistence.Temporal;
 //import javax.persistence.TemporalType;
@@ -19,7 +20,8 @@ import com.cg.blogging.converter.StringListConverter;
 @Table(name = "blog_community")
 public class Community {
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="community_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
 	private int communityId;
 	private String communityDescription;
 	private int totalMembers;

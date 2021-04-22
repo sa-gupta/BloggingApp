@@ -1,5 +1,7 @@
 package com.cg.blogging.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,4 +45,9 @@ public class BloggerController {
 		return rBlogger;
 	}
 	
+	@GetMapping("/blogs")
+	public List<Blogger> viewAllBloggers(){
+		List<Blogger> list = bService.viewAllBloggers();
+		return list;
+	}
 }

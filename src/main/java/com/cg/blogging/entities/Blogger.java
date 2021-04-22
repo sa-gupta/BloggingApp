@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -16,21 +17,23 @@ import javax.persistence.Table;
 @Table(name = "blogger_table")
 public class Blogger {
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	private int userId;
 	private String bloggerName;
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
 	private List<Post> posts = new ArrayList<>();
-//	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
-//	private List<Comment> comments = new ArrayList<>();
-//	@OneToMany
-//	private List<Post> upvoted = new ArrayList<>();
-//	@OneToMany
-//	private List<Post> downvoted = new ArrayList<>();
+	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
+	private List<Comment> comments = new ArrayList<>();
+	@OneToMany
+	@JoinColumn(name = "upvote_post_id")
+	private List<Post> upvoted = new ArrayList<>();
+	@OneToMany
+	@JoinColumn(name = "downvote_post_id")
+	private List<Post> downvoted = new ArrayList<>();
 //	private Award awardsReceived;
 //	private Award awardsGiven;
-//	@OneToMany
-//	private List<Community> communities = new ArrayList<>();
+	@OneToMany
+	private List<Community> communities = new ArrayList<>();
 	private int karma;
 	private String password;
 	

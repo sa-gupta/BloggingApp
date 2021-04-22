@@ -9,9 +9,9 @@ import com.cg.blogging.exception.IdNotFoundException;
 
 public interface IBloggerService {
 	public Blogger addBlogger(Blogger blogger);
-	public Blogger updateBlogger(Blogger blogger) throws IdNotFoundException;
-	public Blogger deleteBlogger(Blogger blogger) throws IdNotFoundException;
-	public Blogger viewBlogger(int bloggerId) throws IdNotFoundException;
+	public Blogger updateBlogger(Blogger blogger);
+	public Blogger deleteBlogger(Blogger blogger);
+	public Blogger viewBlogger(int bloggerId);
 	public List<Blogger> viewAllBloggers();
 	public List<Blogger> viewBloggerList(Community community);
 	//public List<Customer> viewCustomerList(int theatreid);

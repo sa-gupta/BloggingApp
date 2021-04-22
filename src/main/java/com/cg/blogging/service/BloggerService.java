@@ -69,8 +69,8 @@ public class BloggerService implements IBloggerService {
 
 	@Override
 	public List<Blogger> viewAllBloggers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Blogger> blog = bRepo.findAll();
+		return blog;
 	}
 
 	@Override
