@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="com.cg.blogging.service.ICommunityService" project="BloggingApp" 
+    file="/BloggingApp/src/com/cg/blogging/service/ICommunityService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="417" x="266" y="394"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="com.cg.blogging.service.IUserService" project="BloggingApp" 
+    file="/BloggingApp/src/com/cg/blogging/service/IUserService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="197" x="723" y="394"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="3" language="java" name="com.cg.blogging.service.IBloggerService" project="BloggingApp" 
+    file="/BloggingApp/src/com/cg/blogging/service/IBloggerService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="327" x="960" y="394"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="com.cg.blogging.service.IPostService" project="BloggingApp" 
+    file="/BloggingApp/src/com/cg/blogging/service/IPostService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="319" x="1327" y="394"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="com.cg.blogging.service.ICommentService" project="BloggingApp" 
+    file="/BloggingApp/src/com/cg/blogging/service/ICommentService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="345" x="1686" y="394"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
