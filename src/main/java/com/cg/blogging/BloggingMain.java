@@ -2,7 +2,7 @@ package com.cg.blogging;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+// Satyam is a good boy
 @SpringBootApplication
 public class BloggingMain {
 
