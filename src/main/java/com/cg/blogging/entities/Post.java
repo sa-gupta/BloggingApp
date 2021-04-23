@@ -64,18 +64,46 @@ public class Post {
 	}
 
     
-    //for updation constructor
-	public Post(int postId,String title, PostType content, int votes, boolean notSafeForWork, boolean spoiler,
-			boolean originalContent, String flair) {
+    /**
+     * 
+     * @param postId
+     * @param title
+     * @param createdBy
+     * @param content
+     * @param createdDateTime
+     * @param comments
+     * @param votes
+     * @param voteUp
+     * @param notSafeForWork
+     * @param spoiler
+     * @param originalContent
+     * @param flair
+     * @param community
+     */
+
+
+
+	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
+			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
+			boolean originalContent, String flair, Community community) {
+		super();
 		this.postId = postId;
 		this.title = title;
+		this.createdBy = createdBy;
 		this.content = content;
+		this.createdDateTime = createdDateTime;
+		this.comments = comments;
 		this.votes = votes;
+		this.voteUp = voteUp;
 		this.notSafeForWork = notSafeForWork;
 		this.spoiler = spoiler;
 		this.originalContent = originalContent;
 		this.flair = flair;
+		this.community = community;
 	}
+
+
+
 
 
 

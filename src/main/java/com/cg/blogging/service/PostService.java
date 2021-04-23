@@ -30,7 +30,10 @@ public class PostService implements IPostService {
 		if(!opt.isPresent()) {
 			throw new IdNotFoundException("Post not Available");
 		}
-		Post rPost = pRepo.save(post);
+		Post recordInDatabse = opt.get();
+		Post toBeUpdated = new Post(recordInDatabse.getPostId(), post.getTitle(), recordInDatabse.getCreatedBy(), 
+				post.getContent(), null, null, post.getVotes(), true, false, true, true, post.getFlair(), recordInDatabse.getCommunity());
+		Post rPost = pRepo.save(toBeUpdated);
 		return rPost;
 	}
 

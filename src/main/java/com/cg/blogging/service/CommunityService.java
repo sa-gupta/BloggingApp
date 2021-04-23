@@ -46,7 +46,6 @@ public class CommunityService implements ICommunityService {
 
 	@Override
 	public List<Community> listAllCommunities(String searchString) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

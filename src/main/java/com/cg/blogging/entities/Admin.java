@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "admin_table")
 public class Admin {
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	private int userId;
 	private String adminName;
 	private String adminContact;

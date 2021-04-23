@@ -25,10 +25,8 @@ public class Blogger {
 	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
 	private List<Comment> comments = new ArrayList<>();
 	@OneToMany
-	@JoinColumn(name = "upvote_post_id")
 	private List<Post> upvoted = new ArrayList<>();
 	@OneToMany
-	@JoinColumn(name = "downvote_post_id")
 	private List<Post> downvoted = new ArrayList<>();
 //	private Award awardsReceived;
 //	private Award awardsGiven;

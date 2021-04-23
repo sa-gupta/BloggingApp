@@ -1,5 +1,6 @@
 package com.cg.blogging.entities;
 
+import java.time.LocalDateTime;
 //import java.io.File;
 //import java.time.LocalDate;
 //import java.util.Date;
@@ -15,6 +16,8 @@ import javax.persistence.Table;
 //import javax.persistence.Temporal;
 //import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.cg.blogging.converter.StringListConverter;
 @Entity
 @Table(name = "blog_community")
@@ -28,7 +31,8 @@ public class Community {
 	private int onlineMembers;
 //	private File image;
 //	@Temporal(TemporalType.DATE)
-	private String createdOn;
+	@CreationTimestamp
+	private LocalDateTime createdOn;
 	@Convert(converter = StringListConverter.class)
 	private List<String> postRulesAllowed;
 	@Convert(converter = StringListConverter.class)
@@ -45,7 +49,7 @@ public class Community {
 	}
 	
 	public Community(String communityDescription, int totalMembers, int onlineMembers,
-			String createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
+			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
 		this.communityDescription = communityDescription;
 		this.totalMembers = totalMembers;
@@ -58,7 +62,7 @@ public class Community {
 	}
 	
 	public Community(int communityId,String communityDescription, int totalMembers, int onlineMembers,
-			String createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
+			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
 		this.communityId = communityId;
 		this.communityDescription = communityDescription;
@@ -103,11 +107,11 @@ public class Community {
 		this.onlineMembers = onlineMembers;
 	}
 
-	public String getCreatedOn() {
+	public LocalDateTime getCreatedOn() {
 		return createdOn;
 	}
 
-	public void setCreatedOn(String createdOn) {
+	public void setCreatedOn(LocalDateTime createdOn) {
 		this.createdOn = createdOn;
 	}
 

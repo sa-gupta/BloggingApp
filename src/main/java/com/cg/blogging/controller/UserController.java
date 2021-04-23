@@ -59,4 +59,12 @@ public class UserController {
 		}
 		return rUser; 
 	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/signout")
+	public User signOut(@RequestBody User user) {
+		System.out.println("Request Data : "+user);
+		User rUser = uService.signOut(user);
+		return rUser; 
+	}
 }

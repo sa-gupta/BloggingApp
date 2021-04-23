@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Post;
@@ -31,9 +32,9 @@ public class BloggerService implements IBloggerService {
 	
 	@Override
 	public Blogger addBlogger(Blogger blogger) {
-		Blogger rBlogger = bRepo.save(blogger);
-		uRepo.save(new User(rBlogger.getUserId(), rBlogger.getPassword(), "BLOGGER"));
-		return rBlogger;
+		User bloggerUser = uRepo.save(new User(blogger.getPassword(),"BLOGGER"));
+		Blogger bloggerReturn = bRepo.save(new Blogger(bloggerUser.getUserId(), blogger.getBloggerName(), bloggerUser.getPassword()));
+		return bloggerReturn;
 	}
 
 	@Override
@@ -43,6 +44,9 @@ public class BloggerService implements IBloggerService {
 			throw new IdNotFoundException("Id Not Found");
 		}
 		Blogger updatedBlogger = bRepo.save(blogger);
+		Optional<User> userOpt = uRepo.findById(blogger.getUserId());
+		userOpt.get().setPassword(blogger.getPassword());
+		User updatedUser = uRepo.save(userOpt.get());
 		return updatedBlogger;
 	}
 

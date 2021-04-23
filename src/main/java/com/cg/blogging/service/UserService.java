@@ -38,15 +38,19 @@ public class UserService implements IUserService {
 
 	@Override
 	public User signOut(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> opt = userRepo.findById(user.getUserId());
+		if(!opt.isPresent()) {
+			throw new IdNotFoundException("Id doesn't exist");
+		}
+		return opt.get();
 	}
 
 	@Override
 	public User addNewAdmin(Admin admin) {
-		Admin adminReturn = adminRepo.save(admin);
-		User adminUser = new User(adminReturn.getUserId(), adminReturn.getPassword(), "ADMIN");
-		return userRepo.save(adminUser);
+		User adminUser = userRepo.save(new User(admin.getPassword(),"ADMIN"));
+		Admin adminReturn = adminRepo.save(new Admin(adminUser.getUserId(), admin.getAdminName(),
+				admin.getAdminContact(), adminUser.getPassword()));
+		return adminUser;
 	}
 
 }

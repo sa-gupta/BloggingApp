@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.User;
 
 @ExtendWith({ SpringExtension.class })
@@ -38,6 +39,20 @@ public class UserServiceTest {
 		User userAdded = uService.signIn(user);
 		Assertions.assertEquals(userAdded.getPassword(), user.getPassword());
 
+	}
+	@Test
+	public void testSignOut() {
+		User user = new User("user123","ADMIN");
+		em.persist(user);
+		User userSignOut = uService.signOut(user);
+		Assertions.assertEquals(userSignOut.getPassword(), user.getPassword());
+	}
+	@Test
+	public void testAddNewAdmin() {
+		Admin admin  = new Admin("Admin1","Admin1_Contact","Admin1_Password");
+		em.persist(admin);
+		User userAdmin = uService.addNewAdmin(admin);
+		Assertions.assertEquals(userAdmin.getPassword(), admin.getPassword());
 	}
 	
 }
