@@ -1,7 +1,12 @@
 package com.cg.blogging.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,5 +65,26 @@ public class PostController {
 		System.out.println("Update request from client : "+post);
 		Post rPost = pService.updatePost(post);
 		return rPost;
+	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@DeleteMapping("/delete/{postId}")
+	public Post deletePost(@PathVariable("postId") int id) {
+		System.out.println("Delete request from client : "+id);
+		Post rPost = pService.deletePost(id);
+		return rPost;
+	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/{searchStr}")
+	public List<Post> getPostBySearchString(@PathVariable("searchStr") String searchStr){
+		return pService.getPostBySearchString(searchStr);
+		
+	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all")
+	public List<Post> getPostBySearchString(){
+		return pService.getAllPost();
 	}
 }

@@ -43,5 +43,15 @@ public class CentralizedExceptionHandler {
 		return e.getMessage();
 	}
 	
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	@ExceptionHandler(CommunityNotFound.class)
+	public String handleCommunityNotFoundException(CommunityNotFound e) {
+		return e.getMessage();
+	}
 	
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	@ExceptionHandler(UserNotFoundException.class)
+	public String handleUserNotFoundException(UserNotFoundException e) {
+		return e.getMessage();
+	}
 }

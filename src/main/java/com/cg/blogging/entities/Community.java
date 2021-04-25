@@ -20,7 +20,7 @@ import javax.validation.constraints.Size;
 //import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.cg.blogging.converter.StringListConverter;
+import com.cg.blogging.util.StringListConverter;
 
 /**
  * <h1>Community Class</h1>

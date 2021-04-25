@@ -1,4 +1,4 @@
-package com.cg.blogging.converter;
+package com.cg.blogging.util;
 
 import java.util.Arrays;
 import java.util.List;

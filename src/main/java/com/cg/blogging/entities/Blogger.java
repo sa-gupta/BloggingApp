@@ -45,7 +45,7 @@ public class Blogger {
 //	@GeneratedValue
 	private int userId;
 	@NotBlank 
-	@Pattern(regexp = "^[A-Za-z ]\\w{3,19}$", message = "bloggerName must be 4 to 20 characters long with first letter alphabet")
+	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "bloggerName must be 4 to 20 characters long with first letter alphabet")
 	private String bloggerName;
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
 	private List<Post> posts = new ArrayList<>();

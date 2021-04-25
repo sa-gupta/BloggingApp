@@ -69,6 +69,8 @@ public class UserService implements IUserService {
 		if(!opt.isPresent()) {
 			throw new IdNotFoundException("Id doesn't exist");
 		}
+		
+		logger.info("User Signed Out : "+opt.get());
 		return opt.get();
 	}
 

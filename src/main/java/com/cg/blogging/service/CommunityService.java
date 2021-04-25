@@ -3,6 +3,7 @@ package com.cg.blogging.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +12,7 @@ import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.exception.IdNotFoundException;
 import com.cg.blogging.repository.ICommunityRepository;
+import com.cg.blogging.util.ExceptionMessage;
 /**
  * 
  * <h1>Community Service Class</h1>
@@ -29,8 +31,10 @@ import com.cg.blogging.repository.ICommunityRepository;
 @Transactional
 public class CommunityService implements ICommunityService {
 
+	private Logger logger = Logger.getLogger(CommunityService.class);
+	
 	@Autowired
-	private ICommunityRepository comRepo;
+	private ICommunityRepository cRepo;
 	
 	
 	/**
@@ -40,7 +44,9 @@ public class CommunityService implements ICommunityService {
 	 */
 	@Override
 	public Community addCommunity(Community community) {
-		return comRepo.save(community);
+		Community returnCommunity = cRepo.save(community);
+		logger.info("Community created : "+returnCommunity);
+		return returnCommunity;
 	}
 
 	/**
@@ -51,11 +57,12 @@ public class CommunityService implements ICommunityService {
 	 */
 	@Override
 	public Community updateCommunity(Community community) {
-		Optional<Community> opt = comRepo.findById(community.getCommunityId());
+		Optional<Community> opt = cRepo.findById(community.getCommunityId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id not found");
+			throw new IdNotFoundException(ExceptionMessage.COMMUNITY_NOT_FOUND);
 		}
-		return comRepo.save(community);
+		logger.info("Community Updated : "+opt.get());
+		return cRepo.save(community);
 	}
 
 	/**
@@ -65,11 +72,12 @@ public class CommunityService implements ICommunityService {
 	 */
 	@Override
 	public Community deleteCommunity(Community community) {
-		Optional<Community> opt = comRepo.findById(community.getCommunityId());
+		Optional<Community> opt = cRepo.findById(community.getCommunityId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id not found");
+			throw new IdNotFoundException(ExceptionMessage.COMMUNITY_NOT_FOUND);
 		}
-		comRepo.deleteById(community.getCommunityId());
+		cRepo.deleteById(community.getCommunityId());
+		logger.info("Community Deleted : "+opt.get());
 		return opt.get();
 	}
 
@@ -80,7 +88,7 @@ public class CommunityService implements ICommunityService {
 	 */
 	@Override
 	public List<Community> listAllCommunities(String searchString) {
-		return comRepo.listAllCommunities(searchString.toLowerCase());
+		return cRepo.listAllCommunities(searchString.toLowerCase());
 	}
 
 	/**
@@ -97,7 +105,7 @@ public class CommunityService implements ICommunityService {
 	@Override
 	public List<Community> listAllCommunities() {
 		
-		return comRepo.findAll();
+		return cRepo.findAll();
 	}
 
 	

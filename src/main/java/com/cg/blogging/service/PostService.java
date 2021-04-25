@@ -9,9 +9,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.blogging.entities.Blogger;
+import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Post;
+import com.cg.blogging.exception.CommunityNotFound;
 import com.cg.blogging.exception.IdNotFoundException;
+import com.cg.blogging.exception.UserNotFoundException;
+import com.cg.blogging.repository.IBloggerRepository;
+import com.cg.blogging.repository.ICommunityRepository;
 import com.cg.blogging.repository.IPostRepository;
+import com.cg.blogging.util.ExceptionMessage;
 /**
  * 
  * <h1>Post Service Class</h1>
@@ -33,11 +39,24 @@ public class PostService implements IPostService {
 	@Autowired
 	private IPostRepository pRepo;
 	
+	@Autowired
+	private IBloggerRepository bRepo;
+
+	@Autowired
+	private ICommunityRepository cRepo;
+	
 	/**
 	 * Post Service method to add new post details into the post repository.
 	 */
 	@Override
 	public Post addPost(Post post) {
+		Optional<Blogger> bloggerOpt = bRepo.findById(post.getCreatedBy().getUserId());
+		Optional<Community> communityOpt = cRepo.findById(post.getCommunity().getCommunityId());
+		if(!bloggerOpt.isPresent()) {
+			throw new UserNotFoundException(ExceptionMessage.USER_NOT_FOUND);
+		}else if(!communityOpt.isPresent()) {
+			throw new CommunityNotFound(ExceptionMessage.COMMUNITY_NOT_FOUND);
+		}
 		Post returnPost = pRepo.save(post);
 		logger.info("Post Created : "+returnPost);
 		return returnPost;
@@ -55,12 +74,13 @@ public class PostService implements IPostService {
 	public Post updatePost(Post post) {
 		Optional<Post> opt = pRepo.findById(post.getPostId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Post not Available");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		Post recordInDatabse = opt.get();
 		Post toBeUpdated = new Post(recordInDatabse.getPostId(), post.getTitle(), recordInDatabse.getCreatedBy(), 
 				post.getContent(), null, null, post.getVotes(), true, false, true, true, post.getFlair(), recordInDatabse.getCommunity());
 		Post rPost = pRepo.save(toBeUpdated);
+		logger.info("Post Updated : "+rPost);
 		return rPost;
 	}
 	
@@ -69,8 +89,13 @@ public class PostService implements IPostService {
 	 */
 	@Override
 	public Post deletePost(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Post> opt = pRepo.findById(id);
+		if(!opt.isPresent()) {
+			throw new IdNotFoundException(ExceptionMessage.POST_NOT_FOUND);
+		}
+		pRepo.deleteById(id);
+		logger.info("Logger Deleted : "+opt.get());
+		return opt.get();
 	}
 
 	/**
@@ -78,7 +103,8 @@ public class PostService implements IPostService {
 	 */
 	@Override
 	public List<Post> getPostBySearchString(String searchStr) {
-		return null;
+		
+		return pRepo.getPostBySearchString(searchStr.toLowerCase());
 	}
 
 	/**
@@ -97,6 +123,11 @@ public class PostService implements IPostService {
 	public void upVote(boolean upVote) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public List<Post> getAllPost() {
+		return pRepo.findAll();
 	}
 
 }

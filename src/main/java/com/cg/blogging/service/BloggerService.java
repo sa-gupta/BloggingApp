@@ -77,6 +77,7 @@ public class BloggerService implements IBloggerService {
 		Optional<User> userOpt = uRepo.findById(blogger.getUserId());
 		userOpt.get().setPassword(blogger.getPassword());
 		User updatedUser = uRepo.save(userOpt.get());
+		logger.info("Blogger Data Updated : "+updatedBlogger);
 		return updatedBlogger;
 	}
 
@@ -94,6 +95,7 @@ public class BloggerService implements IBloggerService {
 		
 		bRepo.deleteById(blogger.getUserId());
 		uRepo.deleteById(blogger.getUserId());
+		logger.info("Blogger Deleted : "+opt.get());
 		return opt.get();
 	}
 
@@ -108,7 +110,6 @@ public class BloggerService implements IBloggerService {
 		if(!opt.isPresent()) {
 			throw new IdNotFoundException("Id Not Found");
 		}
-		
 		return opt.get();
 	}
 

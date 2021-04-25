@@ -11,6 +11,19 @@ package com.cg.blogging.exception;
  * @author SKSSS
  *
  */
-public class CommunityNotFound {
 
+public class CommunityNotFound extends RuntimeException{
+
+	public CommunityNotFound(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+	}
+
+	public CommunityNotFound(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public CommunityNotFound(String message) {
+		super(message);
+	}
+	
 }

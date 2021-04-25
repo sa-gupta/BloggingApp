@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -67,7 +68,7 @@ public class Post {
 //	private Award awardsReceived;
 	@UpdateTimestamp
 	private LocalDateTime createdDateTime;
-	@OneToMany
+	@ManyToMany
 //	@JoinColumn(name = "comments")
 	private List<Comment> comments;
 	private int votes;
