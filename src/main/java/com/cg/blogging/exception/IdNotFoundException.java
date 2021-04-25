@@ -1,21 +1,44 @@
 package com.cg.blogging.exception;
 
+/**
+ * 
+ * <h1>IdNotFound Exception Class</h1>
+ * <p>
+ * This class handles the Id not found exception 
+ * It passes the message and cause to the 
+ * centralized handler.
+ * 
+ * @author SKSSS
+ *
+ */
 public class IdNotFoundException extends RuntimeException {
 
-	public IdNotFoundException() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Class constructor
+	 */
+	public IdNotFoundException() {
+		
+	}
+	
+	/**
+	 * Class constructor with arguments:
+	 * 
+	 * @param message
+	 * @param cause
+	 */
 	public IdNotFoundException(String message, Throwable cause) {
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Class constructor with arguments
+	 * 
+	 * @param message
+	 */
 	public IdNotFoundException(String message) {
 		super(message);
 	}
 	
-	
-
 }

@@ -3,10 +3,10 @@ package com.cg.blogging.entities;
 import java.time.LocalDateTime;
 //import java.nio.file.Files;
 //import java.time.LocalDateTime;
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
+//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,25 +18,45 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+//import javax.persistence.Temporal;
+//import javax.persistence.TemporalType;
+//import javax.validation.constraints.NotNull;
+//
+//import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+//
+//import com.fasterxml.jackson.annotation.JsonFormat;
 //import javax.persistence.Temporal;
 //import javax.persistence.TemporalType;
 //
 //import org.checkerframework.common.value.qual.BoolVal;
 
+/**
+ * 
+ * <h1>Post Class</h1>
+ * <p>
+ * This class is used to create posts
+ * with different properties according to the
+ * requirements of the user:blogger.
+ * It contains all the details related 
+ * to a post.
+ * 
+ * @author SKSSS
+ *
+ */
 @Entity
-@Table(name = "post_table")
+@Table
 public class Post {
 	@Id
 	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="post_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
 	private int postId;
+	@NotBlank 
+	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "title must be 3 to 30 characters long with first letter alphabet")
 	private String title;
 	@ManyToOne
 	@JoinColumn(name = "blogger_id")
@@ -45,27 +65,39 @@ public class Post {
 	private PostType content;
 //	private List<Files> data;
 //	private Award awardsReceived;
-	@CreationTimestamp
+	@UpdateTimestamp
 	private LocalDateTime createdDateTime;
 	@OneToMany
-	@JoinColumn(name = "comments")
+//	@JoinColumn(name = "comments")
 	private List<Comment> comments;
 	private int votes;
 	private boolean voteUp;
     private boolean notSafeForWork;
     private boolean spoiler;
     private boolean originalContent;
+    @Size(min = 1, max = 20, message = "flair should be of 1 to 20 characters long")
     private String flair;
     @ManyToOne
     @JoinColumn(name = "community")
     private Community community;
-	
+	/**
+	 * Post class constructor.
+	 */
     public Post() {
 	}
 
+    public Post(int postId) {
+		super();
+		this.postId = postId;
+	}
     
     /**
      * 
+     * <p>
+	 * Post class constructor
+	 * to create a post 
+	 * by passing these arguments.
+	 * 
      * @param postId
      * @param title
      * @param createdBy
@@ -80,9 +112,6 @@ public class Post {
      * @param flair
      * @param community
      */
-
-
-
 	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
 			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
 			boolean originalContent, String flair, Community community) {
@@ -103,10 +132,19 @@ public class Post {
 	}
 
 
-
-
-
-
+	/**
+	 * * <p>
+	 * Post class constructor
+	 * to create a post 
+	 * by passing these arguments.
+	 * 
+	 * @param postId
+	 * @param title
+	 * @param createdBy
+	 * @param content
+	 * @param flair
+	 * @param community
+	 */
 	public Post(int postId,String title, Blogger createdBy, PostType content, String flair, Community community) {
 		this.postId = postId;
 		this.title = title;
@@ -116,7 +154,23 @@ public class Post {
 		this.community = community;
 	}
 
-
+	/**
+	 * * <p>
+	 * Post class constructor
+	 * to create a post 
+	 * by passing these arguments.
+	 * 
+	 * @param postId
+	 * @param title
+	 * @param createdBy
+	 * @param content
+	 * @param createdDateTime
+	 * @param notSafeForWork
+	 * @param spoiler
+	 * @param originalContent
+	 * @param flair
+	 * @param community
+	 */
 	public Post(int postId,String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime, boolean notSafeForWork,
 			boolean spoiler, boolean originalContent, String flair, Community community) {
 		super();

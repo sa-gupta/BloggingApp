@@ -4,16 +4,39 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
+/**
+ * 
+ * <h1>Centralized Exceptional Handler Class</h1>
+ * <p>
+ * This class allows to manage/handle all different 
+ * runtime exceptions globally 
+ * from a single class. 
+ * 
+ * @author SKSSS
+ *
+ */
 @RestControllerAdvice
 public class CentralizedExceptionHandler {
-	
+	/**
+	 * 
+	 * To handle exception regarding wrong credentials.
+	 * 
+	 * @param e
+	 * @return Message
+	 */
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler(WrongCredentials.class)
 	public String handleWrongCredentials(WrongCredentials e) {
 		return e.getMessage();
 	}
 	
+	/**
+	 * 
+	 * To handle exception regarding Id not found.
+	 * 
+	 * @param e
+	 * @return Message
+	 */
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler(IdNotFoundException.class)
 	public String handleIdNotFoundException(IdNotFoundException e) {

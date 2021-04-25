@@ -2,7 +2,14 @@ package com.cg.blogging;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-// Satyam is a good boy
+
+/**
+ * <h1>Blogging Main Class</h1>
+ * This class starts the spring application
+ * 
+ * @author SKSSS
+ *
+ */
 @SpringBootApplication
 public class BloggingMain {
 

@@ -29,4 +29,6 @@ public class CommunityServiceTest {
 		Community exCommunity = cService.addCommunity(community);
 		Assertions.assertEquals(exCommunity.getCommunityId(), community.getCommunityId());
 	}
+	
+	
 }

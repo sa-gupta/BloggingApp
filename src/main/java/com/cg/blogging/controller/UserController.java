@@ -16,14 +16,33 @@ import com.cg.blogging.exception.WrongCredentials;
 import com.cg.blogging.service.IBloggerService;
 import com.cg.blogging.service.IUserService;
 
+/**
+ * 
+ * <h1>User Controller Class</h1>
+ * <p>
+ * This class allows to inject user's details into user repository by methods
+ * implemented in User Service Interface. The repository insertion operations can be called like:
+ * {@link #addNewUser(User)},{@link #addNewAdmin(Admin)}
+ * {@link #signIn(User)},{@link #signOut(User)}
+ * 
+ * @author SKSSS
+ *
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
 	private IUserService uService;
+	
 	@Autowired
 	private IBloggerService bService;
 	
+	/**
+	 * To inject new user details into repository.
+	 * 
+	 * @param user
+	 * @return User
+	 */
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
 	public  User addNewUser(@RequestBody User user) {
@@ -32,6 +51,13 @@ public class UserController {
 		return rUser;
 	}
 	
+	/**
+	 * To inject new user having admin role into 
+	 * both user and admin repository.
+	 * 
+	 * @param admin
+	 * @return User & Admin
+	 */
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add/admin")
 	public  User addNewAdmin(@RequestBody Admin admin) {
@@ -40,6 +66,13 @@ public class UserController {
 		return rUser;
 	}
 	
+	/**
+	 * To inject new user having blogger role into 
+	 * both user and blogger repository.
+	 * 
+	 * @param blogger
+	 * @return User & Blogger
+	 */
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add/blogger")
 	public  User addNewBlogger(@RequestBody Blogger blogger) {
@@ -49,6 +82,14 @@ public class UserController {
 		return rUser;
 	}
 	
+	/**
+	 * To request signin for an existing user. 
+	 * Check for password validation.
+	 * To fetch the details from repository.
+	 * 
+	 * @param user
+	 * @return User
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/signin")
 	public User signIn(@RequestBody User user) {
@@ -60,6 +101,13 @@ public class UserController {
 		return rUser; 
 	}
 	
+	/**
+	 * To request signout for an existing user.
+	 * To fetch the details from repository.
+	 * 
+	 * @param user
+	 * @return User
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/signout")
 	public User signOut(@RequestBody User user) {

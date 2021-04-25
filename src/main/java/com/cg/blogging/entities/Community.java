@@ -15,23 +15,40 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 //import javax.persistence.Temporal;
 //import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.CreationTimestamp;
+//import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import com.cg.blogging.converter.StringListConverter;
+
+/**
+ * <h1>Community Class</h1>
+ * <p>
+ * This class provides details regarding the 
+ * communities that are present for the user:blogger 
+ * to be a part of it.
+ * The guidelines which are used by 
+ * moderator for post/comment shadowing. 
+ * 
+ * @author SKSSS
+ *
+ */
 @Entity
-@Table(name = "blog_community")
+@Table
 public class Community {
 	@Id
 	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="community_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
 	private int communityId;
+	@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long")
 	private String communityDescription;
 	private int totalMembers;
 	private int onlineMembers;
 //	private File image;
 //	@Temporal(TemporalType.DATE)
-	@CreationTimestamp
+//	@CreationTimestamp
+	@UpdateTimestamp
 	private LocalDateTime createdOn;
 	@Convert(converter = StringListConverter.class)
 	private List<String> postRulesAllowed;
@@ -41,13 +58,38 @@ public class Community {
 	private List<String> banningPolicy;
 	@Convert(converter = StringListConverter.class)
     private List<String> flairs;
-    
+	/**
+	 * Community class constructor.
+	 */
 	public Community() {}
-
+	/**
+	 * 
+	 * <p>
+	 * Community class constructor
+	 * to create a community 
+	 * by passing one argument.
+	 * 
+	 * @param communityId
+	 */
 	public Community(int communityId) {
 		this.communityId = communityId;
 	}
 	
+	/**
+	 * <p>
+	 * Community class constructor
+	 * to create a community 
+	 * by passing these arguments.
+	 * 
+	 * @param communityDescription
+	 * @param totalMembers
+	 * @param onlineMembers
+	 * @param createdOn
+	 * @param postRulesAllowed
+	 * @param postRulesDisAllowed
+	 * @param banningPolicy
+	 * @param flairs
+	 */
 	public Community(String communityDescription, int totalMembers, int onlineMembers,
 			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
@@ -61,6 +103,22 @@ public class Community {
 		this.flairs = flairs;
 	}
 	
+	/**
+	 * <p>
+	 * Community class constructor
+	 * to create a community 
+	 * by passing these arguments.
+	 * 
+	 * @param communityId
+	 * @param communityDescription
+	 * @param totalMembers
+	 * @param onlineMembers
+	 * @param createdOn
+	 * @param postRulesAllowed
+	 * @param postRulesDisAllowed
+	 * @param banningPolicy
+	 * @param flairs
+	 */
 	public Community(int communityId,String communityDescription, int totalMembers, int onlineMembers,
 			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
