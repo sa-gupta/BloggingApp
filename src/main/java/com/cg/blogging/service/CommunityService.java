@@ -98,7 +98,7 @@ public class CommunityService implements ICommunityService {
 	 */
 	@Override
 	public List<Community> listAllCommunitiesByBlogger(Blogger blogger) {
-		// TODO Auto-generated method stub
+//		return cRepo.listAllCommunitiesByBlogger(blogger.getUserId());
 		return null;
 	}
 

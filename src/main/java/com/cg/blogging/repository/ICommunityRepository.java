@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 //import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.cg.blogging.entities.Blogger;
 //import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 /**
@@ -28,5 +29,7 @@ public interface ICommunityRepository extends JpaRepository<Community, Integer>{
 	
 	@Query("from Community where LOWER(communityDescription) like %:searchStr%")
 	public List<Community> listAllCommunities(@Param("searchStr") String searchString);
-//	public List<Community> listAllCommunitiesByBlogger(Blogger blogger);
+	
+//	@Query("SELECT com.communities from Blogger as com where com.communities.userId =:user_id")
+//	public List<Community> listAllCommunitiesByBlogger(@Param("user_id") int bloggerId);
 }

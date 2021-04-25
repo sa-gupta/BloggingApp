@@ -11,14 +11,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith({ SpringExtension.class })
 @DataJpaTest
-@Import(PostService.class)
+@Import(CommentService.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class PostServiceTest {
+public class CommentServiceTest {
 	@Autowired
-	private IPostService pService;
+	private ICommentService cService;
 	@Autowired
 	private EntityManager em;
-	
 	
 	
 }

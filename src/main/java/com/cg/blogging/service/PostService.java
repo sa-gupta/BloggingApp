@@ -53,8 +53,10 @@ public class PostService implements IPostService {
 		Optional<Blogger> bloggerOpt = bRepo.findById(post.getCreatedBy().getUserId());
 		Optional<Community> communityOpt = cRepo.findById(post.getCommunity().getCommunityId());
 		if(!bloggerOpt.isPresent()) {
+			logger.error(ExceptionMessage.USER_NOT_FOUND);
 			throw new UserNotFoundException(ExceptionMessage.USER_NOT_FOUND);
 		}else if(!communityOpt.isPresent()) {
+			logger.error(ExceptionMessage.COMMUNITY_NOT_FOUND);
 			throw new CommunityNotFound(ExceptionMessage.COMMUNITY_NOT_FOUND);
 		}
 		Post returnPost = pRepo.save(post);
