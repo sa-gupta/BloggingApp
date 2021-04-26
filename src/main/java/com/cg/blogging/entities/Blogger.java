@@ -37,9 +37,9 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table
-//@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name="blogger_type", discriminatorType=DiscriminatorType.STRING)
-//@DiscriminatorValue("BLOGGER")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="blogger_type", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue("BLOGGER")
 public class Blogger {	
 	@Id
 //	@GeneratedValue

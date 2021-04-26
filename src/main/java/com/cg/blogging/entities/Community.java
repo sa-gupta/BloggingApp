@@ -45,11 +45,13 @@ public class Community {
 	private String communityDescription;
 	private int totalMembers;
 	private int onlineMembers;
+//	private User createdBy;
 //	private File image;
 //	@Temporal(TemporalType.DATE)
 //	@CreationTimestamp
 	@UpdateTimestamp
 	private LocalDateTime createdOn;
+
 	@Convert(converter = StringListConverter.class)
 	private List<String> postRulesAllowed;
 	@Convert(converter = StringListConverter.class)
@@ -132,6 +134,12 @@ public class Community {
 		this.banningPolicy = banningPolicy;
 		this.flairs = flairs;
 	}
+//	public User getCreatedBy() {
+//		return createdBy;
+//	}
+//	public void setCreatedBy(User createdBy) {
+//		this.createdBy = createdBy;
+//	}
 
 	public int getCommunityId() {
 		return communityId;
@@ -204,14 +212,15 @@ public class Community {
 	public void setFlairs(List<String> flairs) {
 		this.flairs = flairs;
 	}
-
 	@Override
 	public String toString() {
 		return "Community [communityId=" + communityId + ", communityDescription=" + communityDescription
-				+ ", totalMembers=" + totalMembers + ", onlineMembers=" + onlineMembers + ", createdOn=" + createdOn
-				+ ", postRulesAllowed=" + postRulesAllowed + ", postRulesDisAllowed=" + postRulesDisAllowed
-				+ ", banningPolicy=" + banningPolicy + ", flairs=" + flairs + "]";
+				+ ", totalMembers=" + totalMembers + ", onlineMembers=" + onlineMembers /*+ ", createdBy=" + createdBy
+				*/+ ", createdOn=" + createdOn + ", postRulesAllowed=" + postRulesAllowed + ", postRulesDisAllowed="
+				+ postRulesDisAllowed + ", banningPolicy=" + banningPolicy + ", flairs=" + flairs + "]";
 	}
+
+	
     
 	
 	

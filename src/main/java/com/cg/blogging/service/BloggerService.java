@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 //import java.time.LocalDateTime;
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 //import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
+import com.cg.blogging.entities.Moderator;
 //import com.cg.blogging.entities.Post;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.IdNotFoundException;
@@ -46,6 +48,8 @@ public class BloggerService implements IBloggerService {
 	@Autowired
 	private IUserRepository uRepo;
 	
+	@Autowired
+	EntityManager em;
 	/**
 	 * Blogger Service method to add new blogger details into blogger repository.
 	 */
@@ -73,6 +77,8 @@ public class BloggerService implements IBloggerService {
 		if(!opt.isPresent()) {
 			throw new IdNotFoundException("Id Not Found");
 		}
+		blogger.setBloggerName(opt.get().getBloggerName());
+		blogger.setPassword(opt.get().getPassword());
 		Blogger updatedBlogger = bRepo.save(blogger);
 		Optional<User> userOpt = uRepo.findById(blogger.getUserId());
 		userOpt.get().setPassword(blogger.getPassword());
@@ -132,6 +138,17 @@ public class BloggerService implements IBloggerService {
 	public List<Blogger> viewBloggerList(Community community) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Moderator addModerator(Moderator moderator) {
+		User bloggerUser = uRepo.save(new User(moderator.getPassword(),"MODERATOR"));
+//		EntityManager em;
+		moderator.setUserId(bloggerUser.getUserId());
+		em.persist(moderator);
+//		Moderator moderatorReturn = bRepo.save(new Blogger(bloggerUser.getUserId(), blogger.getBloggerName(), bloggerUser.getPassword()));
+		logger.info("New Moderator added : " + moderator);
+		return moderator;
 	}
 
 }

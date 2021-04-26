@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.Blogger;
+import com.cg.blogging.entities.Moderator;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.WrongCredentials;
 import com.cg.blogging.service.IBloggerService;
@@ -79,6 +80,15 @@ public class UserController {
 		System.out.println("Request Data: "+ blogger);
 		Blogger rBlogger = bService.addBlogger(blogger);
 		User rUser = new User(rBlogger.getUserId(), rBlogger.getPassword(), "BLOGGER");
+		return rUser;
+	}
+	
+	@ResponseStatus(code = HttpStatus.CREATED)
+	@PostMapping("/add/moderator")
+	public  User addNewModerator(@RequestBody Moderator moderator) {
+		System.out.println("Request Data: "+ moderator);
+		Moderator rModerator = bService.addModerator(moderator);
+		User rUser = new User(rModerator.getUserId(), rModerator.getPassword(), "MODERATOR");
 		return rUser;
 	}
 	

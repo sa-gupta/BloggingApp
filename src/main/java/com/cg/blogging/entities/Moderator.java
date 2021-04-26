@@ -15,8 +15,8 @@ import javax.persistence.Entity;
  *
  */
 
-//@Entity
-//@DiscriminatorValue("MODERATOR")
+@Entity
+@DiscriminatorValue("MODERATOR")
 public class Moderator extends Blogger {
 	/**
 	 * Moderator class constructor.

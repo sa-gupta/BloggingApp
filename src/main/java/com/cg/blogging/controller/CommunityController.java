@@ -92,6 +92,13 @@ public class CommunityController {
 		return comService.listAllCommunities();
 	}
 	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/byblogger")
+	public List<Community> listAllCommunitiesByBlogger(@RequestBody Blogger blogger){
+		System.out.println("Request from client : "+blogger);
+		return comService.listAllCommunitiesByBlogger(blogger);
+	}
+	
 	/**
 	 * <p>
 	 * To request details of a community.

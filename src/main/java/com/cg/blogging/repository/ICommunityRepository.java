@@ -30,6 +30,7 @@ public interface ICommunityRepository extends JpaRepository<Community, Integer>{
 	@Query("from Community where LOWER(communityDescription) like %:searchStr%")
 	public List<Community> listAllCommunities(@Param("searchStr") String searchString);
 	
-//	@Query("SELECT com.communities from Blogger as com where com.communities.userId =:user_id")
-//	public List<Community> listAllCommunitiesByBlogger(@Param("user_id") int bloggerId);
+	@Query(nativeQuery = true,value = "select * from community where community_id in (select communities_community_id "
+			+ "from blogger_communities where blogger_User_id =:user_id)")
+	public List<Community> listAllCommunitiesByBlogger(@Param("user_id") int bloggerId);
 }
