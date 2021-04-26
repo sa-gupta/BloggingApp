@@ -136,8 +136,8 @@ public class BloggerService implements IBloggerService {
 	 */
 	@Override
 	public List<Blogger> viewBloggerList(Community community) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return bRepo.viewBloggerList(community.getCommunityId());
 	}
 
 	@Override

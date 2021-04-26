@@ -88,6 +88,12 @@ public class BloggerController {
 		return rBlogger;
 	}
 	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/bycommunity")
+	public List<Blogger> viewBloggerList(@RequestBody Community community){
+		return bService.viewBloggerList(community);
+	}
+	
 	/**
 	 * <p>
 	 * To view details of all the bloggers 
