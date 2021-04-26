@@ -8,7 +8,7 @@ package com.cg.blogging.exception;
  * arise due to not being able to 
  * find the particular community details.
  * 
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 

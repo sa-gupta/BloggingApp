@@ -8,7 +8,7 @@ package com.cg.blogging.exception;
  * It passes the message and cause to the 
  * centralized handler.
  * 
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 public class IdNotFoundException extends RuntimeException {

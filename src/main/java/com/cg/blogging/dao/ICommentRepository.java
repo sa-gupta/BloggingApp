@@ -13,7 +13,7 @@ import com.cg.blogging.entities.Post;
  * 
  * <h1>Comment Repository</h1>
  * This interface allows to manage CRUD operations on the comment database.
- * @author SKSSS
+ * @author Satyam Kukreja
  *
  */
 @Repository

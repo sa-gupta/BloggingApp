@@ -36,7 +36,7 @@ import com.cg.blogging.util.CommentUtil;
  * by using: {@link #getAllCommentForPost()}
  * 
  * 
- * @author SKSSS
+ * @author Satyam Kukreja
  *
  */
 @RestController

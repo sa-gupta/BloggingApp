@@ -30,7 +30,7 @@ import com.cg.blogging.service.ICommunityService;
  * This class provides with other operations to find communities by blogger.
  * {@link #listAllCommunitiesByBlogger(Blogger)}
  * 
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 @RestController
@@ -67,7 +67,6 @@ public class CommunityController {
 	public Community deleteCommunity(@PathVariable("id") Community community) {
 		System.out.println("Delete Request from client : "+community);
 		Community commReturn = comService.deleteCommunity(community);
-//		System.out.println(commReturn.getPostRulesAllowed().get(0));
 		return commReturn;
 	}
 	

@@ -8,7 +8,7 @@ import com.cg.blogging.entities.Admin;
  * 
  * <h1>Admin Repository</h1>
  * This interface allows to manage CRUD operations on the admin database.
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 @Repository

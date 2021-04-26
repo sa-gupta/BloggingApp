@@ -26,7 +26,7 @@ import com.cg.blogging.service.IUserService;
  * {@link #addNewUser(User)},{@link #addNewAdmin(Admin)}
  * {@link #signIn(User)},{@link #signOut(User)}
  * 
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 @RestController

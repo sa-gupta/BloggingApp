@@ -28,7 +28,7 @@ import com.cg.blogging.service.IPostService;
  * {@link #addPost(Post)},{@link #updatePost(Post)},{@link #deletePost(int)},
  * {@link #getPostByBlogger(Blogger)} and so on.
  * 
- * @author SKSSS
+ * @author Srishti
  *
  */
 @RestController
@@ -67,6 +67,15 @@ public class PostController {
 		return rPost;
 	}
 	
+	/**
+	 * This function deletes the Post from database. It makes call
+	 * to service layer for Delete post 
+	 * 
+	 * 
+	 * @param id
+	 * @return Moderator
+	 */
+	
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{postId}")
 	public Post deletePost(@PathVariable("postId") int id) {
@@ -75,18 +84,40 @@ public class PostController {
 		return rPost;
 	}
 	
+	/**
+	 * <p>
+	 * This function searches the database for post with given
+	 * search String 
+	 * 
+	 * @param searchStr
+	 * @return List<Post>
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/{searchStr}")
 	public List<Post> getPostBySearchString(@PathVariable("searchStr") String searchStr){
 		return pService.getPostBySearchString(searchStr);
 		
 	}
-	
+	/**
+	 * <p>
+	 * This function fetches all posts from Database.
+	 * 
+	 * @return List<Post>
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all")
 	public List<Post> getPostBySearchString(){
 		return pService.getAllPost();
 	}
+	
+	/**
+	 * <p>
+	 * This function fetches all posts of given
+	 * Blogger.
+	 * 
+	 * @param blogger
+	 * @return List<Post>
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/byblogger")
 	public List<Post> getPostByBlogger(@RequestBody Blogger blogger){

@@ -1,9 +1,7 @@
 package com.cg.blogging.service;
 
-//import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-//import java.time.LocalDateTime;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
@@ -15,15 +13,12 @@ import org.springframework.stereotype.Service;
 import com.cg.blogging.dao.IBloggerRepository;
 import com.cg.blogging.dao.IModeratorRepository;
 import com.cg.blogging.dao.IUserRepository;
-//import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Moderator;
-//import com.cg.blogging.entities.Post;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.IdNotFoundException;
 import com.cg.blogging.util.ExceptionMessage;
-//import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 /**
  * 
  * <h1>Blogger Service Class</h1>
@@ -156,12 +151,27 @@ public class BloggerService implements IBloggerService {
 		logger.info("New Moderator added : " + moderator);
 		return moderator;
 	}
-
+	/**
+	 * <p>
+	 * This function calls the findAll function of 
+	 * JPARepository using variable{@link #bRepo}}
+	 * 
+	 * @return List<Moderator>
+	 */
 	@Override
 	public List<Moderator> viewAllModerator() {
 		return mRepo.findAll();
 	}
 
+	/**
+	 * <p>
+	 * This function passes data to DAO Layer and fetches 
+	 * the moderator form there.
+	 * 
+	 * 
+	 * @param moderatorId
+	 * @return Moderator
+	 */
 	@Override
 	public Moderator viewModerator(int moderatorId) {
 		Optional<Moderator> opt = mRepo.findById(moderatorId);

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * runtime exceptions globally 
  * from a single class. 
  * 
- * @author SKSSS
+ * @author Sachin Gupta, R.Kavya, Srishti
  *
  */
 @RestControllerAdvice

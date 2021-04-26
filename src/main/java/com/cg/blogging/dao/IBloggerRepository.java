@@ -17,7 +17,7 @@ import com.cg.blogging.entities.Community;
  * 
  * <h1>Blogger Repository</h1>
  * This interface allows to manage CRUD operations on the blogger database.
- * @author SKSSS
+ * @author R.Kavya
  *
  */
 @Repository

@@ -8,7 +8,7 @@ import com.cg.blogging.entities.User;
  * 
  * <h1>User Repository</h1>
  * This interface allows to manage CRUD operations on the user database.
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 @Repository

@@ -15,7 +15,7 @@ import com.cg.blogging.entities.Post;
  * 
  * <h1>Podt Repository</h1>
  * This interface allows to manage CRUD operations on the post database.
- * @author SKSSS
+ * @author Srishti
  *
  */
 public interface IPostRepository extends JpaRepository<Post, Integer>{

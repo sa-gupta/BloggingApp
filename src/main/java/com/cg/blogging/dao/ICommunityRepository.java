@@ -17,7 +17,7 @@ import com.cg.blogging.entities.Community;
  * 
  * <h1>Community Repository</h1>
  * This interface allows to manage CRUD operations on the community database.
- * @author SKSSS
+ * @author Sachin Gupta
  *
  */
 @Repository

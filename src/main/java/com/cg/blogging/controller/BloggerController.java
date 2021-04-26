@@ -32,7 +32,7 @@ import com.cg.blogging.service.IBloggerService;
  * and bloggers list.
  * {@link #viewBloggerList(Community)}
  * 
- * @author SKSSS
+ * @author R.Kavya, Sachin Gupta
  *
  */
 @RestController
@@ -88,6 +88,14 @@ public class BloggerController {
 		return rBlogger;
 	}
 	
+	/**
+	 * <p>
+	 * This functions return the list of blogger who
+	 * joined same community. 
+	 * 
+	 * @param community
+	 * @return List<Blogger>
+	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/bycommunity")
 	public List<Blogger> viewBloggerList(@RequestBody Community community){
