@@ -1,5 +1,7 @@
 package com.cg.blogging.entities;
 
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -24,4 +26,27 @@ public class Moderator extends Blogger {
 	
 	public boolean moderatesPostsAndComments() {return false;}
 
+	public Moderator() {
+		super();
+	}
+
+	public Moderator(int userId, String bloggerName, List<Post> posts, List<Comment> comments, List<Post> upvoted,
+			List<Post> downvoted, List<Community> communities, int karma, String password) {
+		super(userId, bloggerName, posts, comments, upvoted, downvoted, communities, karma, password);
+	}
+
+	public Moderator(int userId, String bloggerName, String password) {
+		super(userId, bloggerName, password);
+	}
+
+	public Moderator(int userId) {
+		super(userId);
+	}
+
+	public Moderator(String bloggerName, List<Post> posts, List<Comment> comments, List<Post> upvoted,
+			List<Post> downvoted, List<Community> communities, int karma, String password) {
+		super(bloggerName, posts, comments, upvoted, downvoted, communities, karma, password);
+	}
+
+	
 }

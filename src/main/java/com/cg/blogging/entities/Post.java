@@ -57,7 +57,7 @@ public class Post {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
 	private int postId;
 	@NotBlank 
-	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "title must be 3 to 30 characters long with first letter alphabet")
+	@Pattern(regexp = "^[a-zA-Z\\s]{5,50}$", message = "title must be 3 to 30 characters long with first letter alphabet")
 	private String title;
 	@ManyToOne
 	@JoinColumn(name = "blogger_id")

@@ -1,4 +1,4 @@
-package com.cg.blogging.repository;
+package com.cg.blogging.dao;
 
 import java.util.List;
 
@@ -22,11 +22,7 @@ import com.cg.blogging.entities.Community;
  */
 @Repository
 public interface ICommunityRepository extends JpaRepository<Community, Integer>{
-//	public Community addCommunity(Community community);
-//	@Query("")
-//	public Community updateCommunity(Community community);
-//	public Community deleteCommunity(Community community);
-	
+
 	@Query("from Community where LOWER(communityDescription) like %:searchStr%")
 	public List<Community> listAllCommunities(@Param("searchStr") String searchString);
 	

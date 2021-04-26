@@ -1,4 +1,4 @@
-package com.cg.blogging.repository;
+package com.cg.blogging.dao;
 
 import java.util.List;
 
@@ -22,12 +22,7 @@ import com.cg.blogging.entities.Community;
  */
 @Repository
 public interface IBloggerRepository extends JpaRepository<Blogger, Integer>{
-//	public Blogger addBlogger(Blogger blogger);
-//	public Blogger updateBlogger(Blogger blogger) throws IdNotFoundException;
-//	public Blogger deleteBlogger(Blogger blogger) throws IdNotFoundException;
-//	public Blogger viewBlogger(int bloggerId) throws IdNotFoundException;
-//	public List<Blogger> viewAllBloggers();
-	
+
 	@Query(nativeQuery = true, value = "select * from blogger where user_id in (select blogger_user_id from blogger_communities where communities_community_id =:community_id)")
 	public List<Blogger> viewBloggerList(@Param("community_id") int communityId);
 

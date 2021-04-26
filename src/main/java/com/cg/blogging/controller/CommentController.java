@@ -1,11 +1,14 @@
 package com.cg.blogging.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.blogging.dto.CommentDetails;
 import com.cg.blogging.entities.Comment;
+import com.cg.blogging.entities.Post;
 import com.cg.blogging.service.ICommentService;
+import com.cg.blogging.util.CommentUtil;
 
 /**
  * 
@@ -40,6 +46,9 @@ public class CommentController {
 	@Autowired
 	private ICommentService cService;
 	
+	@Autowired
+	private CommentUtil cUtil;
+	
 	/**
 	 * To inject the details of a new comment into the repository.
 	 * 
@@ -60,22 +69,33 @@ public class CommentController {
 	 * @param commentId
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public void deleteComment(@PathVariable("id") Integer commentId) {
 		System.out.println("Request comment : "+commentId);
 		cService.deleteComment(new Comment(commentId));
 	}
 	
 //	@ResponseStatus(code = HttpStatus.OK)
-//	@GetMapping("/deleteComment/{commentId}")
-//	public void deleteComment(@PathVariable("commentId") Integer commentId) throws IdNotFoundException{
-//		System.out.println("Request comment : "+commentId);
-//		try {
-//			cService.deleteComment(commentId);
-//		} catch (IdNotFoundException e) {
-//			e.printStackTrace();
-//		}
+//	@GetMapping("/all/bypost")
+//	public List<CommentDetails> listAllCommentsByPost(@RequestBody Post post){
+//		System.out.println("Request from client : "+ post);
+//		List<Comment> comments = cService.listAllCommentsByPost(post);
+//		List<CommentDetails> commentDetails = 	cUtil.toDetails(comments);
+//		return commentDetails;
+////		System.out.println(cService.listAllCommentsByPost(post).get(0));
+////		return null;
 //	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/bypost")
+	public List<Comment> listAllCommentsByPost(@RequestBody Post post){
+		
+		System.out.println("Request from client : "+ post);
+		List<Comment> comments = cService.listAllCommentsByPost(post);
+		return comments;
+//		System.out.println(cService.listAllCommentsByPost(post).get(0));
+//		return null;
+	}
 	
 	/**
 	 * To update the new vote that is added to the comment.

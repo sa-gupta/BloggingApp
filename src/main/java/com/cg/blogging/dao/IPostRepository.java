@@ -1,4 +1,4 @@
-package com.cg.blogging.repository;
+package com.cg.blogging.dao;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.cg.blogging.entities.Blogger;
 //import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Post;
 /**
@@ -18,13 +19,13 @@ import com.cg.blogging.entities.Post;
  *
  */
 public interface IPostRepository extends JpaRepository<Post, Integer>{
-//	public Post addPost(Post post);
-//	public Post updatePost(Post post);
-//	public Post deletePost(int id);
+
 	@Query("from Post where LOWER(title) like %:searchStr%")
 	public List<Post> getPostBySearchString(@Param("searchStr") String searchString);
-//	public List<Post> getPostByBlogger(Blogger blogger);
-//	public void upVote(boolean upVote);
+	
+	@Query(nativeQuery = true,value = "select * from post where blogger_id=:bloggerId")
+	public List<Post> getPostByBlogger(@Param("bloggerId") int blogger_id);
+
 	
 	
 }

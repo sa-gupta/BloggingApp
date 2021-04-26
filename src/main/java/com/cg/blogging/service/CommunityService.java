@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cg.blogging.dao.ICommunityRepository;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.exception.IdNotFoundException;
-import com.cg.blogging.repository.ICommunityRepository;
 import com.cg.blogging.util.ExceptionMessage;
 /**
  * 

@@ -1,4 +1,4 @@
-package com.cg.blogging.repository;
+package com.cg.blogging.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

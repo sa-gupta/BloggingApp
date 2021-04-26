@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cg.blogging.dao.IBloggerRepository;
+import com.cg.blogging.dao.ICommunityRepository;
+import com.cg.blogging.dao.IPostRepository;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Post;
 import com.cg.blogging.exception.CommunityNotFound;
 import com.cg.blogging.exception.IdNotFoundException;
 import com.cg.blogging.exception.UserNotFoundException;
-import com.cg.blogging.repository.IBloggerRepository;
-import com.cg.blogging.repository.ICommunityRepository;
-import com.cg.blogging.repository.IPostRepository;
 import com.cg.blogging.util.ExceptionMessage;
 /**
  * 
@@ -114,8 +114,7 @@ public class PostService implements IPostService {
 	 */
 	@Override
 	public List<Post> getPostByBlogger(Blogger blogger) {
-		// TODO Auto-generated method stub
-		return null;
+		return pRepo.getPostByBlogger(blogger.getUserId());
 	}
 
 	/**

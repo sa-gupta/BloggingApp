@@ -24,7 +24,8 @@ public interface IBloggerService {
 	public Blogger viewBlogger(int bloggerId);
 	public List<Blogger> viewAllBloggers();
 	public List<Blogger> viewBloggerList(Community community);
-	//public List<Customer> viewCustomerList(int theatreid);
 	public Moderator addModerator(Moderator moderator);
+	public List<Moderator> viewAllModerator();
+	public Moderator viewModerator(int moderatorId);
 
 }

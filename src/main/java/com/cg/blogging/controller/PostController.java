@@ -87,4 +87,10 @@ public class PostController {
 	public List<Post> getPostBySearchString(){
 		return pService.getAllPost();
 	}
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/byblogger")
+	public List<Post> getPostByBlogger(@RequestBody Blogger blogger){
+		System.out.println("Request from client : ");
+		return pService.getPostByBlogger(blogger);
+	}
 }

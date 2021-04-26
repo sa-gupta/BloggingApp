@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cg.blogging.dao.IAdminRepository;
+import com.cg.blogging.dao.IUserRepository;
 import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.IdNotFoundException;
-import com.cg.blogging.repository.IAdminRepository;
-import com.cg.blogging.repository.IUserRepository;
 /**
  * 
  * <h1>User Service Class</h1>

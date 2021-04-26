@@ -12,6 +12,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.blogging.dao.IBloggerRepository;
+import com.cg.blogging.dao.IModeratorRepository;
+import com.cg.blogging.dao.IUserRepository;
 //import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
@@ -19,8 +22,7 @@ import com.cg.blogging.entities.Moderator;
 //import com.cg.blogging.entities.Post;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.IdNotFoundException;
-import com.cg.blogging.repository.IBloggerRepository;
-import com.cg.blogging.repository.IUserRepository;
+import com.cg.blogging.util.ExceptionMessage;
 //import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 /**
  * 
@@ -44,6 +46,9 @@ public class BloggerService implements IBloggerService {
 	
 	@Autowired
 	private IBloggerRepository bRepo;
+	
+	@Autowired
+	private IModeratorRepository mRepo;
 	
 	@Autowired
 	private IUserRepository uRepo;
@@ -74,8 +79,9 @@ public class BloggerService implements IBloggerService {
 	@Override
 	public Blogger updateBlogger(Blogger blogger){
 		Optional<Blogger> opt = bRepo.findById(blogger.getUserId());
+		
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id Not Found");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		blogger.setBloggerName(opt.get().getBloggerName());
 		blogger.setPassword(opt.get().getPassword());
@@ -96,7 +102,7 @@ public class BloggerService implements IBloggerService {
 	public Blogger deleteBlogger(Blogger blogger){
 		Optional<Blogger> opt = bRepo.findById(blogger.getUserId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id Not Found");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		
 		bRepo.deleteById(blogger.getUserId());
@@ -149,6 +155,21 @@ public class BloggerService implements IBloggerService {
 //		Moderator moderatorReturn = bRepo.save(new Blogger(bloggerUser.getUserId(), blogger.getBloggerName(), bloggerUser.getPassword()));
 		logger.info("New Moderator added : " + moderator);
 		return moderator;
+	}
+
+	@Override
+	public List<Moderator> viewAllModerator() {
+		return mRepo.findAll();
+	}
+
+	@Override
+	public Moderator viewModerator(int moderatorId) {
+		Optional<Moderator> opt = mRepo.findById(moderatorId);
+		if(!opt.isPresent()) {
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
+		}
+		
+		return opt.get();
 	}
 
 }
