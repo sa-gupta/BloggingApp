@@ -4,8 +4,7 @@ package com.cg.blogging.exception;
  * 
  * <h1>Moderator Approval Exception Class</h1>
  * <p>
- * This class handles the exceptions 
- * arise during shadowing of post or comments.
+ * This class handles the exceptions arise during shadowing of post or comments.
  * 
  * @author SKSSS
  *

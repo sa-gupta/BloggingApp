@@ -22,9 +22,9 @@ import com.cg.blogging.service.IPostService;
  * 
  * <h1>Post Controller Class</h1>
  * <p>
- * This class allows to inject and request posts through service instance
- * by providing CRUD operations using post class.
- * The CRUD operations can be called like:
+ * This class allows to inject and request posts through service instance by
+ * providing CRUD operations using post class. The CRUD operations can be called
+ * like:
  * {@link #addPost(Post)},{@link #updatePost(Post)},{@link #deletePost(int)},
  * {@link #getPostByBlogger(Blogger)} and so on.
  * 
@@ -36,7 +36,7 @@ import com.cg.blogging.service.IPostService;
 public class PostController {
 	@Autowired
 	private IPostService pService;
-	
+
 	/**
 	 * To inject new post details into repository.
 	 * 
@@ -46,15 +46,14 @@ public class PostController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping("/add")
 	public Post addPost(@RequestBody Post post) {
-		System.out.println("Add Request from client : "+post);
 		Post rPost = pService.addPost(post);
 		return rPost;
 	}
-	
+
 	/**
 	 * <p>
-	 * To request details from the user for new values.
-	 * Inject them into the repository to replace with older values.
+	 * To request details from the user for new values. Inject them into the
+	 * repository to replace with older values.
 	 * 
 	 * @param post
 	 * @return Post
@@ -62,42 +61,40 @@ public class PostController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
 	public Post updatePost(@RequestBody Post post) {
-		System.out.println("Update request from client : "+post);
 		Post rPost = pService.updatePost(post);
 		return rPost;
 	}
-	
+
 	/**
-	 * This function deletes the Post from database. It makes call
-	 * to service layer for Delete post 
+	 * This function deletes the Post from database. It makes call to service layer
+	 * for Delete post
 	 * 
 	 * 
 	 * @param id
 	 * @return Moderator
 	 */
-	
+
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{postId}")
 	public Post deletePost(@PathVariable("postId") int id) {
-		System.out.println("Delete request from client : "+id);
 		Post rPost = pService.deletePost(id);
 		return rPost;
 	}
-	
+
 	/**
 	 * <p>
-	 * This function searches the database for post with given
-	 * search String 
+	 * This function searches the database for post with given search String
 	 * 
 	 * @param searchStr
 	 * @return List<Post>
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/{searchStr}")
-	public List<Post> getPostBySearchString(@PathVariable("searchStr") String searchStr){
+	public List<Post> getPostBySearchString(@PathVariable("searchStr") String searchStr) {
 		return pService.getPostBySearchString(searchStr);
-		
+
 	}
+
 	/**
 	 * <p>
 	 * This function fetches all posts from Database.
@@ -106,22 +103,20 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all")
-	public List<Post> getPostBySearchString(){
+	public List<Post> getPostBySearchString() {
 		return pService.getAllPost();
 	}
-	
+
 	/**
 	 * <p>
-	 * This function fetches all posts of given
-	 * Blogger.
+	 * This function fetches all posts of given Blogger.
 	 * 
 	 * @param blogger
 	 * @return List<Post>
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/byblogger")
-	public List<Post> getPostByBlogger(@RequestBody Blogger blogger){
-		System.out.println("Request from client : ");
+	public List<Post> getPostByBlogger(@RequestBody Blogger blogger) {
 		return pService.getPostByBlogger(blogger);
 	}
 }

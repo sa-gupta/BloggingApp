@@ -14,27 +14,28 @@ import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Moderator;
 import com.cg.blogging.service.IBloggerService;
+
 /**
  * 
  * <h1>Moderator Controller Class</h1>
  * <p>
  * 
- * This class allows to inject Moderator details through services by providing CRUD operations
- * using Moderator class. The CRUD operations can be called like:
- * {@link #viewModerator()},{@link #viewAllModerator(moderatorId)}
+ * This class allows to inject Moderator details through services by providing
+ * CRUD operations using Moderator class. The CRUD operations can be called
+ * like: {@link #viewModerator()},{@link #viewAllModerator(moderatorId)}
  *
  * Moderator can Shadow post and comment.
+ * 
  * @author Sachin Gupta
  *
  */
 @RestController
 @RequestMapping("/moderator")
 public class ModeratorController {
-	
+
 	@Autowired
 	private IBloggerService bService;
-	
-	
+
 	/**
 	 * This function gives the list of all moderators in Database
 	 *
@@ -44,10 +45,10 @@ public class ModeratorController {
 	@GetMapping("/all")
 	public List<Moderator> viewAllModerator() {
 		List<Moderator> moderators = bService.viewAllModerator();
-		
+
 		return moderators;
 	}
-	
+
 	/**
 	 * This function return moderator by given ID
 	 * 

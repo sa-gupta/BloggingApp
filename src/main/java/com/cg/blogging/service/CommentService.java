@@ -17,15 +17,16 @@ import com.cg.blogging.entities.Post;
 //import com.cg.blogging.entities.Community;
 import com.cg.blogging.exception.IdNotFoundException;
 import com.cg.blogging.util.ExceptionMessage;
+
 /**
  * 
  * <h1>Comment Service Class</h1>
  * <p>
- * This class allows to manage comments by providing create and delete operations using comment
- * class. The operations can be called like:
- * {@link #addComment(Comment)},{@link #deleteComment(Comment)} 
- * This even allows to get all the comments related to a particular post
- * by using: {@link #getAllCommentForPost()}
+ * This class allows to manage comments by providing create and delete
+ * operations using comment class. The operations can be called like:
+ * {@link #addComment(Comment)},{@link #deleteComment(Comment)} This even allows
+ * to get all the comments related to a particular post by using:
+ * {@link #getAllCommentForPost()}
  * 
  * 
  * @author Sataym Kukreja
@@ -34,25 +35,26 @@ import com.cg.blogging.util.ExceptionMessage;
 @Service
 @Transactional
 public class CommentService implements ICommentService {
-	
+
 	private Logger logger = Logger.getLogger(CommentService.class);
 	@Autowired
 	private ICommentRepository cRepo;
-	
+
 	/**
-	 * This method adds the Comment on a post. It calls the save method of ICommentRepository
+	 * This method adds the Comment on a post. It calls the save method of
+	 * ICommentRepository
 	 * 
 	 * @param Comment
 	 * @return Comment
 	 */
 	@Override
 	public Comment addComment(Comment comment) {
-		
+
 		Comment com = cRepo.save(comment);
 		logger.info("Comment added : " + com);
 		return com;
 	}
-	
+
 	/**
 	 * Comment Service method to delete a comment details from the repository.
 	 * 
@@ -60,12 +62,13 @@ public class CommentService implements ICommentService {
 	 */
 	@Override
 	public void deleteComment(Comment comment) {
-		Optional <Comment> p1=  cRepo.findById(comment.getCommentId());
+		Optional<Comment> p1 = cRepo.findById(comment.getCommentId());
 		if (!p1.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		cRepo.deleteById(comment.getCommentId());
-		logger.info(" Comment deleted : " + p1.get().getCommentId() + " " + p1.get().getCommentDescription() + " " +p1.get().getVotes());
+		logger.info(" Comment deleted : " + p1.get().getCommentId() + " " + p1.get().getCommentDescription() + " "
+				+ p1.get().getVotes());
 	}
 
 	@Override
@@ -76,10 +79,9 @@ public class CommentService implements ICommentService {
 
 	/**
 	 * <p>
-	 * Comment Service method to vies all the comment related to a particular post 
+	 * Comment Service method to vies all the comment related to a particular post
 	 * by fetching details from post and comment repositories.
 	 */
-
 
 	/**
 	 * Comment Service method to vote for a comment.
@@ -89,5 +91,4 @@ public class CommentService implements ICommentService {
 //		((CommentService) commentRepo).upVote(upVote);
 //	}
 
-	
 }

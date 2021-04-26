@@ -14,9 +14,7 @@ import javax.validation.constraints.Size;
  * 
  * <h1>Admin Class</h1>
  * <p>
- * This class details regarding 
- * the administrators of this 
- * application.
+ * This class details regarding the administrators of this application.
  * 
  * @author SKSSS
  *
@@ -25,31 +23,27 @@ import javax.validation.constraints.Size;
 @Table
 public class Admin {
 	@Id
-//	@GeneratedValue
 	private int userId;
-	@NotBlank 
+	@NotBlank
 	@Pattern(regexp = "^[a-zA-Z\\s]{2,30}$", message = "adminName must be 4 to 20 characters long with first letter alphabet")
 	private String adminName;
-	
+
 	private String adminContact;
 	@NotBlank
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", 
-			message = "password must be 8 to 16 characters long and consist of at least :"
-					+ " one digit, one lowercase alphabet, one Uppercase alphabet and one special character in the bracket with No white space allowed.")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", message = "password must be 8 to 16 characters long and consist of at least :"
+			+ " one digit, one lowercase alphabet, one Uppercase alphabet and one special character in the bracket with No white space allowed.")
 	private String password;
-	
+
 	/**
 	 * Admin class constructor.
 	 */
 	public Admin() {
-		
+
 	}
-	
+
 	/**
 	 * <p>
-	 * Admin class constructor
-	 * to create a admin
-	 * by passing these arguments.
+	 * Admin class constructor to create a admin by passing these arguments.
 	 * 
 	 * @param userId
 	 * @param adminName
@@ -62,12 +56,10 @@ public class Admin {
 		this.adminContact = adminContact;
 		this.password = password;
 	}
-	
+
 	/**
 	 * <p>
-	 * Admin class constructor
-	 * to create a admin
-	 * by passing these arguments.
+	 * Admin class constructor to create a admin by passing these arguments.
 	 * 
 	 * @param adminName
 	 * @param adminContact
@@ -115,6 +107,5 @@ public class Admin {
 	public String toString() {
 		return "Admin [userId=" + userId + ", adminName=" + adminName + ", adminContact=" + adminContact + "]";
 	}
-	
-	
+
 }

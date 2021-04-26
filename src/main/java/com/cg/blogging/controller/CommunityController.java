@@ -49,7 +49,6 @@ public class CommunityController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
 	public Community addCommunity(@RequestBody Community community) {
-		System.out.println("Community from client : "+community);
 		Community commReturn = comService.addCommunity(community);
 		System.out.println(commReturn.getPostRulesAllowed().get(0));
 		return commReturn;
@@ -65,7 +64,6 @@ public class CommunityController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/delete/{id}")
 	public Community deleteCommunity(@PathVariable("id") Community community) {
-		System.out.println("Delete Request from client : "+community);
 		Community commReturn = comService.deleteCommunity(community);
 		return commReturn;
 	}
@@ -94,7 +92,6 @@ public class CommunityController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/byblogger")
 	public List<Community> listAllCommunitiesByBlogger(@RequestBody Blogger blogger){
-		System.out.println("Request from client : "+blogger);
 		return comService.listAllCommunitiesByBlogger(blogger);
 	}
 	
@@ -110,7 +107,6 @@ public class CommunityController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
 	public Community updateCommunity(@RequestBody Community community) {
-		System.out.println("Update Request from client : "+community);
 		Community commReturn = comService.updateCommunity(community);
 		return commReturn;
 	}

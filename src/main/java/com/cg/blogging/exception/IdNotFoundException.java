@@ -4,9 +4,8 @@ package com.cg.blogging.exception;
  * 
  * <h1>IdNotFound Exception Class</h1>
  * <p>
- * This class handles the Id not found exception 
- * It passes the message and cause to the 
- * centralized handler.
+ * This class handles the Id not found exception It passes the message and cause
+ * to the centralized handler.
  * 
  * @author Sachin Gupta
  *
@@ -19,9 +18,9 @@ public class IdNotFoundException extends RuntimeException {
 	 * Class constructor
 	 */
 	public IdNotFoundException() {
-		
+
 	}
-	
+
 	/**
 	 * Class constructor with arguments:
 	 * 
@@ -40,5 +39,5 @@ public class IdNotFoundException extends RuntimeException {
 	public IdNotFoundException(String message) {
 		super(message);
 	}
-	
+
 }

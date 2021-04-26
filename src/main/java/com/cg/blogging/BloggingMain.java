@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * <h1>Blogging Main Class</h1>
- * This class starts the spring application
+ * <h1>Blogging Main Class</h1> This class starts the spring application
  * 
  * @author Sachin Gupta
  *

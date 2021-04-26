@@ -1,11 +1,11 @@
 package com.cg.blogging.exception;
+
 /**
  * 
  * <h1>UserNotFound Exception Class</h1>
  * <p>
- * This class handles the Id not found exception 
- * It passes the message and cause to the 
- * centralized handler.
+ * This class handles the Id not found exception It passes the message and cause
+ * to the centralized handler.
  * 
  * @author Sachin Gupta
  *
@@ -24,5 +24,5 @@ public class UserNotFoundException extends RuntimeException {
 	public UserNotFoundException(String message) {
 		super(message);
 	}
-	
+
 }

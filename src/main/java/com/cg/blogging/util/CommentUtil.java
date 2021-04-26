@@ -14,17 +14,17 @@ public class CommentUtil {
 
 //	@Autowired
 //	private BloggerUtil bUtil;
-	
+
 	public List<CommentDetails> toDetails(List<Comment> comments) {
 		List<CommentDetails> commentDetailList = new ArrayList<>();
 		for (Comment comment : comments) {
 			commentDetailList.add(toDetails(comment));
-		}		
+		}
 		return commentDetailList;
 	}
 
 	private CommentDetails toDetails(Comment comment) {
-		CommentDetails commentDetails = new CommentDetails(comment.getCommentId(), comment.getCommentDescription(), 
+		CommentDetails commentDetails = new CommentDetails(comment.getCommentId(), comment.getCommentDescription(),
 				comment.getVotes(), comment.getBlogger(), comment.getPost());
 		return commentDetails;
 	}

@@ -26,25 +26,22 @@ import javax.validation.constraints.Size;
  * 
  * <h1>Blogger Class</h1>
  * <p>
- * This class is used for creating and
- * managing the blogger.
- * Posts, awards, communities and all
- * other details related to a blogger
- * are accessed through this class.
- *  
+ * This class is used for creating and managing the blogger. Posts, awards,
+ * communities and all other details related to a blogger are accessed through
+ * this class.
+ * 
  * @author SKSSS
  *
  */
 @Entity
 @Table
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="blogger_type", discriminatorType=DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "blogger_type", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("BLOGGER")
-public class Blogger {	
+public class Blogger {
 	@Id
-//	@GeneratedValue
 	private int userId;
-	@NotBlank 
+	@NotBlank
 	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "bloggerName must be 4 to 20 characters long with first letter alphabet")
 	private String bloggerName;
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
@@ -61,21 +58,19 @@ public class Blogger {
 	private List<Community> communities = new ArrayList<>();
 	private int karma;
 	@NotBlank
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", 
-			message = "password must be 8 to 16 characters long and consist of at least :"
-					+ " one digit, one lowercase alphabet, one Uppercase alphabet and one special character in the bracket with No white space allowed.")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", message = "password must be 8 to 16 characters long and consist of at least :"
+			+ " one digit, one lowercase alphabet, one Uppercase alphabet and one special character in the bracket with No white space allowed.")
 	private String password;
+
 	/**
 	 * Blogger class constructor.
 	 */
 	public Blogger() {
 	}
-	
+
 	/**
 	 * <p>
-	 * Blogger class constructor
-	 * to create a blogger
-	 * by passing this argument.
+	 * Blogger class constructor to create a blogger by passing this argument.
 	 * 
 	 * @param userId
 	 */
@@ -85,27 +80,21 @@ public class Blogger {
 
 	/**
 	 * <p>
-	 * Blogger class constructor
-	 * to create a blogger
-	 * by passing these arguments.
+	 * Blogger class constructor to create a blogger by passing these arguments.
 	 * 
 	 * @param userId
 	 * @param bloggerName
 	 * @param password
 	 */
-	public Blogger(int userId,String bloggerName, String password) {
+	public Blogger(int userId, String bloggerName, String password) {
 		this.userId = userId;
 		this.bloggerName = bloggerName;
 		this.password = password;
 	}
 
-
-
 	/**
 	 * <p>
-	 * Blogger class constructor
-	 * to create a blogger
-	 * by passing these arguments.
+	 * Blogger class constructor to create a blogger by passing these arguments.
 	 * 
 	 * @param userId
 	 * @param bloggerName
@@ -133,9 +122,7 @@ public class Blogger {
 
 	/**
 	 * <p>
-	 * Blogger class constructor
-	 * to create a blogger
-	 * by passing these arguments.
+	 * Blogger class constructor to create a blogger by passing these arguments.
 	 * 
 	 * @param bloggerName
 	 * @param posts
@@ -162,13 +149,9 @@ public class Blogger {
 		return password;
 	}
 
-
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
 
 	public int getUserId() {
 		return userId;
@@ -240,6 +223,5 @@ public class Blogger {
 				+ comments + ", upvoted=" + upvoted + ", downvoted=" + downvoted + ", communities=" + communities
 				+ ", karma=" + karma + "]";
 	}
-	
-	
+
 }

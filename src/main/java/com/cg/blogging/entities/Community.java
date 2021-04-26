@@ -25,11 +25,9 @@ import com.cg.blogging.util.StringListConverter;
 /**
  * <h1>Community Class</h1>
  * <p>
- * This class provides details regarding the 
- * communities that are present for the user:blogger 
- * to be a part of it.
- * The guidelines which are used by 
- * moderator for post/comment shadowing. 
+ * This class provides details regarding the communities that are present for
+ * the user:blogger to be a part of it. The guidelines which are used by
+ * moderator for post/comment shadowing.
  * 
  * @author SKSSS
  *
@@ -38,14 +36,13 @@ import com.cg.blogging.util.StringListConverter;
 @Table
 public class Community {
 	@Id
-	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="community_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
+	@SequenceGenerator(allocationSize = 1, name = "seq1", sequenceName = "community_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int communityId;
 	@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long")
 	private String communityDescription;
 	private int totalMembers;
 	private int onlineMembers;
-//	private User createdBy;
 //	private File image;
 //	@Temporal(TemporalType.DATE)
 //	@CreationTimestamp
@@ -59,29 +56,28 @@ public class Community {
 	@Convert(converter = StringListConverter.class)
 	private List<String> banningPolicy;
 	@Convert(converter = StringListConverter.class)
-    private List<String> flairs;
+	private List<String> flairs;
+
 	/**
 	 * Community class constructor.
 	 */
-	public Community() {}
+	public Community() {
+	}
+
 	/**
 	 * 
 	 * <p>
-	 * Community class constructor
-	 * to create a community 
-	 * by passing one argument.
+	 * Community class constructor to create a community by passing one argument.
 	 * 
 	 * @param communityId
 	 */
 	public Community(int communityId) {
 		this.communityId = communityId;
 	}
-	
+
 	/**
 	 * <p>
-	 * Community class constructor
-	 * to create a community 
-	 * by passing these arguments.
+	 * Community class constructor to create a community by passing these arguments.
 	 * 
 	 * @param communityDescription
 	 * @param totalMembers
@@ -92,9 +88,9 @@ public class Community {
 	 * @param banningPolicy
 	 * @param flairs
 	 */
-	public Community(String communityDescription, int totalMembers, int onlineMembers,
-			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
-			List<String> banningPolicy, List<String> flairs) {
+	public Community(String communityDescription, int totalMembers, int onlineMembers, LocalDateTime createdOn,
+			List<String> postRulesAllowed, List<String> postRulesDisAllowed, List<String> banningPolicy,
+			List<String> flairs) {
 		this.communityDescription = communityDescription;
 		this.totalMembers = totalMembers;
 		this.onlineMembers = onlineMembers;
@@ -104,12 +100,10 @@ public class Community {
 		this.banningPolicy = banningPolicy;
 		this.flairs = flairs;
 	}
-	
+
 	/**
 	 * <p>
-	 * Community class constructor
-	 * to create a community 
-	 * by passing these arguments.
+	 * Community class constructor to create a community by passing these arguments.
 	 * 
 	 * @param communityId
 	 * @param communityDescription
@@ -121,7 +115,7 @@ public class Community {
 	 * @param banningPolicy
 	 * @param flairs
 	 */
-	public Community(int communityId,String communityDescription, int totalMembers, int onlineMembers,
+	public Community(int communityId, String communityDescription, int totalMembers, int onlineMembers,
 			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
 		this.communityId = communityId;
@@ -134,12 +128,6 @@ public class Community {
 		this.banningPolicy = banningPolicy;
 		this.flairs = flairs;
 	}
-//	public User getCreatedBy() {
-//		return createdBy;
-//	}
-//	public void setCreatedBy(User createdBy) {
-//		this.createdBy = createdBy;
-//	}
 
 	public int getCommunityId() {
 		return communityId;
@@ -212,17 +200,15 @@ public class Community {
 	public void setFlairs(List<String> flairs) {
 		this.flairs = flairs;
 	}
+
 	@Override
 	public String toString() {
 		return "Community [communityId=" + communityId + ", communityDescription=" + communityDescription
-				+ ", totalMembers=" + totalMembers + ", onlineMembers=" + onlineMembers /*+ ", createdBy=" + createdBy
-				*/+ ", createdOn=" + createdOn + ", postRulesAllowed=" + postRulesAllowed + ", postRulesDisAllowed="
-				+ postRulesDisAllowed + ", banningPolicy=" + banningPolicy + ", flairs=" + flairs + "]";
+				+ ", totalMembers=" + totalMembers + ", onlineMembers=" + onlineMembers /*
+																						 * + ", createdBy=" + createdBy
+																						 */ + ", createdOn=" + createdOn
+				+ ", postRulesAllowed=" + postRulesAllowed + ", postRulesDisAllowed=" + postRulesDisAllowed
+				+ ", banningPolicy=" + banningPolicy + ", flairs=" + flairs + "]";
 	}
 
-	
-    
-	
-	
-	
 }

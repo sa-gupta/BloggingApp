@@ -28,12 +28,12 @@ import com.cg.blogging.util.CommentUtil;
  * 
  * <h1>Comment Controller Class</h1>
  * <p>
- * This class allows to inject comment's details through service class
- * by providing create and delete operations using comment
- * class. The operations can be called like:
- * {@link #addComment(Comment)},{@link #deleteComment(Comment)} 
- * This even allows to request all the comments related to a particular post
- * by using: {@link #getAllCommentForPost()}
+ * This class allows to inject comment's details through service class by
+ * providing create and delete operations using comment class. The operations
+ * can be called like:
+ * {@link #addComment(Comment)},{@link #deleteComment(Comment)} This even allows
+ * to request all the comments related to a particular post by using:
+ * {@link #getAllCommentForPost()}
  * 
  * 
  * @author Satyam Kukreja
@@ -45,10 +45,10 @@ import com.cg.blogging.util.CommentUtil;
 public class CommentController {
 	@Autowired
 	private ICommentService cService;
-	
+
 	@Autowired
 	private CommentUtil cUtil;
-	
+
 	/**
 	 * To inject the details of a new comment into the repository.
 	 * 
@@ -58,11 +58,10 @@ public class CommentController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
 	public Comment addComment(@RequestBody @Valid Comment comment) {
-		System.out.println("Request comment : "+comment);
 		Comment comm = cService.addComment(comment);
 		return comm;
 	}
-	
+
 	/**
 	 * To request the details of a comment and delete it from repository.
 	 * 
@@ -71,32 +70,19 @@ public class CommentController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{id}")
 	public void deleteComment(@PathVariable("id") Integer commentId) {
-		System.out.println("Request comment : "+commentId);
 		cService.deleteComment(new Comment(commentId));
 	}
-	
-//	@ResponseStatus(code = HttpStatus.OK)
-//	@GetMapping("/all/bypost")
-//	public List<CommentDetails> listAllCommentsByPost(@RequestBody Post post){
-//		System.out.println("Request from client : "+ post);
-//		List<Comment> comments = cService.listAllCommentsByPost(post);
-//		List<CommentDetails> commentDetails = 	cUtil.toDetails(comments);
-//		return commentDetails;
-////		System.out.println(cService.listAllCommentsByPost(post).get(0));
-////		return null;
-//	}
-	
+
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/bypost")
-	public List<Comment> listAllCommentsByPost(@RequestBody Post post){
-		
-		System.out.println("Request from client : "+ post);
+	public List<Comment> listAllCommentsByPost(@RequestBody Post post) {
+
+		System.out.println("Request from client : " + post);
 		List<Comment> comments = cService.listAllCommentsByPost(post);
 		return comments;
-//		System.out.println(cService.listAllCommentsByPost(post).get(0));
-//		return null;
+
 	}
-	
+
 	/**
 	 * To update the new vote that is added to the comment.
 	 */
@@ -106,6 +92,5 @@ public class CommentController {
 //		System.out.println("Request comment : "+upvote);
 //		cService.upVote(upvote);
 //	}
-	
-	
+
 }

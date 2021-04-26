@@ -4,8 +4,7 @@ package com.cg.blogging.exception;
  * 
  * <h1>Not Enough Points Exception Class</h1>
  * <p>
- * This class manages the exceptions 
- * arise due to count and award distribution. 
+ * This class manages the exceptions arise due to count and award distribution.
  * 
  * @author SKSSS
  *

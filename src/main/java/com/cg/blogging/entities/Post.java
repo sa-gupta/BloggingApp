@@ -40,11 +40,9 @@ import org.hibernate.annotations.UpdateTimestamp;
  * 
  * <h1>Post Class</h1>
  * <p>
- * This class is used to create posts
- * with different properties according to the
- * requirements of the user:blogger.
- * It contains all the details related 
- * to a post.
+ * This class is used to create posts with different properties according to the
+ * requirements of the user:blogger. It contains all the details related to a
+ * post.
  * 
  * @author SKSSS
  *
@@ -53,10 +51,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table
 public class Post {
 	@Id
-	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="post_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
+	@SequenceGenerator(allocationSize = 1, name = "seq1", sequenceName = "post_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int postId;
-	@NotBlank 
+	@NotBlank
 	@Pattern(regexp = "^[a-zA-Z\\s]{5,50}$", message = "title must be 3 to 30 characters long with first letter alphabet")
 	private String title;
 	@ManyToOne
@@ -73,46 +71,45 @@ public class Post {
 	private List<Comment> comments;
 	private int votes;
 	private boolean voteUp;
-    private boolean notSafeForWork;
-    private boolean spoiler;
-    private boolean originalContent;
-    @Size(min = 1, max = 20, message = "flair should be of 1 to 20 characters long")
-    private String flair;
-    @ManyToOne
-    @JoinColumn(name = "community")
-    private Community community;
+	private boolean notSafeForWork;
+	private boolean spoiler;
+	private boolean originalContent;
+	@Size(min = 1, max = 20, message = "flair should be of 1 to 20 characters long")
+	private String flair;
+	@ManyToOne
+	@JoinColumn(name = "community")
+	private Community community;
+
 	/**
 	 * Post class constructor.
 	 */
-    public Post() {
+	public Post() {
 	}
 
-    public Post(int postId) {
+	public Post(int postId) {
 		super();
 		this.postId = postId;
 	}
-    
-    /**
-     * 
-     * <p>
-	 * Post class constructor
-	 * to create a post 
-	 * by passing these arguments.
+
+	/**
 	 * 
-     * @param postId
-     * @param title
-     * @param createdBy
-     * @param content
-     * @param createdDateTime
-     * @param comments
-     * @param votes
-     * @param voteUp
-     * @param notSafeForWork
-     * @param spoiler
-     * @param originalContent
-     * @param flair
-     * @param community
-     */
+	 * <p>
+	 * Post class constructor to create a post by passing these arguments.
+	 * 
+	 * @param postId
+	 * @param title
+	 * @param createdBy
+	 * @param content
+	 * @param createdDateTime
+	 * @param comments
+	 * @param votes
+	 * @param voteUp
+	 * @param notSafeForWork
+	 * @param spoiler
+	 * @param originalContent
+	 * @param flair
+	 * @param community
+	 */
 	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
 			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
 			boolean originalContent, String flair, Community community) {
@@ -132,12 +129,10 @@ public class Post {
 		this.community = community;
 	}
 
-
 	/**
-	 * * <p>
-	 * Post class constructor
-	 * to create a post 
-	 * by passing these arguments.
+	 * *
+	 * <p>
+	 * Post class constructor to create a post by passing these arguments.
 	 * 
 	 * @param postId
 	 * @param title
@@ -146,7 +141,7 @@ public class Post {
 	 * @param flair
 	 * @param community
 	 */
-	public Post(int postId,String title, Blogger createdBy, PostType content, String flair, Community community) {
+	public Post(int postId, String title, Blogger createdBy, PostType content, String flair, Community community) {
 		this.postId = postId;
 		this.title = title;
 		this.createdBy = createdBy;
@@ -156,10 +151,9 @@ public class Post {
 	}
 
 	/**
-	 * * <p>
-	 * Post class constructor
-	 * to create a post 
-	 * by passing these arguments.
+	 * *
+	 * <p>
+	 * Post class constructor to create a post by passing these arguments.
 	 * 
 	 * @param postId
 	 * @param title
@@ -172,8 +166,8 @@ public class Post {
 	 * @param flair
 	 * @param community
 	 */
-	public Post(int postId,String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime, boolean notSafeForWork,
-			boolean spoiler, boolean originalContent, String flair, Community community) {
+	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
+			boolean notSafeForWork, boolean spoiler, boolean originalContent, String flair, Community community) {
 		super();
 		this.postId = postId;
 		this.title = title;
@@ -204,7 +198,7 @@ public class Post {
 //		this.flair = flair;
 //		this.community = community;
 //	}
-	
+
 //	public Post(String title, Blogger createdBy, PostType content, Date createdDateTime,
 //			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
 //			boolean originalContent, String flair, Community community) {
@@ -221,8 +215,6 @@ public class Post {
 //		this.flair = flair;
 //		this.community = community;
 //	}
-
-
 
 	public int getPostId() {
 		return postId;
@@ -344,8 +336,6 @@ public class Post {
 		this.community = community;
 	}
 
-
-
 	@Override
 	public String toString() {
 		return "Post [postId=" + postId + ", title=" + title + ", createdBy=" + createdBy + ", content=" + content
@@ -353,14 +343,5 @@ public class Post {
 				+ ", notSafeForWork=" + notSafeForWork + ", spoiler=" + spoiler + ", originalContent=" + originalContent
 				+ ", flair=" + flair + ", community=" + community + "]";
 	}
-
-	
-
-	
-    
-	
-	
-
-
 
 }

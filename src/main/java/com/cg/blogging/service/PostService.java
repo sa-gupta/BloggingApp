@@ -18,6 +18,7 @@ import com.cg.blogging.exception.CommunityNotFound;
 import com.cg.blogging.exception.IdNotFoundException;
 import com.cg.blogging.exception.UserNotFoundException;
 import com.cg.blogging.util.ExceptionMessage;
+
 /**
  * 
  * <h1>Post Service Class</h1>
@@ -35,16 +36,16 @@ import com.cg.blogging.util.ExceptionMessage;
 public class PostService implements IPostService {
 
 	private Logger logger = Logger.getLogger(PostService.class);
-	
+
 	@Autowired
 	private IPostRepository pRepo;
-	
+
 	@Autowired
 	private IBloggerRepository bRepo;
 
 	@Autowired
 	private ICommunityRepository cRepo;
-	
+
 	/**
 	 * Post Service method to add new post details into the post repository.
 	 */
@@ -52,65 +53,69 @@ public class PostService implements IPostService {
 	public Post addPost(Post post) {
 		Optional<Blogger> bloggerOpt = bRepo.findById(post.getCreatedBy().getUserId());
 		Optional<Community> communityOpt = cRepo.findById(post.getCommunity().getCommunityId());
-		if(!bloggerOpt.isPresent()) {
+		if (!bloggerOpt.isPresent()) {
 			logger.error(ExceptionMessage.USER_NOT_FOUND);
 			throw new UserNotFoundException(ExceptionMessage.USER_NOT_FOUND);
-		}else if(!communityOpt.isPresent()) {
+		} else if (!communityOpt.isPresent()) {
 			logger.error(ExceptionMessage.COMMUNITY_NOT_FOUND);
 			throw new CommunityNotFound(ExceptionMessage.COMMUNITY_NOT_FOUND);
 		}
 		Post returnPost = pRepo.save(post);
-		logger.info("Post Created : "+returnPost);
+		logger.info("Post Created : " + returnPost);
 		return returnPost;
 	}
 
 	/**
 	 * <p>
 	 * Post Service method to update a existing post details by finding the postId
-	 * in the post repository.
-	 * Injecting the changed post details into the repository.
+	 * in the post repository. Injecting the changed post details into the
+	 * repository.
 	 * 
 	 * @exception IdNotFoundException
 	 */
 	@Override
 	public Post updatePost(Post post) {
 		Optional<Post> opt = pRepo.findById(post.getPostId());
-		if(!opt.isPresent()) {
+		if (!opt.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		Post recordInDatabse = opt.get();
-		Post toBeUpdated = new Post(recordInDatabse.getPostId(), post.getTitle(), recordInDatabse.getCreatedBy(), 
-				post.getContent(), null, null, post.getVotes(), true, false, true, true, post.getFlair(), recordInDatabse.getCommunity());
+		Post toBeUpdated = new Post(recordInDatabse.getPostId(), post.getTitle(), recordInDatabse.getCreatedBy(),
+				post.getContent(), null, null, post.getVotes(), true, false, true, true, post.getFlair(),
+				recordInDatabse.getCommunity());
 		Post rPost = pRepo.save(toBeUpdated);
-		logger.info("Post Updated : "+rPost);
+		logger.info("Post Updated : " + rPost);
 		return rPost;
 	}
-	
+
 	/**
-	 * Post Service method to delete a post and it's details from the post repository.
+	 * Post Service method to delete a post and it's details from the post
+	 * repository.
 	 */
 	@Override
 	public Post deletePost(int id) {
 		Optional<Post> opt = pRepo.findById(id);
-		if(!opt.isPresent()) {
+		if (!opt.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.POST_NOT_FOUND);
 		}
 		pRepo.deleteById(id);
-		logger.info("Logger Deleted : "+opt.get());
+		logger.info("Logger Deleted : " + opt.get());
 		return opt.get();
 	}
 
 	/**
-	 * Post Service method to find a post by using searchstring provided from the repository.
+	 * Post Service method to find a post by using searchstring provided from the
+	 * repository.
 	 */
 	@Override
 	public List<Post> getPostBySearchString(String searchStr) {
-		
+
 		return pRepo.getPostBySearchString(searchStr.toLowerCase());
 	}
 
 	/**
-	 * Post Service method to find a post by a particular blogger from post and blogger repositories.
+	 * Post Service method to find a post by a particular blogger from post and
+	 * blogger repositories.
 	 */
 	@Override
 	public List<Post> getPostByBlogger(Blogger blogger) {

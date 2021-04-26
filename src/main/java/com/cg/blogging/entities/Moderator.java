@@ -9,11 +9,10 @@ import javax.persistence.Entity;
  * 
  * <h1>Moderator Class</h1>
  * <p>
- * This class moderates/shadows 
- * the comments and posts 
- * that have sensitive content.
+ * This class moderates/shadows the comments and posts that have sensitive
+ * content.
  * 
- *  @author SKSSS
+ * @author SKSSS
  *
  */
 
@@ -23,8 +22,10 @@ public class Moderator extends Blogger {
 	/**
 	 * Moderator class constructor.
 	 */
-	
-	public boolean moderatesPostsAndComments() {return false;}
+
+	public boolean moderatesPostsAndComments() {
+		return false;
+	}
 
 	public Moderator() {
 		super();
@@ -48,5 +49,4 @@ public class Moderator extends Blogger {
 		super(bloggerName, posts, comments, upvoted, downvoted, communities, karma, password);
 	}
 
-	
 }

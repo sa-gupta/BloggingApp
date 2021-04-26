@@ -1,7 +1,5 @@
 package com.cg.blogging.entities;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +14,9 @@ import javax.validation.constraints.Size;
  * 
  * <h1>Comment Class</h1>
  * <p>
- * This class is used for creating and 
- * managing the comments being posted by the user.
- *  
+ * This class is used for creating and managing the comments being posted by the
+ * user.
+ * 
  * @author SKSSS
  *
  */
@@ -26,8 +24,8 @@ import javax.validation.constraints.Size;
 @Table(name = "comment_table")
 public class Comment {
 	@Id
-	@SequenceGenerator(allocationSize=1, name="seq1", sequenceName="comment_seq")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
+	@SequenceGenerator(allocationSize = 1, name = "seq1", sequenceName = "comment_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int commentId;
 	@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long")
 	private String commentDescription;
@@ -39,18 +37,17 @@ public class Comment {
 	@JoinColumn(name = "post_id")
 	private Post post;
 	private boolean voteUp;
+
 	/**
 	 * Comment class constructor.
 	 */
 	public Comment() {
 	}
-	
+
 	/**
 	 * 
 	 * <p>
-	 * Comment class constructor
-	 * to create a comment
-	 * by passing these arguments.
+	 * Comment class constructor to create a comment by passing these arguments.
 	 * 
 	 * @param commentDescription
 	 * @param blogger
@@ -61,13 +58,11 @@ public class Comment {
 		this.commentDescription = commentDescription;
 		this.blogger = blogger;
 		this.post = post;
-	} 
-	
+	}
+
 	/**
 	 * <p>
-	 * Comment class constructor
-	 * to create a comment
-	 * by passing these arguments.
+	 * Comment class constructor to create a comment by passing these arguments.
 	 * 
 	 * @param commentDescription
 	 * @param votes
@@ -82,12 +77,10 @@ public class Comment {
 		this.post = post;
 		this.voteUp = voteUp;
 	}
-	
+
 	/**
 	 * <p>
-	 * Comment class constructor
-	 * to create a comment
-	 * by passing these arguments.
+	 * Comment class constructor to create a comment by passing these arguments.
 	 * 
 	 * @param commentDescription
 	 * @param votes
@@ -100,12 +93,10 @@ public class Comment {
 		this.blogger = blogger;
 		this.voteUp = voteUp;
 	}
-	
+
 	/**
 	 * <p>
-	 * Comment class constructor
-	 * to create a comment
-	 * by passing these arguments.
+	 * Comment class constructor to create a comment by passing these arguments.
 	 * 
 	 * @param commentId
 	 * @param commentDescription
@@ -126,9 +117,7 @@ public class Comment {
 
 	/**
 	 * <p>
-	 * Comment class constructor
-	 * to create a comment
-	 * by passing this argument.
+	 * Comment class constructor to create a comment by passing this argument.
 	 * 
 	 * @param commentId
 	 */
@@ -189,8 +178,5 @@ public class Comment {
 		return "Comment [commentId=" + commentId + ", commentDescription=" + commentDescription + ", votes=" + votes
 				+ ", blogger=" + blogger + ", post=" + post + ", voteUp=" + voteUp + "]";
 	}
-	
-	
-	
-}
 
+}

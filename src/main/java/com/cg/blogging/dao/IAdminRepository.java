@@ -6,12 +6,13 @@ import com.cg.blogging.entities.Admin;
 
 /**
  * 
- * <h1>Admin Repository</h1>
- * This interface allows to manage CRUD operations on the admin database.
+ * <h1>Admin Repository</h1> This interface allows to manage CRUD operations on
+ * the admin database.
+ * 
  * @author Sachin Gupta
  *
  */
 @Repository
-public interface IAdminRepository extends JpaRepository<Admin, Integer>{
+public interface IAdminRepository extends JpaRepository<Admin, Integer> {
 
 }

@@ -1,10 +1,10 @@
 package com.cg.blogging.entities;
+
 /**
  * 
  * <p>
- * This tells the values that each
- * coin consists. These coins are used as
- * awards for the users and posts.
+ * This tells the values that each coin consists. These coins are used as awards
+ * for the users and posts.
  * 
  * @author SKSSS
  *
