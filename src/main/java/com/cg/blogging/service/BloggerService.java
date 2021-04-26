@@ -115,7 +115,7 @@ public class BloggerService implements IBloggerService {
 	public Blogger viewBlogger(int bloggerId){
 		Optional<Blogger> opt = bRepo.findById(bloggerId);
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id Not Found");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		return opt.get();
 	}
@@ -137,7 +137,6 @@ public class BloggerService implements IBloggerService {
 	 */
 	@Override
 	public List<Blogger> viewBloggerList(Community community) {
-		
 		return bRepo.viewBloggerList(community.getCommunityId());
 	}
 

@@ -16,6 +16,7 @@ import com.cg.blogging.entities.Comment;
 import com.cg.blogging.entities.Post;
 //import com.cg.blogging.entities.Community;
 import com.cg.blogging.exception.IdNotFoundException;
+import com.cg.blogging.util.ExceptionMessage;
 /**
  * 
  * <h1>Comment Service Class</h1>
@@ -61,7 +62,7 @@ public class CommentService implements ICommentService {
 	public void deleteComment(Comment comment) {
 		Optional <Comment> p1=  cRepo.findById(comment.getCommentId());
 		if (!p1.isPresent()) {
-			throw new IdNotFoundException("ID not found");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		cRepo.deleteById(comment.getCommentId());
 		logger.info(" Comment deleted : " + p1.get().getCommentId() + " " + p1.get().getCommentDescription() + " " +p1.get().getVotes());

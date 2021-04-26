@@ -12,6 +12,7 @@ import com.cg.blogging.dao.IUserRepository;
 import com.cg.blogging.entities.Admin;
 import com.cg.blogging.entities.User;
 import com.cg.blogging.exception.IdNotFoundException;
+import com.cg.blogging.util.ExceptionMessage;
 /**
  * 
  * <h1>User Service Class</h1>
@@ -52,7 +53,7 @@ public class UserService implements IUserService {
 	public User signIn(User user) {
 		Optional<User> opt = userRepo.findById(user.getUserId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id doesn't exist");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		logger.info("User Signed In : "+opt.get());
 		return opt.get();
@@ -67,7 +68,7 @@ public class UserService implements IUserService {
 	public User signOut(User user) {
 		Optional<User> opt = userRepo.findById(user.getUserId());
 		if(!opt.isPresent()) {
-			throw new IdNotFoundException("Id doesn't exist");
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		
 		logger.info("User Signed Out : "+opt.get());
