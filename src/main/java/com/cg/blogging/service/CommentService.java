@@ -54,13 +54,10 @@ public class CommentService implements ICommentService {
 	 */
 	@Override
 	public void deleteComment(Comment comment) {
-		logger.debug("Done");
-//		logger.info("******** Comment deleted : " + comment);
 		Optional <Comment> p1=  commentRepo.findById(comment.getCommentId());
 		if (!p1.isPresent()) {
 			throw new IdNotFoundException("ID not found");
 		}
-//		Comment com = p1.get();
 		commentRepo.deleteById(comment.getCommentId());
 		logger.info("******* Comment deleted : " + p1.get().getCommentId() + " " + p1.get().getCommentDescription() + " " +p1.get().getVotes());
 	}
