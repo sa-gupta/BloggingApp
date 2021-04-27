@@ -83,6 +83,7 @@ public class UserService implements IUserService {
 	 */
 	@Override
 	public User addNewAdmin(Admin admin) {
+//		System.out.println(admin.getUserId());
 		User adminUser = userRepo.save(new User(admin.getPassword(), Role.ADMIN));
 		Admin adminReturn = adminRepo.save(new Admin(adminUser.getUserId(), admin.getAdminName(),
 				admin.getAdminContact(), adminUser.getPassword()));

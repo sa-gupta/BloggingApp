@@ -76,8 +76,7 @@ public class CommentController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/bypost")
 	public List<Comment> listAllCommentsByPost(@RequestBody Post post) {
-
-		System.out.println("Request from client : " + post);
+		
 		List<Comment> comments = cService.listAllCommentsByPost(post);
 		return comments;
 

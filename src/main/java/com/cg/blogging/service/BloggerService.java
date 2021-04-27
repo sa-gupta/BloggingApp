@@ -32,7 +32,7 @@ import com.cg.blogging.util.Role;
  * provides with other operations to find bloggers by community.
  * {@link #viewBloggerList(Community)}
  * 
- * @author SKSSS
+ * @author R.Kavya
  *
  */
 @Service("bService")
@@ -146,10 +146,8 @@ public class BloggerService implements IBloggerService {
 	@Override
 	public Moderator addModerator(Moderator moderator) {
 		User bloggerUser = uRepo.save(new User(moderator.getPassword(), Role.MODERATOR));
-//		EntityManager em;
 		moderator.setUserId(bloggerUser.getUserId());
 		em.persist(moderator);
-//		Moderator moderatorReturn = bRepo.save(new Blogger(bloggerUser.getUserId(), blogger.getBloggerName(), bloggerUser.getPassword()));
 		logger.info("New Moderator added : " + moderator);
 		return moderator;
 	}

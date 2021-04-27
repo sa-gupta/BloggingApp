@@ -129,6 +129,8 @@ public class Community {
 		this.flairs = flairs;
 	}
 
+	//Getters and Setters
+	
 	public int getCommunityId() {
 		return communityId;
 	}
@@ -201,6 +203,8 @@ public class Community {
 		this.flairs = flairs;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return "Community [communityId=" + communityId + ", communityDescription=" + communityDescription
