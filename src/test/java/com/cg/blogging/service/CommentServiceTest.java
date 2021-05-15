@@ -27,17 +27,17 @@ public class CommentServiceTest {
 	private EntityManager em;
 	
 	
-	@Test
-	public void testAddComment() {
-		Comment comment = new Comment("Hi", new Blogger(2), new Post(2));
-		Comment exComment = cService.addComment(comment);
-		Assertions.assertEquals(exComment.getBlogger(), comment.getBlogger());
-	}
-	
-	@Test
-	public void testDeleteComment() {
-		Comment comment = cService.addComment(new Comment("Hi", new Blogger(2), new Post(2)));
-		cService.deleteComment(comment);
+//	@Test
+//	public void testAddComment() {
+//		Comment comment = new Comment("Hi", new Blogger(2), new Post(2));
+//		Comment exComment = cService.addComment(comment);
 //		Assertions.assertEquals(exComment.getBlogger(), comment.getBlogger());
-	}
+//	}
+//	
+//	@Test
+//	public void testDeleteComment() {
+//		Comment comment = cService.addComment(new Comment("Hi", new Blogger(2), new Post(2)));
+//		cService.deleteComment(comment);
+////		Assertions.assertEquals(exComment.getBlogger(), comment.getBlogger());
+//	}
 }

@@ -1,12 +1,7 @@
 package com.cg.blogging.entities;
 
 import java.time.LocalDateTime;
-//import java.nio.file.Files;
-//import java.time.LocalDateTime;
-//import java.util.Date;
 import java.util.List;
-
-//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -29,12 +24,7 @@ import javax.validation.constraints.Size;
 //
 //import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-//
-//import com.fasterxml.jackson.annotation.JsonFormat;
-//import javax.persistence.Temporal;
-//import javax.persistence.TemporalType;
-//
-//import org.checkerframework.common.value.qual.BoolVal;
+
 
 /**
  * 
@@ -62,12 +52,11 @@ public class Post {
 	private Blogger createdBy;
 	@Enumerated(EnumType.STRING)
 	private PostType content;
-//	private List<Files> data;
-//	private Award awardsReceived;
+	private String data;
 	@UpdateTimestamp
 	private LocalDateTime createdDateTime;
 	@ManyToMany
-//	@JoinColumn(name = "comments")
+	@JoinColumn(name = "comments")
 	private List<Comment> comments;
 	private int votes;
 	private boolean voteUp;
@@ -85,136 +74,6 @@ public class Post {
 	 */
 	public Post() {
 	}
-
-	public Post(int postId) {
-		super();
-		this.postId = postId;
-	}
-
-	/**
-	 * 
-	 * <p>
-	 * Post class constructor to create a post by passing these arguments.
-	 * 
-	 * @param postId
-	 * @param title
-	 * @param createdBy
-	 * @param content
-	 * @param createdDateTime
-	 * @param comments
-	 * @param votes
-	 * @param voteUp
-	 * @param notSafeForWork
-	 * @param spoiler
-	 * @param originalContent
-	 * @param flair
-	 * @param community
-	 */
-	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
-			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
-			boolean originalContent, String flair, Community community) {
-		super();
-		this.postId = postId;
-		this.title = title;
-		this.createdBy = createdBy;
-		this.content = content;
-		this.createdDateTime = createdDateTime;
-		this.comments = comments;
-		this.votes = votes;
-		this.voteUp = voteUp;
-		this.notSafeForWork = notSafeForWork;
-		this.spoiler = spoiler;
-		this.originalContent = originalContent;
-		this.flair = flair;
-		this.community = community;
-	}
-
-	/**
-	 * *
-	 * <p>
-	 * Post class constructor to create a post by passing these arguments.
-	 * 
-	 * @param postId
-	 * @param title
-	 * @param createdBy
-	 * @param content
-	 * @param flair
-	 * @param community
-	 */
-	public Post(int postId, String title, Blogger createdBy, PostType content, String flair, Community community) {
-		this.postId = postId;
-		this.title = title;
-		this.createdBy = createdBy;
-		this.content = content;
-		this.flair = flair;
-		this.community = community;
-	}
-
-	/**
-	 * *
-	 * <p>
-	 * Post class constructor to create a post by passing these arguments.
-	 * 
-	 * @param postId
-	 * @param title
-	 * @param createdBy
-	 * @param content
-	 * @param createdDateTime
-	 * @param notSafeForWork
-	 * @param spoiler
-	 * @param originalContent
-	 * @param flair
-	 * @param community
-	 */
-	public Post(int postId, String title, Blogger createdBy, PostType content, LocalDateTime createdDateTime,
-			boolean notSafeForWork, boolean spoiler, boolean originalContent, String flair, Community community) {
-		super();
-		this.postId = postId;
-		this.title = title;
-		this.createdBy = createdBy;
-		this.content = content;
-		this.createdDateTime = createdDateTime;
-		this.notSafeForWork = notSafeForWork;
-		this.spoiler = spoiler;
-		this.originalContent = originalContent;
-		this.flair = flair;
-		this.community = community;
-	}
-
-//	public Post(int postId, String title, Blogger createdBy, PostType content, Date createdDateTime,
-//			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
-//			boolean originalContent, String flair, Community community) {
-//		this.postId = postId;
-//		this.title = title;
-//		this.createdBy = createdBy;
-//		this.content = content;
-//		this.createdDateTime = createdDateTime;
-//		this.comments = comments;
-//		this.votes = votes;
-//		this.voteUp = voteUp;
-//		this.notSafeForWork = notSafeForWork;
-//		this.spoiler = spoiler;
-//		this.originalContent = originalContent;
-//		this.flair = flair;
-//		this.community = community;
-//	}
-
-//	public Post(String title, Blogger createdBy, PostType content, Date createdDateTime,
-//			List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork, boolean spoiler,
-//			boolean originalContent, String flair, Community community) {
-//		this.title = title;
-//		this.createdBy = createdBy;
-//		this.content = content;
-//		this.createdDateTime = createdDateTime;
-//		this.comments = comments;
-//		this.votes = votes;
-//		this.voteUp = voteUp;
-//		this.notSafeForWork = notSafeForWork;
-//		this.spoiler = spoiler;
-//		this.originalContent = originalContent;
-//		this.flair = flair;
-//		this.community = community;
-//	}
 
 	public int getPostId() {
 		return postId;
@@ -248,22 +107,6 @@ public class Post {
 		this.content = content;
 	}
 
-//	public List<Files> getData() {
-//		return data;
-//	}
-//
-//	public void setData(List<Files> data) {
-//		this.data = data;
-//	}
-//
-//	public Award getAwardsReceived() {
-//		return awardsReceived;
-//	}
-//
-//	public void setAwardsReceived(Award awardsReceived) {
-//		this.awardsReceived = awardsReceived;
-//	}
-
 	public LocalDateTime getCreatedDateTime() {
 		return createdDateTime;
 	}
@@ -271,14 +114,6 @@ public class Post {
 	public void setCreatedDateTime(LocalDateTime createdDateTime) {
 		this.createdDateTime = createdDateTime;
 	}
-
-//	public List<Comment> getComments() {
-//		return comments;
-//	}
-//
-//	public void setComments(List<Comment> comments) {
-//		this.comments = comments;
-//	}
 
 	public int getVotes() {
 		return votes;
@@ -336,12 +171,28 @@ public class Post {
 		this.community = community;
 	}
 
-	@Override
-	public String toString() {
-		return "Post [postId=" + postId + ", title=" + title + ", createdBy=" + createdBy + ", content=" + content
-				+ ", createdDateTime=" + createdDateTime + ", votes=" + votes + ", voteUp=" + voteUp
-				+ ", notSafeForWork=" + notSafeForWork + ", spoiler=" + spoiler + ", originalContent=" + originalContent
-				+ ", flair=" + flair + ", community=" + community + "]";
+	public String getData() {
+		return data;
 	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+//	@Override
+//	public String toString() {
+//		return "Post [postId=" + postId + ", title=" + title + ", createdBy=" + createdBy + ", content=" + content
+//				+ ", createdDateTime=" + createdDateTime + ", votes=" + votes + ", voteUp=" + voteUp
+//				+ ", notSafeForWork=" + notSafeForWork + ", spoiler=" + spoiler + ", originalContent=" + originalContent
+//				+ ", flair=" + flair + ", community=" + community + "]";
+//	}
 
 }

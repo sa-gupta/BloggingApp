@@ -20,7 +20,7 @@ public interface ICommentService {
 
 	public void deleteComment(Comment comment);
 
-	public List<Comment> listAllCommentsByPost(Post post);
+	public List<Comment> listAllCommentsByPost(int postId);
 //	public void upVote(boolean upVote);
 
 }

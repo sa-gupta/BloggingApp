@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.blogging.dto.BloggerDetails;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Community;
 //import com.cg.blogging.entities.Community;
 import com.cg.blogging.service.IBloggerService;
+import com.cg.blogging.util.BloggerUtil;
 
 /**
  * 
@@ -37,6 +39,9 @@ import com.cg.blogging.service.IBloggerService;
 public class BloggerController {
 	@Autowired
 	private IBloggerService bService;
+	
+	@Autowired
+	private BloggerUtil bUtil;
 
 	/**
 	 * <p>
@@ -48,10 +53,9 @@ public class BloggerController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/view/{bloggerId}")
-	public Blogger viewBlogger(@PathVariable("bloggerId") int bloggerId) {
+	public BloggerDetails viewBlogger(@PathVariable("bloggerId") int bloggerId) {
 		Blogger blogger = bService.viewBlogger(bloggerId);
-
-		return blogger;
+		return bUtil.bloggerToBloggerDetails(blogger);
 	}
 
 	/**
@@ -64,9 +68,10 @@ public class BloggerController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
-	public Blogger updateBlogger(@RequestBody Blogger blogger) {
+	public BloggerDetails updateBlogger(@RequestBody Blogger blogger) {
 		Blogger rBlogger = bService.updateBlogger(blogger);
-		return rBlogger;
+//		System.out.println(blogger.getBloggerName()+" -> "+rBlogger.getBloggerName());
+		return bUtil.bloggerToBloggerDetails(rBlogger);
 	}
 
 	/**
@@ -79,9 +84,9 @@ public class BloggerController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{bloggerId}")
-	public Blogger deleteBlogger(@PathVariable("bloggerId") int bloggerId) {
-		Blogger rBlogger = bService.deleteBlogger(new Blogger(bloggerId));
-		return rBlogger;
+	public BloggerDetails deleteBlogger(@PathVariable("bloggerId") int bloggerId) {
+		Blogger blogger = bService.deleteBlogger(new Blogger(bloggerId));
+		return bUtil.bloggerToBloggerDetails(blogger);
 	}
 
 	/**
@@ -92,9 +97,11 @@ public class BloggerController {
 	 * @return List<Blogger>
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/all/bycommunity")
-	public List<Blogger> viewBloggerList(@RequestBody Community community) {
-		return bService.viewBloggerList(community);
+	@GetMapping("/all/bycommunity/{id}")
+	public List<BloggerDetails> viewBloggerList(@PathVariable("id") int id) {
+		List<Blogger> list = bService.viewBloggerList(id);
+		List<BloggerDetails> detailList = bUtil.bloggerListToBloggerDetailsList(list);
+		return detailList;
 	}
 
 	/**
@@ -106,8 +113,9 @@ public class BloggerController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all")
-	public List<Blogger> viewAllBloggers() {
+	public List<BloggerDetails> viewAllBloggers() {
 		List<Blogger> list = bService.viewAllBloggers();
-		return list;
+		List<BloggerDetails> detailList = bUtil.bloggerListToBloggerDetailsList(list);
+		return detailList;
 	}
 }

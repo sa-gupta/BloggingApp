@@ -45,17 +45,17 @@ public class Blogger {
 	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "bloggerName must be 4 to 20 characters long with first letter alphabet")
 	private String bloggerName;
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
-	private List<Post> posts = new ArrayList<>();
+	private List<Post> posts;
 	@OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL)
-	private List<Comment> comments = new ArrayList<>();
+	private List<Comment> comments;
 	@OneToMany
-	private List<Post> upvoted = new ArrayList<>();
+	private List<Post> upvoted;
 	@OneToMany
-	private List<Post> downvoted = new ArrayList<>();
+	private List<Post> downvoted;
 //	private Award awardsReceived;
 //	private Award awardsGiven;
 	@ManyToMany
-	private List<Community> communities = new ArrayList<>();
+	private List<Community> communities;
 	private int karma;
 	@NotBlank
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", message = "password must be 8 to 16 characters long and consist of at least :"
@@ -217,11 +217,11 @@ public class Blogger {
 		this.karma = karma;
 	}
 
-	@Override
-	public String toString() {
-		return "Blogger [userId=" + userId + ", bloggerName=" + bloggerName + ", posts=" + posts + ", comments="
-				+ comments + ", upvoted=" + upvoted + ", downvoted=" + downvoted + ", communities=" + communities
-				+ ", karma=" + karma + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Blogger [userId=" + userId + ", bloggerName=" + bloggerName + ", posts=" + posts + ", comments="
+//				+ comments + ", upvoted=" + upvoted + ", downvoted=" + downvoted + ", communities=" + communities
+//				+ ", karma=" + karma + "]";
+//	}
 
 }

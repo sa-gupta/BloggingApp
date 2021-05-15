@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.blogging.entities.Blogger;
-import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Moderator;
 import com.cg.blogging.service.IBloggerService;
 
@@ -26,7 +24,7 @@ import com.cg.blogging.service.IBloggerService;
  *
  * Moderator can Shadow post and comment.
  * 
- * @author Sachin Gupta
+ * @author Saiyam Anand
  *
  */
 @RestController

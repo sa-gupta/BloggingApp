@@ -3,9 +3,7 @@ package com.cg.blogging.service;
 import java.util.List;
 
 import com.cg.blogging.entities.Blogger;
-import com.cg.blogging.entities.Community;
 import com.cg.blogging.entities.Moderator;
-import com.cg.blogging.exception.IdNotFoundException;
 
 /**
  * 
@@ -28,7 +26,7 @@ public interface IBloggerService {
 
 	public List<Blogger> viewAllBloggers();
 
-	public List<Blogger> viewBloggerList(Community community);
+	public List<Blogger> viewBloggerList(int id);
 
 	public Moderator addModerator(Moderator moderator);
 

@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.blogging.dto.PostDetails;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Post;
 import com.cg.blogging.service.IPostService;
+import com.cg.blogging.util.PostUtil;
 
 /**
  * 
@@ -36,6 +38,9 @@ import com.cg.blogging.service.IPostService;
 public class PostController {
 	@Autowired
 	private IPostService pService;
+	
+	@Autowired
+	private PostUtil pUtil;
 
 	/**
 	 * To inject new post details into repository.
@@ -45,9 +50,9 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping("/add")
-	public Post addPost(@RequestBody Post post) {
+	public PostDetails addPost(@RequestBody Post post) {
 		Post rPost = pService.addPost(post);
-		return rPost;
+		return pUtil.postToPostDetails(rPost);
 	}
 
 	/**
@@ -60,9 +65,10 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
-	public Post updatePost(@RequestBody Post post) {
+	public PostDetails updatePost(@RequestBody Post post) {
 		Post rPost = pService.updatePost(post);
-		return rPost;
+		PostDetails pDetail = pUtil.postToPostDetails(rPost);
+		return pDetail;
 	}
 
 	/**
@@ -76,9 +82,9 @@ public class PostController {
 
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{postId}")
-	public Post deletePost(@PathVariable("postId") int id) {
+	public PostDetails deletePost(@PathVariable("postId") int id) {
 		Post rPost = pService.deletePost(id);
-		return rPost;
+		return pUtil.postToPostDetails(rPost);
 	}
 
 	/**
@@ -90,8 +96,8 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/{searchStr}")
-	public List<Post> getPostBySearchString(@PathVariable("searchStr") String searchStr) {
-		return pService.getPostBySearchString(searchStr);
+	public List<PostDetails> getPostBySearchString(@PathVariable("searchStr") String searchStr) {
+		return pUtil.postListToPostDetailsList(pService.getPostBySearchString(searchStr));
 
 	}
 
@@ -103,8 +109,8 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all")
-	public List<Post> getPostBySearchString() {
-		return pService.getAllPost();
+	public List<PostDetails> getPostBySearchString() {
+		return pUtil.postListToPostDetailsList(pService.getAllPost());
 	}
 
 	/**
@@ -116,7 +122,7 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/byblogger")
-	public List<Post> getPostByBlogger(@RequestBody Blogger blogger) {
-		return pService.getPostByBlogger(blogger);
+	public List<PostDetails> getPostByBlogger(@RequestBody Blogger blogger) {
+		return pUtil.postListToPostDetailsList(pService.getPostByBlogger(blogger));
 	}
 }

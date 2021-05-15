@@ -80,9 +80,10 @@ public class PostService implements IPostService {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
 		Post recordInDatabse = opt.get();
-		Post toBeUpdated = new Post(recordInDatabse.getPostId(), post.getTitle(), recordInDatabse.getCreatedBy(),
-				post.getContent(), null, null, post.getVotes(), true, false, true, true, post.getFlair(),
-				recordInDatabse.getCommunity());
+		Post toBeUpdated = new Post();
+		toBeUpdated.setPostId(recordInDatabse.getPostId());
+		toBeUpdated.setTitle(recordInDatabse.getTitle());
+		toBeUpdated.setData(recordInDatabse.getData());		
 		Post rPost = pRepo.save(toBeUpdated);
 		logger.info("Post Updated : " + rPost);
 		return rPost;
@@ -126,10 +127,7 @@ public class PostService implements IPostService {
 	 * Post Service method to vote for a post.
 	 */
 	@Override
-	public void upVote(boolean upVote) {
-		// TODO Auto-generated method stub
-
-	}
+	public void upVote(boolean upVote) {}
 
 	@Override
 	public List<Post> getAllPost() {

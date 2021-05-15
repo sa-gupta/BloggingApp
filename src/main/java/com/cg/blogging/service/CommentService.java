@@ -72,8 +72,8 @@ public class CommentService implements ICommentService {
 	}
 
 	@Override
-	public List<Comment> listAllCommentsByPost(Post post) {
-		return cRepo.listAllCommentsByPost(post.getPostId());
+	public List<Comment> listAllCommentsByPost(int postId) {
+		return cRepo.listAllCommentsByPost(postId);
 	}
 
 	/**

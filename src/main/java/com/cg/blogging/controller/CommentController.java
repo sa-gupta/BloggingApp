@@ -6,10 +6,8 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,9 +55,8 @@ public class CommentController {
 	 */
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
-	public Comment addComment(@RequestBody @Valid Comment comment) {
-		Comment comm = cService.addComment(comment);
-		return comm;
+	public CommentDetails addComment(@RequestBody @Valid Comment comment) {
+		return cUtil.commentToCommentDetails(cService.addComment(comment));
 	}
 
 	/**
@@ -74,11 +71,9 @@ public class CommentController {
 	}
 
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/all/bypost")
-	public List<Comment> listAllCommentsByPost(@RequestBody Post post) {
-		
-		List<Comment> comments = cService.listAllCommentsByPost(post);
-		return comments;
+	@GetMapping("/all/{postId}")
+	public List<CommentDetails> listAllCommentsByPost(@PathVariable("postId") int postId) {
+		return cUtil.commentListToCommentDetailsList(cService.listAllCommentsByPost(postId));
 
 	}
 
@@ -86,7 +81,7 @@ public class CommentController {
 	 * To update the new vote that is added to the comment.
 	 */
 //	@ResponseStatus(code = HttpStatus.OK)
-//	@PostMapping("/upVote")
+//	@PostMapping("/upVote")	
 //	public void upVote(@RequestBody boolean upvote) {
 //		System.out.println("Request comment : "+upvote);
 //		cService.upVote(upvote);

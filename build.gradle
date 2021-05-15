@@ -38,8 +38,8 @@ dependencies {
     
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.2.RELEASE'
-    
-    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+	
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
 	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.7.Final'
     
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
@@ -59,6 +59,14 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.1.2.RELEASE'
+	
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	
+	
 	
 	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
 	

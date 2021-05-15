@@ -17,5 +17,4 @@ public class BloggingMain {
 		SpringApplication.run(BloggingMain.class, args);
 		System.out.println("......Server running on port 8083.......");
 	}
-
 }

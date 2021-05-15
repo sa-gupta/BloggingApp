@@ -77,16 +77,16 @@ public class BloggerService implements IBloggerService {
 	@Override
 	public Blogger updateBlogger(Blogger blogger) {
 		Optional<Blogger> opt = bRepo.findById(blogger.getUserId());
-
+		Blogger dbBlogger = opt.get();
 		if (!opt.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
-		blogger.setBloggerName(opt.get().getBloggerName());
-		blogger.setPassword(opt.get().getPassword());
-		Blogger updatedBlogger = bRepo.save(blogger);
+		dbBlogger.setBloggerName(blogger.getBloggerName());
+		dbBlogger.setPassword(blogger.getPassword());
+		Blogger updatedBlogger = bRepo.save(dbBlogger);
 		Optional<User> userOpt = uRepo.findById(blogger.getUserId());
 		userOpt.get().setPassword(blogger.getPassword());
-		User updatedUser = uRepo.save(userOpt.get());
+		uRepo.save(userOpt.get());
 		logger.info("Blogger Data Updated : " + updatedBlogger);
 		return updatedBlogger;
 	}
@@ -139,8 +139,8 @@ public class BloggerService implements IBloggerService {
 	 * community Id. Fetching details from community and blogger repositories.
 	 */
 	@Override
-	public List<Blogger> viewBloggerList(Community community) {
-		return bRepo.viewBloggerList(community.getCommunityId());
+	public List<Blogger> viewBloggerList(int id) {
+		return bRepo.viewBloggerList(id);
 	}
 
 	@Override
