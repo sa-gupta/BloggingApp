@@ -39,6 +39,7 @@ public class Community {
 	@SequenceGenerator(allocationSize = 1, name = "seq1", sequenceName = "community_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int communityId;
+	private String communityName;
 	@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long")
 	private String communityDescription;
 	private int totalMembers;
@@ -203,16 +204,12 @@ public class Community {
 		this.flairs = flairs;
 	}
 
-	
-	
-	@Override
-	public String toString() {
-		return "Community [communityId=" + communityId + ", communityDescription=" + communityDescription
-				+ ", totalMembers=" + totalMembers + ", onlineMembers=" + onlineMembers /*
-																						 * + ", createdBy=" + createdBy
-																						 */ + ", createdOn=" + createdOn
-				+ ", postRulesAllowed=" + postRulesAllowed + ", postRulesDisAllowed=" + postRulesDisAllowed
-				+ ", banningPolicy=" + banningPolicy + ", flairs=" + flairs + "]";
+	public String getCommunityName() {
+		return communityName;
+	}
+
+	public void setCommunityName(String communityName) {
+		this.communityName = communityName;
 	}
 
 }

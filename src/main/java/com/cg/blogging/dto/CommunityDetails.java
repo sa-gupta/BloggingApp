@@ -5,6 +5,9 @@ import java.util.List;
 
 public class CommunityDetails {
 	private int communityId;
+	private String communityName;
+	
+
 	private String communityDescription;
 	private int totalMembers;
 	private int onlineMembers;
@@ -18,10 +21,11 @@ public class CommunityDetails {
 
 	
 	
-	public CommunityDetails(int communityId, String communityDescription, int totalMembers, int onlineMembers,
-			LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
+	public CommunityDetails(int communityId, String communityName, String communityDescription, int totalMembers,
+			int onlineMembers, LocalDateTime createdOn, List<String> postRulesAllowed, List<String> postRulesDisAllowed,
 			List<String> banningPolicy, List<String> flairs) {
 		this.communityId = communityId;
+		this.communityName = communityName;
 		this.communityDescription = communityDescription;
 		this.totalMembers = totalMembers;
 		this.onlineMembers = onlineMembers;
@@ -41,6 +45,20 @@ public class CommunityDetails {
 	public void setCommunityId(int communityId) {
 		this.communityId = communityId;
 	}
+
+	
+	
+	public String getCommunityName() {
+		return communityName;
+	}
+
+
+
+	public void setCommunityName(String communityName) {
+		this.communityName = communityName;
+	}
+
+
 
 	public String getCommunityDescription() {
 		return communityDescription;

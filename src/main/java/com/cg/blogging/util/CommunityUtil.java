@@ -12,7 +12,7 @@ import com.cg.blogging.entities.Community;
 public class CommunityUtil {
 
 	public CommunityDetails communityToCommunityDetails(Community community) {
-		CommunityDetails cDetails = new CommunityDetails(community.getCommunityId(), community.getCommunityDescription(),
+		CommunityDetails cDetails = new CommunityDetails(community.getCommunityId(), community.getCommunityName(), community.getCommunityDescription(),
 				community.getTotalMembers(), community.getOnlineMembers(), community.getCreatedOn(),
 				community.getPostRulesAllowed(), community.getPostRulesDisAllowed(), community.getBanningPolicy(),
 				community.getFlairs());

@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.blogging.dto.CommunityDetails;
 import com.cg.blogging.entities.Blogger;
 //import com.cg.blogging.entities.Comment;
 import com.cg.blogging.entities.Community;
 import com.cg.blogging.service.ICommunityService;
+import com.cg.blogging.util.CommunityUtil;
 
 /**
  * 
@@ -40,6 +42,9 @@ public class CommunityController {
 	@Autowired
 	private ICommunityService comService;
 	
+	@Autowired
+	private CommunityUtil cUtil;
+	
 	/**
 	 * To inject details of the new community into repository.
 	 * 
@@ -48,10 +53,9 @@ public class CommunityController {
 	 */
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
-	public Community addCommunity(@RequestBody Community community) {
+	public CommunityDetails addCommunity(@RequestBody Community community) {
 		Community commReturn = comService.addCommunity(community);
-		System.out.println(commReturn.getPostRulesAllowed().get(0));
-		return commReturn;
+		return cUtil.communityToCommunityDetails(commReturn);
 	}
 	
 	
@@ -63,9 +67,9 @@ public class CommunityController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/delete/{id}")
-	public Community deleteCommunity(@PathVariable("id") Community community) {
+	public CommunityDetails deleteCommunity(@PathVariable("id") Community community) {
 		Community commReturn = comService.deleteCommunity(community);
-		return commReturn;
+		return cUtil.communityToCommunityDetails(commReturn);
 	}
 	
 	/**
@@ -78,21 +82,21 @@ public class CommunityController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/{searchString}")
-	public List<Community> listAllCommunities(@PathVariable("searchString") String searchString){
+	public List<CommunityDetails> listAllCommunities(@PathVariable("searchString") String searchString){
 		
-		return comService.listAllCommunities(searchString);
+		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunities(searchString));
 	}
 	
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all")
-	public List<Community> listAllCommunities(){
-		return comService.listAllCommunities();
+	public List<CommunityDetails> listAllCommunities(){
+		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunities());
 	}
 	
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping("/all/byblogger")
-	public List<Community> listAllCommunitiesByBlogger(@RequestBody Blogger blogger){
-		return comService.listAllCommunitiesByBlogger(blogger);
+	public List<CommunityDetails> listAllCommunitiesByBlogger(@RequestBody Blogger blogger){
+		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunitiesByBlogger(blogger));
 	}
 	
 	/**
@@ -106,8 +110,8 @@ public class CommunityController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
-	public Community updateCommunity(@RequestBody Community community) {
+	public CommunityDetails updateCommunity(@RequestBody Community community) {
 		Community commReturn = comService.updateCommunity(community);
-		return commReturn;
+		return cUtil.communityToCommunityDetails(commReturn);
 	}
 }
