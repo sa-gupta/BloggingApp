@@ -56,7 +56,10 @@ public class CommentController {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping("/add")
 	public CommentDetails addComment(@RequestBody @Valid Comment comment) {
-		return cUtil.commentToCommentDetails(cService.addComment(comment));
+		Comment com = cService.addComment(comment);
+		System.out.println(com.getBlogger().getBloggerName()+"in controller...");
+		return cUtil.commentToCommentDetails(com);
+//		return com;
 	}
 
 	/**
@@ -67,7 +70,7 @@ public class CommentController {
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{id}")
 	public void deleteComment(@PathVariable("id") Integer commentId) {
-		cService.deleteComment(new Comment(commentId));
+		cService.deleteComment(commentId);
 	}
 
 	@ResponseStatus(code = HttpStatus.OK)

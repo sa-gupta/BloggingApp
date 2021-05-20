@@ -1,5 +1,7 @@
 package com.cg.blogging.entities;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 /**
  * 
@@ -37,6 +41,8 @@ public class Comment {
 	@JoinColumn(name = "post_id")
 	private Post post;
 	private boolean voteUp;
+	@UpdateTimestamp
+	private LocalDateTime createdOn;
 
 	/**
 	 * Comment class constructor.
@@ -44,6 +50,20 @@ public class Comment {
 	public Comment() {
 	}
 
+	
+	public Comment(int commentId,
+			@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long") String commentDescription,
+			int votes, Blogger blogger, Post post, boolean voteUp, LocalDateTime createdOn) {
+		this.commentId = commentId;
+		this.commentDescription = commentDescription;
+		this.votes = votes;
+		this.blogger = blogger;
+		this.post = post;
+		this.voteUp = voteUp;
+		this.createdOn = createdOn;
+	}
+
+
 	/**
 	 * 
 	 * <p>
@@ -53,12 +73,30 @@ public class Comment {
 	 * @param blogger
 	 * @param post
 	 */
-	public Comment(String commentDescription, Blogger blogger, Post post) {
-		super();
-		this.commentDescription = commentDescription;
-		this.blogger = blogger;
-		this.post = post;
-	}
+//	public Comment(String commentDescription, Blogger blogger, Post post) {
+//		super();
+//		this.commentDescription = commentDescription;
+//		this.blogger = blogger;
+//		this.post = post;
+//	}
+//
+//	/**
+//	 * <p>
+//	 * Comment class constructor to create a comment by passing these arguments.
+//	 * 
+//	 * @param commentDescription
+//	 * @param votes
+//	 * @param blogger
+//	 * @param post
+//	 * @param voteUp
+//	 */
+//	public Comment(String commentDescription, int votes, Blogger blogger, Post post, boolean voteUp) {
+//		this.commentDescription = commentDescription;
+//		this.votes = votes;
+//		this.blogger = blogger;
+//		this.post = post;
+//		this.voteUp = voteUp;
+//	}
 
 	/**
 	 * <p>
@@ -67,32 +105,14 @@ public class Comment {
 	 * @param commentDescription
 	 * @param votes
 	 * @param blogger
-	 * @param post
 	 * @param voteUp
 	 */
-	public Comment(String commentDescription, int votes, Blogger blogger, Post post, boolean voteUp) {
-		this.commentDescription = commentDescription;
-		this.votes = votes;
-		this.blogger = blogger;
-		this.post = post;
-		this.voteUp = voteUp;
-	}
-
-	/**
-	 * <p>
-	 * Comment class constructor to create a comment by passing these arguments.
-	 * 
-	 * @param commentDescription
-	 * @param votes
-	 * @param blogger
-	 * @param voteUp
-	 */
-	public Comment(String commentDescription, int votes, Blogger blogger, boolean voteUp) {
-		this.commentDescription = commentDescription;
-		this.votes = votes;
-		this.blogger = blogger;
-		this.voteUp = voteUp;
-	}
+//	public Comment(String commentDescription, int votes, Blogger blogger, boolean voteUp) {
+//		this.commentDescription = commentDescription;
+//		this.votes = votes;
+//		this.blogger = blogger;
+//		this.voteUp = voteUp;
+//	}
 
 	/**
 	 * <p>
@@ -105,15 +125,15 @@ public class Comment {
 	 * @param post
 	 * @param voteUp
 	 */
-	public Comment(int commentId, String commentDescription, int votes, Blogger blogger, Post post, boolean voteUp) {
-		super();
-		this.commentId = commentId;
-		this.commentDescription = commentDescription;
-		this.votes = votes;
-		this.blogger = blogger;
-		this.post = post;
-		this.voteUp = voteUp;
-	}
+//	public Comment(int commentId, String commentDescription, int votes, Blogger blogger, Post post, boolean voteUp) {
+//		super();
+//		this.commentId = commentId;
+//		this.commentDescription = commentDescription;
+//		this.votes = votes;
+//		this.blogger = blogger;
+//		this.post = post;
+//		this.voteUp = voteUp;
+//	}
 
 	/**
 	 * <p>
@@ -121,8 +141,12 @@ public class Comment {
 	 * 
 	 * @param commentId
 	 */
-	public Comment(Integer commentId) {
-		this.commentId = commentId;
+	public LocalDateTime getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(LocalDateTime createdOn) {
+		this.createdOn = createdOn;
 	}
 
 	public int getCommentId() {

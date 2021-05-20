@@ -1,24 +1,33 @@
 package com.cg.blogging.dto;
 
+import java.time.LocalDateTime;
+
 public class CommentDetails {
 	
 	private int commentId;
 	private String commentDescription;
 	private int votes;
-	private BloggerDetails blogger;
+	private String bloggerName;
+	private LocalDateTime createdOn;
 	
 	public CommentDetails() {}
 	
-	
-	
-	public CommentDetails(int commentId, String commentDescription, int votes, BloggerDetails blogger) {
+	public CommentDetails(int commentId, String commentDescription, int votes, String bloggerName,
+			LocalDateTime createdOn) {
 		this.commentId = commentId;
 		this.commentDescription = commentDescription;
 		this.votes = votes;
-		this.blogger = blogger;
+		this.bloggerName = bloggerName;
+		this.createdOn = createdOn;
+	}
+	
+	public LocalDateTime getCreatedOn() {
+		return createdOn;
 	}
 
-
+	public void setCreatedOn(LocalDateTime createdOn) {
+		this.createdOn = createdOn;
+	}
 
 	public int getCommentId() {
 		return commentId;
@@ -38,12 +47,15 @@ public class CommentDetails {
 	public void setVotes(int votes) {
 		this.votes = votes;
 	}
-	public BloggerDetails getBlogger() {
-		return blogger;
+
+	public String getBloggerName() {
+		return bloggerName;
 	}
-	public void setBlogger(BloggerDetails blogger) {
-		this.blogger = blogger;
+
+	public void setBloggerName(String bloggerName) {
+		this.bloggerName = bloggerName;
 	}
+	
 	
 	
 }

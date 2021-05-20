@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.cg.blogging.dto.BloggerDetails;
 import com.cg.blogging.entities.Blogger;
+import com.cg.blogging.entities.Community;
 @Component
 public class BloggerUtil {
 
@@ -16,8 +17,15 @@ public class BloggerUtil {
 	}
 	
 	public BloggerDetails bloggerToBloggerDetails(Blogger blogger) {
-		BloggerDetails bDetail = new BloggerDetails(blogger.getUserId(), blogger.getBloggerName(), blogger.getKarma());
+		BloggerDetails bDetail = new BloggerDetails(blogger.getUserId(), blogger.getBloggerName(), blogger.getKarma(),
+				listOfCommunityName(blogger.getCommunities()));
+//		blogger.getCommunities().stream().forEach(c -> System.out.println(c.get));
 		return bDetail;
+	}
+	
+	public List<String> listOfCommunityName(List<Community> list){
+		List<String> res = list.stream().map(c -> c.getCommunityName()).collect(Collectors.toList());
+		return res;
 	}
 
 }

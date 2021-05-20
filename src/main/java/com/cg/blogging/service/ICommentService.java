@@ -18,7 +18,7 @@ import com.cg.blogging.entities.Post;
 public interface ICommentService {
 	public Comment addComment(Comment comment);
 
-	public void deleteComment(Comment comment);
+	public void deleteComment(int id);
 
 	public List<Comment> listAllCommentsByPost(int postId);
 //	public void upVote(boolean upVote);

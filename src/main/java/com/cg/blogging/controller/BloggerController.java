@@ -71,6 +71,7 @@ public class BloggerController {
 	public BloggerDetails updateBlogger(@RequestBody Blogger blogger) {
 		Blogger rBlogger = bService.updateBlogger(blogger);
 //		System.out.println(blogger.getBloggerName()+" -> "+rBlogger.getBloggerName());
+//		System.out.println(rBlogger.getCommunities());
 		return bUtil.bloggerToBloggerDetails(rBlogger);
 	}
 

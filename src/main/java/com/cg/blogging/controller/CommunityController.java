@@ -94,9 +94,9 @@ public class CommunityController {
 	}
 	
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/all/byblogger")
-	public List<CommunityDetails> listAllCommunitiesByBlogger(@RequestBody Blogger blogger){
-		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunitiesByBlogger(blogger));
+	@GetMapping("/all/byblogger/{id}")
+	public List<CommunityDetails> listAllCommunitiesByBlogger(@PathVariable("id") int id){
+		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunitiesByBlogger(id));
 	}
 	
 	/**

@@ -41,8 +41,6 @@ import javax.validation.constraints.Size;
 public class Blogger {
 	@Id
 	private int userId;
-	@NotBlank
-	@Pattern(regexp = "^[a-zA-Z\\s]{5,30}$", message = "bloggerName must be 4 to 20 characters long with first letter alphabet")
 	private String bloggerName;
 	@OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
 	private List<Post> posts;
@@ -57,9 +55,6 @@ public class Blogger {
 	@ManyToMany
 	private List<Community> communities;
 	private int karma;
-	@NotBlank
-	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%&*$])(?=\\S+$).{8,16}$", message = "password must be 8 to 16 characters long and consist of at least :"
-			+ " one digit, one lowercase alphabet, one Uppercase alphabet and one special character in the bracket with No white space allowed.")
 	private String password;
 
 	/**
@@ -74,9 +69,7 @@ public class Blogger {
 	 * 
 	 * @param userId
 	 */
-	public Blogger(int userId) {
-		this.userId = userId;
-	}
+	
 
 	/**
 	 * <p>
@@ -90,6 +83,11 @@ public class Blogger {
 		this.userId = userId;
 		this.bloggerName = bloggerName;
 		this.password = password;
+	}
+
+	public Blogger(int userId) {
+		super();
+		this.userId = userId;
 	}
 
 	/**

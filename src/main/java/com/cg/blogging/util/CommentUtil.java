@@ -17,11 +17,15 @@ public class CommentUtil {
 	
 	public CommentDetails commentToCommentDetails (Comment comment) {
 		CommentDetails cDetail = new CommentDetails(comment.getCommentId(), comment.getCommentDescription(),
-				comment.getVotes(), bUtil.bloggerToBloggerDetails(comment.getBlogger()));
+				comment.getVotes(), comment.getBlogger().getBloggerName() ,comment.getCreatedOn());
+		System.out.println(comment.getCommentId()+" in util...");
 		return cDetail;
 	}
 
 	public List<CommentDetails> commentListToCommentDetailsList(List<Comment> comments) {
+		if(comments==null) {
+			System.out.println("comment list null");
+		}
 		List<CommentDetails> list = comments.stream().map(c -> commentToCommentDetails(c)).collect(Collectors.toList());
 		return list;
 	}

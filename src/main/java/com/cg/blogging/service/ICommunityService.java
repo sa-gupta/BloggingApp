@@ -24,7 +24,7 @@ public interface ICommunityService {
 
 	public List<Community> listAllCommunities(String searchString);
 
-	public List<Community> listAllCommunitiesByBlogger(Blogger blogger);
+	public List<Community> listAllCommunitiesByBlogger(int id);
 
 	public List<Community> listAllCommunities();
 }

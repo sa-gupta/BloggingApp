@@ -25,7 +25,7 @@ public interface IPostService {
 
 	public List<Post> getPostBySearchString(String searchStr);
 
-	public List<Post> getPostByBlogger(Blogger blogger);
+	public List<Post> getPostByBlogger(int id);
 
 	public void upVote(boolean upVote);
 

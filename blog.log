@@ -36,3 +36,275 @@
 15/05/2021 13:13:29 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@27601bfe
 15/05/2021 13:14:16 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@1dccf8e7
 15/05/2021 13:15:09 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - Blogger Deleted : com.cg.blogging.entities.Blogger@34c4eae
+18/05/2021 00:19:51 INFO http-nio-8083-exec-4 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@62990f96
+18/05/2021 00:26:47 INFO http-nio-8083-exec-1 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@1c06340c
+18/05/2021 00:28:35 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@30434aec
+18/05/2021 00:31:01 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@3e97c047
+18/05/2021 00:34:38 INFO http-nio-8083-exec-1 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@111bc852
+18/05/2021 00:37:38 INFO http-nio-8083-exec-6 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@4193cf12
+18/05/2021 00:38:44 INFO http-nio-8083-exec-8 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@122fc900
+18/05/2021 00:39:30 INFO http-nio-8083-exec-10 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@5d7ae19d
+18/05/2021 00:41:45 INFO http-nio-8083-exec-9 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@741514f4
+18/05/2021 00:42:46 INFO http-nio-8083-exec-7 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=21, commentDescription=First comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@ffc3cdc, post=com.cg.blogging.entities.Post@72a19114, voteUp=false]
+18/05/2021 00:43:14 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=22, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@4aacba98, post=com.cg.blogging.entities.Post@132b0b91, voteUp=false]
+18/05/2021 00:43:29 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=23, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@6475cdf8, post=com.cg.blogging.entities.Post@35a101c7, voteUp=false]
+18/05/2021 00:44:04 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=24, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@133e15e1, post=com.cg.blogging.entities.Post@1dd0a088, voteUp=false]
+18/05/2021 00:45:07 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=25, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@2dc8af6b, post=com.cg.blogging.entities.Post@5318c9c1, voteUp=false]
+18/05/2021 00:45:15 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=26, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@469afb9e, post=com.cg.blogging.entities.Post@3806900f, voteUp=false]
+18/05/2021 00:45:35 INFO http-nio-8083-exec-9 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=27, commentDescription=second comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@6ca0879e, post=com.cg.blogging.entities.Post@599bc259, voteUp=false]
+18/05/2021 00:46:37 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@3eee6cf8
+18/05/2021 00:47:14 INFO http-nio-8083-exec-4 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@3af8a590
+18/05/2021 00:47:51 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=28, commentDescription=first comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@5a3257c, post=com.cg.blogging.entities.Post@e2112bf, voteUp=false]
+18/05/2021 00:48:01 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=29, commentDescription=first comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@7d2d5aa7, post=com.cg.blogging.entities.Post@71c665c7, voteUp=false]
+18/05/2021 00:48:11 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=30, commentDescription=first comment by Lalit, votes=0, blogger=com.cg.blogging.entities.Blogger@2bd30fa6, post=com.cg.blogging.entities.Post@10dc1d52, voteUp=false]
+18/05/2021 00:48:18 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=31, commentDescription=first comment by Lalit, votes=0, blogger=com.cg.blogging.entities.Blogger@93dbae5, post=com.cg.blogging.entities.Post@3b6b1069, voteUp=false]
+18/05/2021 00:48:44 INFO http-nio-8083-exec-9 com.cg.blogging.service.CommentService -  Comment deleted : 31 first comment by Lalit 0
+18/05/2021 00:48:58 INFO http-nio-8083-exec-8 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@49a0ae64
+18/05/2021 00:54:25 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@57910324
+18/05/2021 00:54:36 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@17d953d0
+18/05/2021 00:54:46 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@2acdc88e
+18/05/2021 00:54:59 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@1440d1d1
+18/05/2021 00:55:12 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - New Admin Created : Admin [userId=5, adminName=Akhil Patwal, adminContact=Akhil@gmail.com]
+18/05/2021 00:55:19 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@5ad5a8c9
+18/05/2021 00:55:32 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@61d7efbd
+18/05/2021 00:56:30 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@7243436
+18/05/2021 00:56:45 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@19f3ea90
+18/05/2021 00:57:37 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@30784f1a
+18/05/2021 00:58:11 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@37928e93
+18/05/2021 00:58:23 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@4191d125
+18/05/2021 00:58:45 ERROR http-nio-8083-exec-6 com.cg.blogging.service.PostService - Community not present in database
+18/05/2021 00:58:52 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@1feeffb7
+18/05/2021 00:59:04 INFO http-nio-8083-exec-8 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@772b1a1c
+18/05/2021 00:59:18 INFO http-nio-8083-exec-9 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@2eb5559b
+18/05/2021 00:59:42 INFO http-nio-8083-exec-10 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@775ad5af
+18/05/2021 01:00:04 INFO http-nio-8083-exec-1 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@7d0bd6a7
+18/05/2021 01:00:13 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@31fddc91
+18/05/2021 01:01:10 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=1, commentDescription=first comment by Lalit, votes=0, blogger=com.cg.blogging.entities.Blogger@b08b21d, post=com.cg.blogging.entities.Post@61da6bdc, voteUp=false]
+18/05/2021 01:01:19 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=2, commentDescription=first comment by Sachin, votes=0, blogger=com.cg.blogging.entities.Blogger@78329a72, post=com.cg.blogging.entities.Post@125e0d9d, voteUp=false]
+18/05/2021 01:01:28 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=3, commentDescription=first comment by Ritika, votes=0, blogger=com.cg.blogging.entities.Blogger@2aeb5e05, post=com.cg.blogging.entities.Post@54485cf7, voteUp=false]
+18/05/2021 01:01:39 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=4, commentDescription=Second comment by Ritika, votes=0, blogger=com.cg.blogging.entities.Blogger@36c98aa5, post=com.cg.blogging.entities.Post@44a69701, voteUp=false]
+18/05/2021 01:02:00 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@196f426b
+18/05/2021 01:04:59 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Deleted : com.cg.blogging.entities.Blogger@5885b69a
+18/05/2021 01:17:23 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@355435f7
+18/05/2021 01:19:43 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@6607252a
+18/05/2021 01:21:20 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@714371cd
+18/05/2021 23:01:12 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+18/05/2021 23:01:24 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+18/05/2021 23:18:41 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService -  Comment deleted : 4 Second comment by Ritika 0
+18/05/2021 23:19:04 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Deleted : com.cg.blogging.entities.Blogger@1c541955
+19/05/2021 00:38:07 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 00:46:53 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 00:47:04 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+19/05/2021 00:47:41 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+19/05/2021 00:48:23 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+19/05/2021 00:57:09 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 00:58:29 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 00:59:11 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:02:17 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:02:41 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:03:18 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:04:58 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:05:33 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 01:06:54 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 10:42:47 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=3, password=Lalit@123, role=BLOGGER]
+19/05/2021 10:44:55 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+19/05/2021 10:45:48 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:00:04 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:03:38 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:12:20 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:20:00 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:20:29 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:24:18 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:24:27 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:27:11 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:29:40 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:38:29 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:38:46 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:48:12 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:48:15 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:49:08 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 11:49:25 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=7, password=Satyam@123, role=MODERATOR]
+19/05/2021 11:53:51 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=7, password=Satyam@123, role=MODERATOR]
+19/05/2021 12:13:27 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@3eb69c1d
+19/05/2021 12:20:29 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@5ad90c40
+19/05/2021 12:22:58 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@68b3b46c
+19/05/2021 12:23:35 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@17445f7b
+19/05/2021 12:26:08 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@75b0c85c
+19/05/2021 12:31:21 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommunityService - Community Updated : com.cg.blogging.entities.Community@679daf3e
+19/05/2021 12:31:58 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommunityService - Community Updated : com.cg.blogging.entities.Community@3b0952f3
+19/05/2021 12:32:30 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommunityService - Community Updated : com.cg.blogging.entities.Community@4c38c71f
+19/05/2021 12:35:54 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@4f2ce136
+19/05/2021 12:36:48 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommunityService - Community Updated : com.cg.blogging.entities.Community@4b26e5c2
+19/05/2021 12:37:30 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@796d4f1f
+19/05/2021 12:38:12 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommunityService - Community Updated : com.cg.blogging.entities.Community@245f1c2a
+19/05/2021 12:38:31 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@60731e0a
+19/05/2021 12:39:22 INFO http-nio-8083-exec-6 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@5871e2ae
+19/05/2021 12:39:45 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@3a5dcf2a
+19/05/2021 12:41:04 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@7bd88acd
+19/05/2021 12:41:45 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@292362a8
+19/05/2021 12:41:56 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@70411931
+19/05/2021 12:42:24 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@2d6c6172
+19/05/2021 13:36:59 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 13:37:04 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 13:37:05 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 13:52:09 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - Blogger Deleted : com.cg.blogging.entities.Blogger@15478594
+19/05/2021 14:24:53 ERROR http-nio-8083-exec-2 com.cg.blogging.service.PostService - User not present in database
+19/05/2021 14:25:48 INFO http-nio-8083-exec-5 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@2908edf9
+19/05/2021 15:16:23 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=21, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@18e02f54, post=com.cg.blogging.entities.Post@47dd751, voteUp=false]
+19/05/2021 15:23:03 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=22, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@4f9705f7, post=com.cg.blogging.entities.Post@aaeb9b3, voteUp=false]
+19/05/2021 15:24:49 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=23, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@6dba3cc7, post=com.cg.blogging.entities.Post@7c47a4b5, voteUp=false]
+19/05/2021 15:36:26 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=24, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@16f83f09, post=com.cg.blogging.entities.Post@3c076a34, voteUp=false]
+19/05/2021 15:37:17 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=25, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@36c72d79, post=com.cg.blogging.entities.Post@18c76b2a, voteUp=false]
+19/05/2021 15:39:45 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=26, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@7459fe5f, post=com.cg.blogging.entities.Post@1efa7a36, voteUp=false]
+19/05/2021 15:40:02 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService -  Comment deleted : 26 Second comment by Annu 0
+19/05/2021 15:40:06 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService -  Comment deleted : 24 Second comment by Annu 0
+19/05/2021 15:40:09 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService -  Comment deleted : 25 Second comment by Annu 0
+19/05/2021 15:40:15 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService -  Comment deleted : 21 Second comment by Annu 0
+19/05/2021 15:40:19 INFO http-nio-8083-exec-7 com.cg.blogging.service.CommentService -  Comment deleted : 23 Second comment by Annu 0
+19/05/2021 15:40:27 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService -  Comment deleted : 22 Second comment by Annu 0
+19/05/2021 15:44:11 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=27, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@5795ecff, post=com.cg.blogging.entities.Post@7c9a57b1, voteUp=false]
+19/05/2021 15:46:30 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=28, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@1017c491, post=com.cg.blogging.entities.Post@1b91ec9a, voteUp=false]
+19/05/2021 15:52:14 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=29, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@143fd67f, post=com.cg.blogging.entities.Post@68c63130, voteUp=false]
+19/05/2021 15:55:51 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=30, commentDescription=Second comment by Annu, votes=0, blogger=com.cg.blogging.entities.Blogger@514855d7, post=com.cg.blogging.entities.Post@2469c1cc, voteUp=false]
+19/05/2021 16:48:21 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService -  Comment deleted : 1 first comment by Lalit 0
+19/05/2021 16:48:26 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService -  Comment deleted : 3 first comment by Ritika 0
+19/05/2021 16:53:21 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@798e2576
+19/05/2021 16:55:07 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@63a3fe46
+19/05/2021 16:56:30 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=31, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@25198bab, post=com.cg.blogging.entities.Post@5b69bab8, voteUp=false]
+19/05/2021 16:56:40 INFO http-nio-8083-exec-7 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=32, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@4bb1fe5a, post=com.cg.blogging.entities.Post@20269845, voteUp=false]
+19/05/2021 16:56:48 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=33, commentDescription=Comment 9, votes=0, blogger=com.cg.blogging.entities.Blogger@38951c04, post=com.cg.blogging.entities.Post@92b8172, voteUp=false]
+19/05/2021 16:56:52 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=34, commentDescription=Comment 21, votes=0, blogger=com.cg.blogging.entities.Blogger@64890cc9, post=com.cg.blogging.entities.Post@6eddbdf7, voteUp=false]
+19/05/2021 16:57:32 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=35, commentDescription=Comment 21, votes=0, blogger=com.cg.blogging.entities.Blogger@f88c17d, post=com.cg.blogging.entities.Post@3a6fb92e, voteUp=false]
+19/05/2021 16:59:26 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=36, commentDescription=Comment 21, votes=0, blogger=com.cg.blogging.entities.Blogger@781b7587, post=com.cg.blogging.entities.Post@ebccf93, voteUp=false]
+19/05/2021 17:00:44 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=37, commentDescription=Comment 21, votes=0, blogger=com.cg.blogging.entities.Blogger@63e83100, post=com.cg.blogging.entities.Post@28521793, voteUp=false]
+19/05/2021 17:07:00 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 17:08:25 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=21, password=Sachin@123, role=BLOGGER]
+19/05/2021 17:08:41 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=21, password=Sachin@123, role=BLOGGER]
+19/05/2021 17:18:50 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 17:47:32 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@77da8a09
+19/05/2021 19:27:49 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 19:28:23 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 19:42:26 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 19:43:40 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 19:46:05 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 21:06:15 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@6886342a
+19/05/2021 21:09:08 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@29631716
+19/05/2021 21:09:59 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@3a0c464f
+19/05/2021 21:10:41 INFO http-nio-8083-exec-6 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@119b2b78
+19/05/2021 21:14:45 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@75b469ac
+19/05/2021 21:15:53 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@22a26199
+19/05/2021 21:20:13 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@29e5f481
+19/05/2021 21:34:44 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@2bec926f
+19/05/2021 21:37:02 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@56b21674
+19/05/2021 21:38:03 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@6ec88e68
+19/05/2021 21:39:46 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@4a7d8f1c
+19/05/2021 21:49:45 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@437f4620
+19/05/2021 21:52:25 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@647c8844
+19/05/2021 21:53:29 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@2ffaede1
+19/05/2021 21:56:20 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@41ff1d7a
+19/05/2021 21:57:20 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@ac8d431
+19/05/2021 22:07:13 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@1bc64bbd
+19/05/2021 22:08:33 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@24acf066
+19/05/2021 22:10:16 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@8759aa2
+19/05/2021 22:11:08 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@21e9b97e
+19/05/2021 22:11:48 INFO http-nio-8083-exec-6 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@7a80d42f
+19/05/2021 22:12:37 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@545d8e36
+19/05/2021 22:19:18 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@6ce53c73
+19/05/2021 22:22:51 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+19/05/2021 22:28:55 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@497e4797
+19/05/2021 22:30:35 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@586d34e9
+20/05/2021 00:01:04 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@25fe179
+20/05/2021 00:02:45 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@65d1fb9b
+20/05/2021 00:06:57 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@19292f8c
+20/05/2021 00:10:37 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@14706ae1
+20/05/2021 00:13:11 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@208f0582
+20/05/2021 00:18:49 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@26b057bf
+20/05/2021 00:19:17 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@54e41fda
+20/05/2021 00:21:56 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@5552f5d3
+20/05/2021 00:24:50 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@5c3a7cfe
+20/05/2021 00:28:36 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@71ac8380
+20/05/2021 00:29:17 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@10ab67ce
+20/05/2021 00:29:59 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@719c910e
+20/05/2021 00:31:09 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@51affdc3
+20/05/2021 00:31:55 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@57ccbc3c
+20/05/2021 00:35:28 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@10a713a7
+20/05/2021 00:35:35 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@271cfdb7
+20/05/2021 00:43:19 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@4316cbb9
+20/05/2021 00:44:07 INFO http-nio-8083-exec-3 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@ee5227b
+20/05/2021 00:45:22 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@6127c281
+20/05/2021 00:45:59 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Moderator added : com.cg.blogging.entities.Moderator@53fc57b2
+20/05/2021 00:47:27 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 00:49:07 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 00:51:02 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 00:54:39 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Ritika@123, role=BLOGGER]
+20/05/2021 00:56:44 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 00:57:35 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 01:12:56 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 01:14:08 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Annu@123, role=BLOGGER]
+20/05/2021 01:20:11 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@5fa3f307
+20/05/2021 01:20:25 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@a6f19f8
+20/05/2021 01:20:43 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@4d8450c9
+20/05/2021 01:21:59 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=3, password=Lalit@123, role=BLOGGER]
+20/05/2021 01:45:48 INFO http-nio-8083-exec-5 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Lalit@123, role=BLOGGER]
+20/05/2021 01:46:29 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Lalit@123, role=BLOGGER]
+20/05/2021 01:52:45 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=3, password=Lalit@123, role=BLOGGER]
+20/05/2021 02:15:28 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=3, password=Lalit@123, role=BLOGGER]
+20/05/2021 02:53:24 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Lalit@123, role=BLOGGER]
+20/05/2021 09:48:47 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=1, password=Lalit@123, role=BLOGGER]
+20/05/2021 10:25:25 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - New Admin Created : Admin [userId=1, adminName=Akhil Patwal, adminContact=Akhil@gmail.com]
+20/05/2021 10:25:34 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@25b17c07
+20/05/2021 10:25:48 INFO http-nio-8083-exec-6 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@4fb5a774
+20/05/2021 10:26:20 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@6c1b2888
+20/05/2021 10:26:33 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@3fac28e
+20/05/2021 10:26:53 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@2fcbaa40
+20/05/2021 10:30:18 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@1dcf4287
+20/05/2021 10:30:32 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommunityService - Community Deleted : com.cg.blogging.entities.Community@7a1ba213
+20/05/2021 10:31:44 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@2246f530
+20/05/2021 10:32:25 INFO http-nio-8083-exec-7 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@74d17fb5
+20/05/2021 10:33:33 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommunityService - Community created : com.cg.blogging.entities.Community@507c2138
+20/05/2021 10:34:20 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@7432e51a
+20/05/2021 10:35:18 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@3b819fbb
+20/05/2021 10:35:33 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@23699bd9
+20/05/2021 10:37:45 INFO http-nio-8083-exec-2 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@56e09002
+20/05/2021 10:41:25 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@fe4fff1
+20/05/2021 10:42:08 INFO http-nio-8083-exec-5 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@3e517e6d
+20/05/2021 10:43:31 INFO http-nio-8083-exec-9 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@3e357514
+20/05/2021 10:43:57 INFO http-nio-8083-exec-8 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@4113d90a
+20/05/2021 10:44:29 INFO http-nio-8083-exec-7 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@40bf863e
+20/05/2021 10:44:47 INFO http-nio-8083-exec-1 com.cg.blogging.service.BloggerService - Blogger Data Updated : com.cg.blogging.entities.Blogger@5c4f9dc6
+20/05/2021 10:46:02 INFO http-nio-8083-exec-4 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@3134ae51
+20/05/2021 10:51:23 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@40000bbd
+20/05/2021 10:52:40 INFO http-nio-8083-exec-5 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@b1405b8
+20/05/2021 10:53:06 INFO http-nio-8083-exec-6 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@7e8d21ce
+20/05/2021 10:54:05 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@5b0edb41
+20/05/2021 10:58:36 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=1, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@10ed69dc, post=com.cg.blogging.entities.Post@7d9377e3, voteUp=false]
+20/05/2021 10:58:55 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=2, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@3bea4f7f, post=com.cg.blogging.entities.Post@4f9c3296, voteUp=false]
+20/05/2021 10:59:04 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=3, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@36f73124, post=com.cg.blogging.entities.Post@699d074f, voteUp=false]
+20/05/2021 10:59:27 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=4, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@c7b7bf3, post=com.cg.blogging.entities.Post@42981e2c, voteUp=false]
+20/05/2021 10:59:43 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=5, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@450e134b, post=com.cg.blogging.entities.Post@52acd834, voteUp=false]
+20/05/2021 11:00:14 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=6, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@339ae93a, post=com.cg.blogging.entities.Post@3d2c8aad, voteUp=false]
+20/05/2021 11:00:22 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=7, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@4123c781, post=com.cg.blogging.entities.Post@11bd413, voteUp=false]
+20/05/2021 11:00:30 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=8, commentDescription=Comment 3, votes=0, blogger=com.cg.blogging.entities.Blogger@228df9af, post=com.cg.blogging.entities.Post@101113e6, voteUp=false]
+20/05/2021 11:00:53 INFO http-nio-8083-exec-7 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=9, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@41c276b8, post=com.cg.blogging.entities.Post@81458dd, voteUp=false]
+20/05/2021 11:01:01 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=10, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@2a7630f8, post=com.cg.blogging.entities.Post@30f2d839, voteUp=false]
+20/05/2021 11:01:09 INFO http-nio-8083-exec-9 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=11, commentDescription=Comment 3, votes=0, blogger=com.cg.blogging.entities.Blogger@4cacac, post=com.cg.blogging.entities.Post@b4979ed, voteUp=false]
+20/05/2021 11:01:18 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=12, commentDescription=Comment 4, votes=0, blogger=com.cg.blogging.entities.Blogger@2137e5e0, post=com.cg.blogging.entities.Post@7b7dcb00, voteUp=false]
+20/05/2021 11:01:25 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=13, commentDescription=Comment 5, votes=0, blogger=com.cg.blogging.entities.Blogger@1cd3796, post=com.cg.blogging.entities.Post@4bdb2b24, voteUp=false]
+20/05/2021 11:02:46 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=14, commentDescription=Comment 1, votes=0, blogger=com.cg.blogging.entities.Blogger@29ee5894, post=com.cg.blogging.entities.Post@482a5415, voteUp=false]
+20/05/2021 11:02:53 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=15, commentDescription=Comment 2, votes=0, blogger=com.cg.blogging.entities.Blogger@3a4a3b7f, post=com.cg.blogging.entities.Post@3db821e3, voteUp=false]
+20/05/2021 11:05:53 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+20/05/2021 12:20:52 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=16, commentDescription=Test Comment, votes=0, blogger=com.cg.blogging.entities.Blogger@e2d066a, post=com.cg.blogging.entities.Post@73896f56, voteUp=false]
+20/05/2021 12:26:04 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=17, commentDescription=Test Comment, votes=0, blogger=com.cg.blogging.entities.Blogger@26c3a859, post=com.cg.blogging.entities.Post@3c48c4e7, voteUp=false]
+20/05/2021 12:32:40 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=18, commentDescription=Sachin, votes=0, blogger=null, post=null, voteUp=false]
+20/05/2021 12:43:26 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=6, password=Srishti@123, role=BLOGGER]
+20/05/2021 12:45:53 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=6, password=Srishti@123, role=BLOGGER]
+20/05/2021 12:50:05 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=6, password=Srishti@123, role=BLOGGER]
+20/05/2021 12:52:15 INFO http-nio-8083-exec-9 com.cg.blogging.service.UserService - User Signed In : User [userId=6, password=Srishti@123, role=BLOGGER]
+20/05/2021 12:52:52 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+20/05/2021 12:53:13 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+20/05/2021 13:05:53 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+20/05/2021 13:06:16 INFO http-nio-8083-exec-9 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=19, commentDescription=Sachin, votes=0, blogger=null, post=null, voteUp=false]
+20/05/2021 13:08:15 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=20, commentDescription=Sachin, votes=0, blogger=null, post=null, voteUp=false]
+20/05/2021 13:13:34 INFO http-nio-8083-exec-1 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=21, commentDescription=null, votes=0, blogger=null, post=null, voteUp=false]
+20/05/2021 13:38:35 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=5, password=Annu@123, role=BLOGGER]
+20/05/2021 13:59:45 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]

@@ -94,7 +94,7 @@ public class UserController {
 	 * @return User
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/signin")
+	@PostMapping("/signin")
 	public User signIn(@RequestBody User user) {
 		User rUser = uService.signIn(user);
 		if (!(rUser.getPassword().equals(user.getPassword()))) {

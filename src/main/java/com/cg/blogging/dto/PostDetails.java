@@ -9,31 +9,28 @@ public class PostDetails {
 	
 	private int postId;
 	private String title;
-	private BloggerDetails createdBy;
+	private String createdBy;
 	private PostType content;
 	private String data;
 	private LocalDateTime createdDateTime;
-	private List<CommentDetails> comments;
 	private String flair;
-	private CommunityDetails community; //to modify
+	private String community; //to modify
 	
 	public PostDetails() {}
 	
 	
 
-	public PostDetails(int postId, String title, BloggerDetails createdBy, PostType content, String data,
-			LocalDateTime createdDateTime, List<CommentDetails> comments, String flair, CommunityDetails community) {
+	public PostDetails(int postId, String title, String createdBy, PostType content, String data,
+			LocalDateTime createdDateTime, String flair, String community) {
 		this.postId = postId;
 		this.title = title;
 		this.createdBy = createdBy;
 		this.content = content;
 		this.data = data;
 		this.createdDateTime = createdDateTime;
-		this.comments = comments;
 		this.flair = flair;
 		this.community = community;
 	}
-
 
 
 	public int getPostId() {
@@ -52,11 +49,11 @@ public class PostDetails {
 		this.title = title;
 	}
 
-	public BloggerDetails getCreatedBy() {
+	public String getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(BloggerDetails createdBy) {
+	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
 
@@ -84,14 +81,6 @@ public class PostDetails {
 		this.createdDateTime = createdDateTime;
 	}
 
-	public List<CommentDetails> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<CommentDetails> comments) {
-		this.comments = comments;
-	}
-
 	public String getFlair() {
 		return flair;
 	}
@@ -100,11 +89,11 @@ public class PostDetails {
 		this.flair = flair;
 	}
 
-	public CommunityDetails getCommunity() {
+	public String getCommunity() {
 		return community;
 	}
 
-	public void setCommunity(CommunityDetails community) {
+	public void setCommunity(String community) {
 		this.community = community;
 	}
 	

@@ -119,8 +119,8 @@ public class PostService implements IPostService {
 	 * blogger repositories.
 	 */
 	@Override
-	public List<Post> getPostByBlogger(Blogger blogger) {
-		return pRepo.getPostByBlogger(blogger.getUserId());
+	public List<Post> getPostByBlogger(int id) {
+		return pRepo.getPostByBlogger(id);
 	}
 
 	/**

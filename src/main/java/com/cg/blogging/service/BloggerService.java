@@ -77,12 +77,15 @@ public class BloggerService implements IBloggerService {
 	@Override
 	public Blogger updateBlogger(Blogger blogger) {
 		Optional<Blogger> opt = bRepo.findById(blogger.getUserId());
-		Blogger dbBlogger = opt.get();
+		
 		if (!opt.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
+		Blogger dbBlogger = opt.get();
 		dbBlogger.setBloggerName(blogger.getBloggerName());
 		dbBlogger.setPassword(blogger.getPassword());
+		dbBlogger.setCommunities(blogger.getCommunities());
+		dbBlogger.setKarma(blogger.getKarma());
 		Blogger updatedBlogger = bRepo.save(dbBlogger);
 		Optional<User> userOpt = uRepo.findById(blogger.getUserId());
 		userOpt.get().setPassword(blogger.getPassword());

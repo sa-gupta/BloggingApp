@@ -2,6 +2,8 @@ package com.cg.blogging.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -45,7 +47,7 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int postId;
 	@NotBlank
-	@Pattern(regexp = "^[a-zA-Z\\s]{5,50}$", message = "title must be 3 to 30 characters long with first letter alphabet")
+//	@Pattern(regexp = "^[a-zA-Z\\s]{5,50}$", message = "title must be 3 to 30 characters long with first letter alphabet")
 	private String title;
 	@ManyToOne
 	@JoinColumn(name = "blogger_id")
@@ -55,8 +57,8 @@ public class Post {
 	private String data;
 	@UpdateTimestamp
 	private LocalDateTime createdDateTime;
-	@ManyToMany
-	@JoinColumn(name = "comments")
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+//	@JoinColumn(name = "comments")
 	private List<Comment> comments;
 	private int votes;
 	private boolean voteUp;
@@ -73,6 +75,10 @@ public class Post {
 	 * Post class constructor.
 	 */
 	public Post() {
+	}
+
+	public Post(int postId) {
+		this.postId = postId;
 	}
 
 	public int getPostId() {

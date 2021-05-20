@@ -1,22 +1,35 @@
 package com.cg.blogging.dto;
 
-
-
+import java.util.List;
 
 public class BloggerDetails {
 
 	private int userId;
 	private String bloggerName;
 	private int karma;
+	private List<String> communityName;
 	
 	
-	public BloggerDetails(int userId, String bloggerName, int karma) {
+	
+	
+	public BloggerDetails(int userId, String bloggerName, int karma, List<String> communityName) {
 		this.userId = userId;
 		this.bloggerName = bloggerName;
 		this.karma = karma;
+		this.communityName = communityName;
 	}
-	
+
 	public BloggerDetails() {
+	}
+
+	
+	
+	public List<String> getCommunityName() {
+		return communityName;
+	}
+
+	public void setCommunityName(List<String> communityName) {
+		this.communityName = communityName;
 	}
 
 	public int getUserId() {

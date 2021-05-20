@@ -99,10 +99,10 @@ public class CommunityService implements ICommunityService {
 	 * particular blogger from blogger and community repositories.
 	 */
 	@Override
-	public List<Community> listAllCommunitiesByBlogger(Blogger blogger) {
+	public List<Community> listAllCommunitiesByBlogger(int id) {
 //		System.out.println(cRepo.listAllCommunitiesByBlogger(blogger.getUserId()));
 
-		return cRepo.listAllCommunitiesByBlogger(blogger.getUserId());
+		return cRepo.listAllCommunitiesByBlogger(id);
 //		return null;
 	}
 

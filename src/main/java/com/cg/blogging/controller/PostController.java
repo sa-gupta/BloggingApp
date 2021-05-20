@@ -121,8 +121,8 @@ public class PostController {
 	 * @return List<Post>
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
-	@GetMapping("/all/byblogger")
-	public List<PostDetails> getPostByBlogger(@RequestBody Blogger blogger) {
-		return pUtil.postListToPostDetailsList(pService.getPostByBlogger(blogger));
+	@GetMapping("/all/byblogger/{id}")
+	public List<PostDetails> getPostByBlogger(@PathVariable int id) {
+		return pUtil.postListToPostDetailsList(pService.getPostByBlogger(id));
 	}
 }

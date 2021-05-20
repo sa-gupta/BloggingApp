@@ -49,9 +49,10 @@ public class CommentService implements ICommentService {
 	 */
 	@Override
 	public Comment addComment(Comment comment) {
-
+		System.out.println(comment);
 		Comment com = cRepo.save(comment);
 		logger.info("Comment added : " + com);
+//		System.out.println(com.getBlogger().getBloggerName()+"in service...");
 		return com;
 	}
 
@@ -61,12 +62,12 @@ public class CommentService implements ICommentService {
 	 * @exception IdNotFoundException
 	 */
 	@Override
-	public void deleteComment(Comment comment) {
-		Optional<Comment> p1 = cRepo.findById(comment.getCommentId());
+	public void deleteComment(int id) {
+		Optional<Comment> p1 = cRepo.findById(id);
 		if (!p1.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
-		cRepo.deleteById(comment.getCommentId());
+		cRepo.deleteById(id);
 		logger.info(" Comment deleted : " + p1.get().getCommentId() + " " + p1.get().getCommentDescription() + " "
 				+ p1.get().getVotes());
 	}

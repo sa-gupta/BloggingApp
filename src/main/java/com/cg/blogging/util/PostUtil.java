@@ -23,9 +23,8 @@ public class PostUtil {
 
 	public PostDetails postToPostDetails(Post post) {
 		PostDetails dPost = new PostDetails(post.getPostId(), post.getTitle(),
-				bUtil.bloggerToBloggerDetails(post.getCreatedBy()), post.getContent(), post.getData(),
-				post.getCreatedDateTime(), comUtil.commentListToCommentDetailsList(post.getComments()), post.getFlair(),
-				cUtil.communityToCommunityDetails(post.getCommunity()));
+				post.getCreatedBy().getBloggerName(), post.getContent(), post.getData(),
+				post.getCreatedDateTime(), post.getFlair(),post.getCommunity().getCommunityName());
 		return dPost;
 	}
 
