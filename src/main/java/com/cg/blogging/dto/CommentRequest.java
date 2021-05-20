@@ -80,6 +80,15 @@ public class CommentRequest {
 	public void setPostId(int postId) {
 		this.postId = postId;
 	}
+
+	@Override
+	public String toString() {
+		return "CommentRequest [commentId=" + commentId + ", commentDescription=" + commentDescription
+				+ ", bloggerName=" + bloggerName + ", createdOn=" + createdOn + ", votes=" + votes + ", bloggerId="
+				+ bloggerId + ", postId=" + postId + "]";
+	}
+	
+	
 	
 	
 }

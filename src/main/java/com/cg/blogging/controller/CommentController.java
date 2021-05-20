@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.blogging.dto.CommentDetails;
+import com.cg.blogging.dto.CommentRequest;
 import com.cg.blogging.entities.Comment;
 import com.cg.blogging.entities.Post;
 import com.cg.blogging.service.ICommentService;
@@ -53,14 +54,14 @@ public class CommentController {
 	 * @param Comment
 	 * @return Comment
 	 */
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@PostMapping("/add")
-	public CommentDetails addComment(@RequestBody @Valid Comment comment) {
-		Comment com = cService.addComment(comment);
-		System.out.println(com.getBlogger().getBloggerName()+"in controller...");
-		return cUtil.commentToCommentDetails(com);
-//		return com;
-	}
+//	@ResponseStatus(code = HttpStatus.CREATED)
+//	@PostMapping("/add")
+//	public CommentDetails addComment(@RequestBody @Valid Comment comment) {
+//		Comment com = cService.addComment(comment);
+//		System.out.println(com.getBlogger().getBloggerName()+"in controller...");
+//		return cUtil.commentToCommentDetails(com);
+////		return com;
+//	}
 
 	/**
 	 * To request the details of a comment and delete it from repository.
@@ -79,6 +80,22 @@ public class CommentController {
 		return cUtil.commentListToCommentDetailsList(cService.listAllCommentsByPost(postId));
 
 	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@PostMapping("/add")
+	public boolean addCommentTest(@RequestBody CommentRequest comment) {
+//		System.out.println(comment);
+//		System.out.println(cUtil.commentReqToComment(comment).getBlogger().getUserId());
+//		System.out.println(cService.addComment(cUtil.commentReqToComment(comment)));
+		
+		if(cService.addComment(cUtil.commentReqToComment(comment)).getCommentId()>0) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
 
 	/**
 	 * To update the new vote that is added to the comment.

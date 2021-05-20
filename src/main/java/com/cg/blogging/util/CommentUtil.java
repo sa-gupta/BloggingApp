@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.cg.blogging.dto.CommentDetails;
+import com.cg.blogging.dto.CommentRequest;
+import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Comment;
+import com.cg.blogging.entities.Post;
 
 @Component
 public class CommentUtil {
@@ -28,5 +31,10 @@ public class CommentUtil {
 		}
 		List<CommentDetails> list = comments.stream().map(c -> commentToCommentDetails(c)).collect(Collectors.toList());
 		return list;
+	}
+	
+	public Comment commentReqToComment(CommentRequest comReq) {
+		Comment comment = new Comment(0,comReq.getCommentDescription(),comReq.getVotes(),new Blogger(comReq.getBloggerId()),new Post(comReq.getPostId()),false,comReq.getCreatedOn());
+		return comment;
 	}
 }
