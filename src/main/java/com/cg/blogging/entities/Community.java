@@ -40,7 +40,6 @@ public class Community {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
 	private int communityId;
 	private String communityName;
-	@Size(min = 5, max = 40, message = "Comment description should be between 5 to 40 characters long")
 	private String communityDescription;
 	private int totalMembers;
 	private int onlineMembers;

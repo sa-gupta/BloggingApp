@@ -79,12 +79,12 @@ public class PostService implements IPostService {
 		if (!opt.isPresent()) {
 			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
 		}
-		Post recordInDatabse = opt.get();
-		Post toBeUpdated = new Post();
-		toBeUpdated.setPostId(recordInDatabse.getPostId());
-		toBeUpdated.setTitle(recordInDatabse.getTitle());
-		toBeUpdated.setData(recordInDatabse.getData());		
-		Post rPost = pRepo.save(toBeUpdated);
+//		Post recordInDatabse = opt.get();
+//		Post toBeUpdated = new Post();
+//		toBeUpdated.setPostId(recordInDatabse.getPostId());
+//		toBeUpdated.setTitle(recordInDatabse.getTitle());
+//		toBeUpdated.setData(recordInDatabse.getData());		
+		Post rPost = pRepo.save(post);
 		logger.info("Post Updated : " + rPost);
 		return rPost;
 	}

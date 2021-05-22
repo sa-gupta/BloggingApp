@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+### Angular App ###
+src/BloggApp/node_modules/

@@ -80,6 +80,29 @@ public class Post {
 	public Post(int postId) {
 		this.postId = postId;
 	}
+	
+	
+
+	public Post(int postId, @NotBlank String title, Blogger createdBy, PostType content, String data,
+			LocalDateTime createdDateTime, List<Comment> comments, int votes, boolean voteUp, boolean notSafeForWork,
+			boolean spoiler, boolean originalContent,
+			@Size(min = 1, max = 20, message = "flair should be of 1 to 20 characters long") String flair,
+			Community community) {
+		this.postId = postId;
+		this.title = title;
+		this.createdBy = createdBy;
+		this.content = content;
+		this.data = data;
+		this.createdDateTime = createdDateTime;
+		this.comments = comments;
+		this.votes = votes;
+		this.voteUp = voteUp;
+		this.notSafeForWork = notSafeForWork;
+		this.spoiler = spoiler;
+		this.originalContent = originalContent;
+		this.flair = flair;
+		this.community = community;
+	}
 
 	public int getPostId() {
 		return postId;

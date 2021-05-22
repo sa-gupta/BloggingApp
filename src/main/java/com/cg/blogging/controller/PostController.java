@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.blogging.dto.PostDetails;
+import com.cg.blogging.dto.PostRequest;
 import com.cg.blogging.entities.Blogger;
 import com.cg.blogging.entities.Post;
 import com.cg.blogging.service.IPostService;
@@ -54,6 +55,13 @@ public class PostController {
 		Post rPost = pService.addPost(post);
 		return pUtil.postToPostDetails(rPost);
 	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@PostMapping("/test")
+	public PostDetails addPostTest(@RequestBody PostRequest post) {
+		Post rPost = pService.addPost(pUtil.postReqToPost(post));
+		return pUtil.postToPostDetails(rPost);
+	}
 
 	/**
 	 * <p>
@@ -65,10 +73,14 @@ public class PostController {
 	 */
 	@ResponseStatus(code = HttpStatus.OK)
 	@PutMapping("/update")
-	public PostDetails updatePost(@RequestBody Post post) {
-		Post rPost = pService.updatePost(post);
-		PostDetails pDetail = pUtil.postToPostDetails(rPost);
-		return pDetail;
+	public boolean updatePost(@RequestBody PostRequest post) {
+		
+		Post rPost = pService.updatePost(pUtil.postReqToPost(post));
+//		PostDetails pDetail = pUtil.postToPostDetails(rPost);
+//		if(pDetail.getPostId() == post.getPostId()) {
+//			return true;
+//		}
+		return false;
 	}
 
 	/**
@@ -82,9 +94,12 @@ public class PostController {
 
 	@ResponseStatus(code = HttpStatus.OK)
 	@DeleteMapping("/delete/{postId}")
-	public PostDetails deletePost(@PathVariable("postId") int id) {
+	public boolean deletePost(@PathVariable("postId") int id) {
 		Post rPost = pService.deletePost(id);
-		return pUtil.postToPostDetails(rPost);
+		if(rPost.getPostId() == id) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
