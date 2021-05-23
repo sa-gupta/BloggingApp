@@ -1,0 +1,30 @@
+<!-- <p *ngFor="let b of bookService.books" [ngStyle] = "{'background-color': b.price>500?'pink':'wheat'}"><b>ID:</b> {{b.id}} <b>TITLE:</b> {{b.title|shorten}} <b>AUTHOR:</b> {{b.author|shorten:7}} <b>PRICE:</b> {{b.price}} </p> -->
+<div class="row justify-content-md-center">
+    <div class="col-lg-9">
+
+        <div class="table-responsive  mycss">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">AUTHOR</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">UPDATE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let b of bookService.books" [ngClass] = "b.price>500?'table-danger':'table-success'">
+                            <td>{{b.id}}</td>
+                            <td>{{b.title|shorten:20}}</td> 
+                            <td>{{b.author|shorten:20}}</td>
+                            <td>{{b.price}}</td>
+                            <td><button (click)="updateBook(b.id)" class="btn btn-warning"  style="height: 40px;">Update</button></td>
+                        </tr>
+                    </tbody>        
+            </table>
+            
+        </div>
+        <button class="btn btn-success" routerLink="/add-book">Add Books</button>
+    </div>
+</div>

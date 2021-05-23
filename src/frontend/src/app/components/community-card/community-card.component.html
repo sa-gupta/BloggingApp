@@ -1,0 +1,29 @@
+
+
+    <div class="row mt-3">
+        <div class="col-lg-12" id="card-title">
+            {{communityName}}
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-lg-12" id="community-desc">
+            {{communityDescription|shorten: 140}} 
+        </div>
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-lg-12">
+            <div class="row" style="margin-left: 5px;">
+
+                <div id="community-flair" *ngFor="let flair of flairs" style="margin: 5px;">{{flair}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-3 text-center">
+        <div class="col-lg-12">
+            <button class="btn" id="join-btn">Join</button>
+            <button (click)= "routerToCommunityPage(communityId)" class="btn" id="view-btn">View</button>
+        </div>
+    </div>

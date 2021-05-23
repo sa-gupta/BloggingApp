@@ -5,4 +5,4 @@
 build
 
 ### Angular App ###
-src/BloggApp/node_modules/
+src/frontend/node_modules/

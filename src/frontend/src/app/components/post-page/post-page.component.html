@@ -1,0 +1,29 @@
+
+<div style="text-align: center;">
+    <p class="post-page-title">
+        Posts
+    </p>
+</div>
+
+<div class="row text-center "  *ngFor="let p of postServ.posts">
+<!-- <p>{{p | json}} </p> -->
+
+    <div class="col-lg-10 mx-auto mb-4" id="post-tile">
+        <!-- <p>{{p | json}} </p> -->
+        <div class="row text-center "  >
+            <div class="col-lg-10" id="title" >{{p.title}} </div>
+            <div class="col-lg-2" id="flair"><p class="m-auto">{{p.flair}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <p id="post-meta-data"> Author: {{p.createdBy}} &nbsp;&nbsp;|&nbsp;&nbsp; Date: {{p.createdDateTime | date:'shortDate'}}&nbsp;&nbsp;|&nbsp;&nbsp; Community: {{p.community}} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"  >
+                <p id="post-content">{{p.data}} &nbsp;<a id="read-more-link" (click)="postPageRoute(p.postId)"> Read More</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>

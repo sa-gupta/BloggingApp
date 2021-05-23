@@ -1,0 +1,33 @@
+
+
+<div class="row" id="comment-title">Comments</div>
+
+<div class="row" id="comment-tile">
+    <form class="row form-group" (submit)="addComment(cmnt,bloggerId)" #cmntFrm = "ngForm">
+        <input type="text" class="form-control col-12" name="comment" id="comment" #cmnt="ngModel" ngModel placeholder="Enter Comment" >
+        <input type="number" class="form-control col-12" name="bId" id="bId" #bloggerId="ngModel" ngModel placeholder="Your Id" >
+        <button class="btn btn-primary col-1 mt-3 mb-3" [disabled] = "!cmntFrm.valid">Post</button>
+    </form>
+</div>
+
+<div class="row" *ngFor="let c of commentService.comments" id="comment-tile">
+    <div class="row" id="for-space" >
+        <div class="col-lg-12">
+            {{c.commentDescription}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p ><span id="author-name">{{c.bloggerName}}</span> &nbsp; | &nbsp; <span id="time">{{c.createdOn|date: 'shortDate'}}</span></p>
+            
+            <!-- <p id="time">{{c.date|date: 'shortDate'}}</p> -->
+        </div>
+        <div class="col-lg-3">
+            <a >Upvote &nbsp;<span id="upvote"><i class="fa fa-thumbs-up"></i></span> {{c.votes}}</a>
+            &nbsp;&nbsp;&nbsp;
+            <a >Downvote &nbsp;<span id="downvote"><i class="fa fa-thumbs-down"></i></span> {{c.votes}}</a>
+        </div>
+    </div>
+</div>
+
+<!-- <p *ngFor="let c of cmnts">{{c|json}}</p> -->

@@ -1,0 +1,62 @@
+<!-- <p>{{postService.userPosts|json}}</p> -->
+
+<div style="margin-top: 30px;">
+    <p class="post-page-title">
+        Posts  
+        <a routerLink="/{{id}}/add-post" style="text-decoration: none;"> 
+            <span style="color: white; background-color: #123239; margin-left: 30px; padding-left: 20px; padding-right: 20px; border-radius: 50px;">+</span>
+        </a>
+    </p>
+    
+</div>
+
+
+<!-- <p>{{p | json}} </p> -->
+<!-- <div class="col-lg-12  mb-4" id="post-tile">
+    <form class="row form-group" #postFrm = "ngForm">
+        <div class="row">
+            <input type="text" class="form-control col-lg-10 mt-4" style="width: 1200px; margin-left: 50px;"
+            name="postTitle" id="post-title" #postTitle="ngModel" ngModel placeholder="Enter Post Title" >
+
+            <input type="text" class="form-control col-lg-10 mt-4" style="width: 1200px; margin-left: 50px;"
+            name="data" id="data" #data="ngModel" ngModel placeholder="Enter Post Content" >
+
+            <input type="text" class="form-control col-lg-10 mt-4" style="width: 1200px; margin-left: 50px;"
+            name="postFlair" id="post-flair" #postFlair="ngModel" ngModel placeholder="Enter Flair for Post" >
+        </div>
+        <div class="row">
+
+            <button class="btn btn-primary col-12 mt-3 mb-3" style="width: 100px; margin-left: 50px;" [disabled] = "!postFrm.valid">Post</button>
+        </div>
+    </form>
+</div> -->
+        
+
+
+<div class="row" *ngFor="let p of postService.userPosts">
+
+    <div class="col-lg-10 mx-auto mb-4" id="post-tile">
+        <!-- <p>{{p | json}} </p> -->
+        <div class="row text-center "  >
+            <div class="col-lg-10" id="title" >{{p.title}} </div>
+            <div class="col-lg-2" id="flair"><p class="m-auto">{{p.flair}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <p id="post-meta-data"> Author: {{p.createdBy}} &nbsp;&nbsp;|&nbsp;&nbsp; Date: {{p.createdDateTime | date:'shortDate'}}&nbsp;&nbsp;|&nbsp;&nbsp; Community: {{p.community}} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"  >
+                <p id="post-content">{{p.data}} &nbsp;<a id="read-more-link" (click)="postPageRoute(p.postId)"> Read More</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <button (click)="routeToUpdate(p.postId)" class="btn btn-warning mb-1" style="font-size: 25px; border-radius: 15px; font-weight: 500;">Update</button>
+        <button (click)="deletePost(p.postId)" class="btn btn-danger" style="font-size: 25px; border-radius: 15px; font-weight: 500; width: 111px;">Delete</button>
+        
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.logo{
+    margin-top: 15px;
+    margin-left: 25px;
+}
+a{
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 44px;
+    color: #123985;
+    font-style: normal;
+    text-decoration: none;
+}
+a.my-nav-items{
+    color:#C30000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#loginBtn{
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 600;
+    background-color: #123985;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+
+
+#signupBtn{
+    color: white;
+    margin-top: 30px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    background-color: #C30000;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.menu-item{
+    margin-left: 60px;
+}

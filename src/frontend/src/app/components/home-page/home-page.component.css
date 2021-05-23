@@ -1,0 +1,25 @@
+.home-page-img{
+    width: 800px;
+    height: 600px;
+}
+
+.welcome-text{
+    font-family: 'Poppins',sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color:#123985C9;
+}
+
+.more-text{
+    font-family: 'Poppins',sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.get-started-btn{
+    background-color:#123985ED;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+}

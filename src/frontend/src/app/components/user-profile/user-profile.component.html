@@ -1,0 +1,31 @@
+<!-- <p>{{bloggerServ.blogger|json}}</p> -->
+
+<!-- ID: {{id}} Role: {{role}} -->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-3 col-sm-12">
+            <img src="assets/user.png" style="width: 320px; height: 320px;">
+        </div>
+        <div class="col-lg-9" >
+            <div class="row ">
+                <div class="col-lg-6 " id="name-ele">{{bloggerServ.blogger.bloggerName}}</div> 
+                <div class="col-lg-6 my-auto" id="karma-ele">Karma &nbsp;&nbsp; {{bloggerServ.blogger.karma}}</div>
+            </div>
+            <div class="row mt-5">
+
+                <div class="col-lg-1" *ngFor="let c of bloggerServ.blogger.communityName" id="community-ele">
+                    <span >{{c}}</span>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <app-user-post>
+            
+        </app-user-post>
+    </div>
+</div>

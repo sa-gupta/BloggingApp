@@ -1,0 +1,23 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input{
+    border: 1px solid #123985; 
+    border-radius: 20px;
+}
+
+.update-book-title{
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+    color: #123239; 
+    font-size: 50px;
+}
+
+small{
+    font-style: italic;
+}

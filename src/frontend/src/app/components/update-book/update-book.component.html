@@ -1,0 +1,44 @@
+<div style="text-align: center;">
+    <p class="update-book-title">
+        UPDATE BOOK
+    </p>
+    </div>
+<div class="container pt-3 pb-3 test" style="width: 80%; background-color: #ECECEC; border-radius: 25px; border: 2px solid #123985;">
+    <div class="row">
+        <form (submit)="updateBook(fm.value)"  class="form-group" #fm="ngForm">
+            <!-- ID Input & Label -->
+            <div class="form-floating mb-3">
+                <input type="number" name="id" id="id" placeholder="ID" [(ngModel)]="book.id" ngModel 
+                class="form-control" required #bId="ngModel" [class.is-invalid]="bId.invalid && bId.touched" [disabled]='true'/>
+                <label for="id">ID</label>
+                <small *ngIf="bId.invalid && bId.touched" class="text-danger">ID is required</small>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="title" id="title" placeholder="Title" [(ngModel)]="book.title" ngModel
+                class="form-control" required #bTitle="ngModel" [class.is-invalid]="bTitle.invalid && bTitle.touched" />
+                <label for="title">Title</label>
+                <small *ngIf="bTitle.invalid && bTitle.touched" class="text-danger">Title is required</small>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="text" name="author" id="author" placeholder="Author" [(ngModel)]="book.author" ngModel 
+                class="form-control" required #bAuthor="ngModel" [class.is-invalid]="bAuthor.invalid && bAuthor.touched" />
+                <label for="author">Author</label>
+                <small *ngIf="bAuthor.invalid && bAuthor.touched" class="text-danger">Author is required</small>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="number" name="price" id="price" placeholder="Price" [(ngModel)]="book.price" ngModel 
+                class="form-control" required #bPrice="ngModel" [class.is-invalid]="bPrice.invalid && bPrice.touched" />
+                <label for="price">Price</label>
+                <small *ngIf="bPrice.invalid && bPrice.touched" class="text-danger">Price is required</small>
+            </div>
+            <div class="form-floating mb-3">
+
+                </div>
+            <br>    
+            <button class="btn btn-success" [disabled] = '!fm.valid'>Update</button>
+        </form>
+    </div>
+</div>

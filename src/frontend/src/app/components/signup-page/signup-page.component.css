@@ -1,0 +1,72 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input{
+    border: 1px solid #123985; 
+    border-radius: 20px;
+}
+
+.login-title{
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+    color: #123239; 
+    font-size: 50px;
+}
+
+small{
+    font-style: italic;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+    margin-left: 150px; 
+    width: 100px; 
+    border-radius: 15px;
+}
+
+.login-btn{
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s, 0s;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.signup-btn{
+    background-color: #C30000;
+}
+
+
+
+:hover.signup-btn{
+    color: white;
+    background-color: #910000;
+}
+
+.or-text{
+    font-family: 'Poppins'; 
+    font-size: 20px; 
+    font-weight: 500; 
+    margin-left: 185px;
+    margin-top: 15px;
+}
+
+#role{
+    border: 1px solid #123985;
+    border-radius: 20px;
+    height: 60px;
+}
+
+
+option{
+    background-color: #e6e6e6;
+    
+}

@@ -1,0 +1,68 @@
+
+<div style="text-align: center;">
+    <p class="login-title">
+        SIGNUP
+    </p>
+    </div>
+<div class="container test" style="width: 500px; padding: 50px; background-color: #ECECEC; border-radius: 25px; border: 2px solid #123985;">
+    <div class="row">
+        <form (submit)="signUpUser(f)"  class="form-group" #f="ngForm">
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="name" id="name" placeholder="Name"  ngModel 
+                    class="form-control" required #bName="ngModel" [class.is-invalid]="bName.invalid && bName.touched" />
+                    <label for="name">Name</label>
+                    <small *ngIf="bName.invalid && bName.touched" class="text-danger">Name is required</small>
+                </div>
+                
+            <div class="form-floating mb-3">
+                <input type="password" name="newPassword" id="newPassword" placeholder="New Password" ngModel
+                class="form-control" required #newPswd="ngModel" [class.is-invalid]="newPswd.invalid && newPswd.touched" />
+                <label for="title">New Password</label>
+                <small *ngIf="newPswd.invalid && newPswd.touched" class="text-danger">Password is required</small>
+                <!-- <small *ngIf="success " class="text-danger">Wrong Password</small> -->
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="cnfPassword" id="cnfPassword" placeholder="Confirm Password" ngModel
+                class="form-control" required #cnfPswd="ngModel" [class.is-invalid]="cnfPswd.invalid && cnfPswd.touched" />
+                <label for="title">Confirm Password</label>
+                <small *ngIf="cnfPswd.invalid && cnfPswd.touched" class="text-danger">Password is required</small>
+                <small *ngIf="newPswd.value != cnfPswd.value " class="text-danger">Confirm Password should be same</small>
+            </div>
+
+            <div class="mb-3">
+
+                <select id="role" name="role" class="form-control" #mySelect ngModel required>
+                        <option value="" selected disabled>Select Role</option>
+                        <option value="Blogger">Blogger</option>
+                        <option value="Moderator">Moderator</option>
+                </select> 
+            </div>
+            
+            
+            <br>    
+
+                <button class="btn signup-btn" [disabled] = "!f.valid">Signup</button>
+                <p class="or-text">OR</p>
+                <button class="btn btn-success" routerLink="/login" >Login</button>
+            
+        </form>
+        <div class="container text-center" >
+            <p *ngIf="failure" style="color: red; font-size: 30px; font-family: 'Poppins',sans-serif; font-weight: 500; margin-top: 10px;">Something went wrong !</p>
+            <p *ngIf="success" style="color: #123985; font-size: 30px; font-family: 'Poppins',sans-serif; font-weight: 500; margin-top: 10px;">Yay! Account Created</p>
+            <p *ngIf="success" style="color: #123985; font-size: 30px; font-family: 'Poppins',sans-serif; font-weight: 500; margin-top: 10px;">Use Your Login ID: {{blogger.userId}} and password to login</p>
+        </div>
+    </div>
+    <!-- <div class="row">Wrong Password</div> -->
+<!-- </div> -->
+<!-- user:
+{{user|json}} -->
+
+<!-- {{book|json}} -->
+
+<!-- <p *ngFor="let b of bookService.books" [ngStyle] = "{'background-color': b.price>500?'pink':'wheat'}">{{b|json|uppercase}} </p> -->
+
+
+
+<!-- <p *ngFor="let b of books" [ngClass] = "b.price>500?'text-danger':'text-primary'">{{b|json}}</p> -->

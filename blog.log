@@ -439,3 +439,7 @@
 23/05/2021 02:23:23 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Ritika@123, role=BLOGGER]
 23/05/2021 02:24:36 INFO http-nio-8083-exec-5 com.cg.blogging.service.PostService - Post Updated : com.cg.blogging.entities.Post@35ec8b69
 23/05/2021 02:25:06 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=41, commentDescription=never watch bollywood, votes=0, blogger=com.cg.blogging.entities.Blogger@63520183, post=com.cg.blogging.entities.Post@35ace362, voteUp=false]
+23/05/2021 10:04:44 INFO http-nio-8083-exec-4 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@56aa7cf8
+23/05/2021 10:05:04 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=10, password=Kajal@123, role=BLOGGER]
+23/05/2021 10:06:14 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@144aa746
+23/05/2021 10:06:51 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=42, commentDescription=evan i love badminton, votes=0, blogger=com.cg.blogging.entities.Blogger@6e4d1839, post=com.cg.blogging.entities.Post@456cf70e, voteUp=false]

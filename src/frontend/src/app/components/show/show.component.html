@@ -1,0 +1,10 @@
+<button class="btn btn-primary" [disabled]="!trainee1" (click)="fun(trainee.value)">
+    Test
+</button>
+
+<p [innerHTML]="flag"></p>
+
+<input class="border border-primary form form-control" style="border-radius: 30px; width: 50%;" type="text" name="trainee" 
+id="trainee" [(ngModel)]="trainee1" #trainee>
+
+<p>{{trainee1}}</p>

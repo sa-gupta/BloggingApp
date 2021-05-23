@@ -1,0 +1,63 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#comment-title{
+    color: #760000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid #ff8484;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+#comment-tile{
+    background-color: white;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+}
+
+#author-name{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#time{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#comment-desc{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#downvote:hover{
+    color: #d9534f;
+    cursor: pointer;
+}
+
+#upvote:hover{
+    color: #5cb85c;
+    cursor: pointer;
+}
+
+#bId{
+    margin-top: 10px;
+
+}
+

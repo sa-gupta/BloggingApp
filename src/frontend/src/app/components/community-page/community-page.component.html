@@ -1,0 +1,20 @@
+<div class="container" id="my-container">
+    <div style="text-align: center; margin-top: 20px;">
+        <p class="communities-title">
+            Communities
+        </p>
+    </div>
+    
+    <div class="row mx-auto">
+        <div class="mt-5" id="community-card" *ngFor="let c of communityService.communities">  
+            <app-community-card [communityId]= c.communityId [communityName]= c.communityName [communityDescription]= c.communityDescription [flairs]=c.flairs></app-community-card>
+        </div>
+
+        
+    
+
+    <div (click)="routeToAddCommunity()" class="mt-5" id="community-card">
+        <div  id="add-community" class="mx-auto my-auto">+</div>
+    </div>
+</div>
+</div>

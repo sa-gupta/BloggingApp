@@ -1,0 +1,35 @@
+.communities-title{
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+    color: #123239; 
+    font-size: 50px;
+}
+
+/* #my-container{
+    margin: 0;
+    padding: 0;
+} */
+
+#community-card{
+    background-color: #caf0f8;
+    margin-left: 20px;
+    width: 400px;
+    border-radius: 25px;
+}
+
+#add-community{
+    font-family: 'Poppins', sans-serif;
+    font-size: 150px;
+    font-weight: 700;
+    background-color: #e6fbff;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 9px 60px;
+    color: rgb(167, 167, 167);
+}
+
+#add-community:hover{
+    background-color: #b7d5db;
+    cursor: pointer;
+}

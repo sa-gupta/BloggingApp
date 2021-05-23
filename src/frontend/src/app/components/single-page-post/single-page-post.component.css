@@ -1,0 +1,65 @@
+#post-title{
+    text-align: left;
+    color:#760000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    width: fit-content;
+    padding: 0 0 0 0;
+}
+
+#flair{
+    text-align: center;
+    background-color: #C00000;
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    height: fit-content;
+    width: fit-content;
+    /* width: 92px; */
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+#date{
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+
+}
+
+#post-view{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#author-text{
+    color: #CC1E1E;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 0 0 0;
+}
+
+
+#community-text{
+    color: #760000;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    font-weight: 700;   
+}
+
+#content-text{
+    font-family: 'Poppins',sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+#comment-section{
+    background: #F1F1F1;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}

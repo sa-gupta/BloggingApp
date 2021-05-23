@@ -1,0 +1,44 @@
+
+<div style="text-align: center;">
+    <p class="login-title">
+        LOGIN
+    </p>
+    </div>
+<div class="container test" style="width: 500px; padding: 50px; background-color: #ECECEC; border-radius: 25px; border: 2px solid #123985;">
+    <div class="row">
+        <form (submit)="loginUser(f)"  class="form-group" #f="ngForm">
+
+            <div class="form-floating mb-3">
+                <input type="number" name="id" id="id" placeholder="ID"  ngModel 
+                class="form-control" required #uId="ngModel" [class.is-invalid]="uId.invalid && uId.touched" />
+                <label for="id">ID</label>
+                <small *ngIf="uId.invalid && uId.touched" class="text-danger">ID is required</small>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="password" id="password" placeholder="Password" ngModel
+                class="form-control" required #uPswd="ngModel" [class.is-invalid]="uPswd.invalid && uPswd.touched" />
+                <label for="title">Password</label>
+                <small *ngIf="uPswd.invalid && uPswd.touched" class="text-danger">Password is required</small>
+                &nbsp;&nbsp;&nbsp;
+                <small *ngIf="success "  class="text-danger">Wrong Password</small>
+            </div>
+            <br>    
+            <button class="btn btn-success" [disabled] = "!f.valid" >Login</button>
+            <br><br>
+            <p class="or-text">OR</p>
+            <button class="btn signup-btn"routerLink="/signup">Signup</button>
+        </form>
+    </div>
+    <!-- <div class="row">Wrong Password</div> -->
+</div>
+<!-- user:
+{{user|json}} -->
+
+<!-- {{book|json}} -->
+
+<!-- <p *ngFor="let b of bookService.books" [ngStyle] = "{'background-color': b.price>500?'pink':'wheat'}">{{b|json|uppercase}} </p> -->
+
+
+
+<!-- <p *ngFor="let b of books" [ngClass] = "b.price>500?'text-danger':'text-primary'">{{b|json}}</p> -->

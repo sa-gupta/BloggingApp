@@ -1,0 +1,35 @@
+<p>update-post works! Post Id to be updated {{post.title}}</p>
+<div class="container" style="margin-top: 50px;">
+
+    <div class="col-lg-12  mb-4" id="post-tile">
+        <form  (submit)="updatePost(postFrm)" class="row form-group"  #postFrm = "ngForm" style="background-color: #ffcccc; border-radius: 30px;">
+                <h2 style="margin-left: 40px; margin-top: 10px; color: #252629; font-family: 'Poppins',sans-serif; font-weight: 700;">Create New Post</h2>    
+
+                <input type="text" class="form-control col-lg-10 mt-4" [(ngModel)]="post.title" style="width: 1200px; margin-left: 50px;"
+                name="postTitle" id="post-title" #postTitle="ngModel" ngModel placeholder="Enter Post Title" >
+
+                <textarea class="form-control mt-4 col-lg-10" id="postContent" rows="5" [(ngModel)]="post.data" style="width: 1200px; margin-left: 50px;" 
+                 name="postContent" placeholder="Enter Post Content" #postContent="ngModel" ngModel ></textarea>
+                
+                <!-- <input type="text" class="form-control col-lg-10 mt-4" style="width: 1200px; margin-left: 50px;"
+                name="data" id="data" #data="ngModel" ngModel placeholder="Enter Post Content" > -->
+                
+                <input type="text" class="form-control col-lg-10 mt-4" [(ngModel)]="post.flair" style="width: 1200px; margin-left: 50px;"
+                name="postFlair" id="post-flair" #postFlair="ngModel" ngModel placeholder="Enter Flair for Post" >
+
+                
+                <select class="form-control col-lg-10 mt-4" id="community" style="width: 500px; margin-left: 50px;"
+                name="community" #community="ngModel" ngModel [(ngModel)]="post.communityId" [disabled] = 'true'>
+                    <option value="" selected disabled>Select Community</option>
+                    <option value="4">Movies</option>
+                    <option value="2">Science</option>
+                    <option value="3">Sports</option>
+
+                </select>
+            <div class="row">
+                
+                <button class="btn btn-primary col-12 mt-4 mb-3" style="width: 100px; margin-left: 50px;" [disabled] = "!postFrm.valid">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
