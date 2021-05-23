@@ -459,3 +459,11 @@
 23/05/2021 15:45:27 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=45, commentDescription=lets travel, votes=0, blogger=com.cg.blogging.entities.Blogger@487b579c, post=com.cg.blogging.entities.Post@1a58e4ac, voteUp=false]
 23/05/2021 15:45:49 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=46, commentDescription=Nice Post, votes=0, blogger=com.cg.blogging.entities.Blogger@162b0f00, post=com.cg.blogging.entities.Post@3f79f63c, voteUp=false]
 23/05/2021 15:47:18 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=47, commentDescription=Nice Post, votes=0, blogger=com.cg.blogging.entities.Blogger@7a5335ce, post=com.cg.blogging.entities.Post@321a1360, voteUp=false]
+23/05/2021 20:13:21 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=48, commentDescription=New, votes=0, blogger=com.cg.blogging.entities.Blogger@964b7bc, post=com.cg.blogging.entities.Post@7a659061, voteUp=false]
+23/05/2021 20:13:41 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=49, commentDescription=More comment, votes=0, blogger=com.cg.blogging.entities.Blogger@4932ef34, post=com.cg.blogging.entities.Post@2140975d, voteUp=false]
+23/05/2021 20:15:00 INFO http-nio-8083-exec-2 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 20:15:28 INFO http-nio-8083-exec-10 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@386d692
+23/05/2021 20:16:03 INFO http-nio-8083-exec-8 com.cg.blogging.service.UserService - User Signed In : User [userId=3, password=Sataym@123, role=BLOGGER]
+23/05/2021 20:23:00 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 20:24:51 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 20:26:01 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=5, password=Annu@123, role=BLOGGER]

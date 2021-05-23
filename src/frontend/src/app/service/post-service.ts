@@ -11,6 +11,19 @@ import { CommentService } from "./comment-service";
 export class PostService{
     communityPosts: Array<Post> = [];
     
+    posts:Array<Post> = [];
+    
+    userPosts:Array<Post> = [];
+
+    postToUpdate:Post;
+
+    post:Post = new Post(0,"","","",new Date,"","",0,[],0,"");
+
+    constructor(private commentService: CommentService, private http:HttpClient){
+        // this.commentService = commentService;
+        this.postToUpdate = new Post(0,"","","",new Date(),"","",0,[],0,"");
+    }
+
 
     updatePost(post: Post) {
         const headers = { 'content-type': 'application/json'};
@@ -25,13 +38,7 @@ export class PostService{
          );
     }
     
-    posts:Array<Post> = [];
     
-    userPosts:Array<Post> = [];
-
-    postToUpdate:Post;
-
-    post:Post = new Post(0,"","","",new Date,"","",0,[],0,"");
 
     fetchPostById(id: any): Post{
         this.fetchPosts();
@@ -73,10 +80,7 @@ export class PostService{
 
     
 
-    constructor(private commentService: CommentService, private http:HttpClient){
-        // this.commentService = commentService;
-        this.postToUpdate = new Post(0,"","","",new Date(),"","",0,[],0,"");
-    }
+    
 
     getPost(id: number):any {
         
@@ -89,6 +93,7 @@ export class PostService{
         
         return this.post;
     }
+
     fetchPosts(){
         this.http.get<Post[]>("http://localhost:8083/post/all/").subscribe(
             data=>{this.convert(data);}
@@ -105,26 +110,29 @@ export class PostService{
         });
     }
 
-    convertPostsByBlogger(data:Post[]){
-        this.userPosts = [];
-        data.forEach(p => {
-            
-            this.userPosts.push(p);
-            // console.log(p)
-        });
-    }
-
     getPostsByBlogger(id: any): any {
         this.http.get<Post[]>("http://localhost:8083/post/all/byblogger/"+id).subscribe(
             data=>{this.convertPostsByBlogger(data);}
         );
     }
 
+    convertPostsByBlogger(data:Post[]){
+        this.userPosts = [];
+        data.forEach(p => {
+            
+            this.userPosts.push(p);
+            console.log(p);
+        });
+    }
+
+    
+
     getPostsByCommunity(id: any): any {
         this.http.get<Post[]>("http://localhost:8083/post/all/bycommunity/"+id).subscribe(
             data=>{this.convertPostsByCommunity(data);}
         );
     }
+
     convertPostsByCommunity(data: Post[]) {
         this.communityPosts = [];
         data.forEach(p => {
