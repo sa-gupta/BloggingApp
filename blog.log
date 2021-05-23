@@ -432,3 +432,10 @@
 23/05/2021 02:05:54 INFO http-nio-8083-exec-10 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=38, commentDescription=null, votes=0, blogger=com.cg.blogging.entities.Blogger@55c42afc, post=com.cg.blogging.entities.Post@17d7b3da, voteUp=false]
 23/05/2021 02:06:20 INFO http-nio-8083-exec-9 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=39, commentDescription=Nice Post, votes=0, blogger=com.cg.blogging.entities.Blogger@187bcf7f, post=com.cg.blogging.entities.Post@7767d4de, voteUp=false]
 23/05/2021 02:06:49 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=40, commentDescription=Even I love travelling, votes=0, blogger=com.cg.blogging.entities.Blogger@cb22d1c, post=com.cg.blogging.entities.Post@38f27c5d, voteUp=false]
+23/05/2021 02:19:48 INFO http-nio-8083-exec-4 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 02:20:47 INFO http-nio-8083-exec-10 com.cg.blogging.service.BloggerService - New Blogger added : com.cg.blogging.entities.Blogger@1c252080
+23/05/2021 02:21:07 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Ritika@123, role=BLOGGER]
+23/05/2021 02:22:59 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@6d192d9f
+23/05/2021 02:23:23 INFO http-nio-8083-exec-7 com.cg.blogging.service.UserService - User Signed In : User [userId=9, password=Ritika@123, role=BLOGGER]
+23/05/2021 02:24:36 INFO http-nio-8083-exec-5 com.cg.blogging.service.PostService - Post Updated : com.cg.blogging.entities.Post@35ec8b69
+23/05/2021 02:25:06 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=41, commentDescription=never watch bollywood, votes=0, blogger=com.cg.blogging.entities.Blogger@63520183, post=com.cg.blogging.entities.Post@35ace362, voteUp=false]
