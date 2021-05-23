@@ -443,3 +443,19 @@
 23/05/2021 10:05:04 INFO http-nio-8083-exec-6 com.cg.blogging.service.UserService - User Signed In : User [userId=10, password=Kajal@123, role=BLOGGER]
 23/05/2021 10:06:14 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@144aa746
 23/05/2021 10:06:51 INFO http-nio-8083-exec-8 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=42, commentDescription=evan i love badminton, votes=0, blogger=com.cg.blogging.entities.Blogger@6e4d1839, post=com.cg.blogging.entities.Post@456cf70e, voteUp=false]
+23/05/2021 15:08:58 INFO http-nio-8083-exec-1 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 15:09:05 INFO http-nio-8083-exec-5 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@39f28f35
+23/05/2021 15:11:03 INFO http-nio-8083-exec-2 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@26e87f50
+23/05/2021 15:11:12 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@79a9b667
+23/05/2021 15:23:34 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@1ff30be5
+23/05/2021 15:23:42 INFO http-nio-8083-exec-10 com.cg.blogging.service.PostService - Logger Deleted : com.cg.blogging.entities.Post@61a68b01
+23/05/2021 15:28:18 INFO http-nio-8083-exec-3 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 15:28:48 INFO http-nio-8083-exec-8 com.cg.blogging.service.PostService - Post Updated : com.cg.blogging.entities.Post@4c515a08
+23/05/2021 15:30:47 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Post Created : com.cg.blogging.entities.Post@d35671d
+23/05/2021 15:32:19 INFO http-nio-8083-exec-3 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=43, commentDescription=Sikkim is in my bucketlist of travelling, votes=0, blogger=com.cg.blogging.entities.Blogger@134e265c, post=com.cg.blogging.entities.Post@25711988, voteUp=false]
+23/05/2021 15:42:48 INFO http-nio-8083-exec-4 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=44, commentDescription=More comment, votes=0, blogger=com.cg.blogging.entities.Blogger@564446d3, post=com.cg.blogging.entities.Post@3a9ba67d, voteUp=false]
+23/05/2021 15:43:03 INFO http-nio-8083-exec-10 com.cg.blogging.service.UserService - User Signed In : User [userId=2, password=Sachin@123, role=BLOGGER]
+23/05/2021 15:44:02 INFO http-nio-8083-exec-7 com.cg.blogging.service.PostService - Post Updated : com.cg.blogging.entities.Post@6ce64dda
+23/05/2021 15:45:27 INFO http-nio-8083-exec-5 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=45, commentDescription=lets travel, votes=0, blogger=com.cg.blogging.entities.Blogger@487b579c, post=com.cg.blogging.entities.Post@1a58e4ac, voteUp=false]
+23/05/2021 15:45:49 INFO http-nio-8083-exec-2 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=46, commentDescription=Nice Post, votes=0, blogger=com.cg.blogging.entities.Blogger@162b0f00, post=com.cg.blogging.entities.Post@3f79f63c, voteUp=false]
+23/05/2021 15:47:18 INFO http-nio-8083-exec-6 com.cg.blogging.service.CommentService - Comment added : Comment [commentId=47, commentDescription=Nice Post, votes=0, blogger=com.cg.blogging.entities.Blogger@7a5335ce, post=com.cg.blogging.entities.Post@321a1360, voteUp=false]

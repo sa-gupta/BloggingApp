@@ -13,6 +13,7 @@ export class UserPostComponent implements OnInit {
   router:Router;
   postService:PostService;
   id: any;
+  role:any;
   constructor( router:Router, private route:ActivatedRoute,postService:PostService) { 
     this.postService = postService;
     this.router = router;
@@ -39,6 +40,10 @@ export class UserPostComponent implements OnInit {
 
   deletePost(id: number){
     this.postService.deletePost(id);
+    setTimeout(() => {
+      window.location.reload();
+
+    },1000);
   }
 
 }

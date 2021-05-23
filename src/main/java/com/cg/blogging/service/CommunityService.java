@@ -112,4 +112,13 @@ public class CommunityService implements ICommunityService {
 		return cRepo.findAll();
 	}
 
+	@Override
+	public Community communityById(int id) {
+		Optional<Community> opt = cRepo.findById(id);
+		if(!opt.isPresent()) {
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
+		}
+		return opt.get();
+	}
+
 }

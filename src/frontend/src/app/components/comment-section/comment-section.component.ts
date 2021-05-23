@@ -33,10 +33,13 @@ export class CommentSectionComponent implements OnInit {
 
     // console.log(this.comment);
     this.commentService.addCommentToDb(this.comment);
-    this.router.navigate([
-      'post/'+this.id
-    ]);
+    // this.router.navigate([
+    //   'post/'+this.id
+    // ]);
     // this.ngOnInit();
+    setTimeout(() => {
+      window.location.reload();
+    },1000);
 
   }
 }

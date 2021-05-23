@@ -127,6 +127,12 @@ public class PostController {
 	public List<PostDetails> getPostBySearchString() {
 		return pUtil.postListToPostDetailsList(pService.getAllPost());
 	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/{id}")
+	public PostDetails getPostById(@PathVariable int id) {
+		return pUtil.postToPostDetails(pService.getPostById(id));
+	}
 
 	/**
 	 * <p>

@@ -99,6 +99,12 @@ public class CommunityController {
 		return cUtil.communityListToCommunityDetailsList(comService.listAllCommunitiesByBlogger(id));
 	}
 	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/{id}")
+	public CommunityDetails communityById(@PathVariable("id") int id){
+		return cUtil.communityToCommunityDetails(comService.communityById(id));
+	}
+	
 	/**
 	 * <p>
 	 * To request details of a community.

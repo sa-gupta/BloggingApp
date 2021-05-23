@@ -17,14 +17,14 @@ export class SinglePagePostComponent implements OnInit {
   // cmnt:PostComment = new PostComment(1,"hi","sachin",new Date(),90,1);
   // cmnts:PostComment[] = [this.cmnt];
   // this.cmnts.push(this.cmnt);
-  post:any;
+  // post:any;
   constructor(router:Router, private route:ActivatedRoute,postService:PostService) {
     this.postService = postService;
   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
-    this.post = this.postService.getPost(id);
+    this.postService.getPost(id);
     // console.log(this.postService.getPost(id));
     
   }

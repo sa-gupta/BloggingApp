@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/post';
@@ -13,7 +14,7 @@ export class UpdatePostComponent implements OnInit {
   id:any;
   post:Post;
   updatePostTest:Post;
-  constructor(router:Router, private route:ActivatedRoute, private postService:PostService) { 
+  constructor(router:Router, private route:ActivatedRoute, private postService:PostService, private location:Location) { 
     this.post = new Post(0,"","","",new Date(),"","",0,[],0,"");
     this.updatePostTest = new Post(0,"","","",new Date(),"","",0,[],this.post.bloggerId,"");
   }
@@ -33,6 +34,10 @@ export class UpdatePostComponent implements OnInit {
     // console.log(f.value);
     console.log(this.updatePostTest);
     this.postService.updatePost(this.updatePostTest);
+    setTimeout(() => {
+      this.location.back();
+
+    },1000);
     // console.log(this.post);
   }
 

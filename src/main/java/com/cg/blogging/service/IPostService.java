@@ -31,4 +31,6 @@ public interface IPostService {
 
 	public List<Post> getAllPost();
 
+	public Post getPostById(int id);
+
 }

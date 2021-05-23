@@ -134,4 +134,13 @@ public class PostService implements IPostService {
 		return pRepo.findAll();
 	}
 
+	@Override
+	public Post getPostById(int id) {
+		Optional<Post> opt = pRepo.findById(id);
+		if(!opt.isPresent()) {
+			throw new IdNotFoundException(ExceptionMessage.ID_NOT_FOUND);
+		}
+		return opt.get();
+	}
+
 }

@@ -6,8 +6,10 @@ import { Community } from "../model/community";
     providedIn: 'root'
 })
 export class CommunityService {
+  
 
     communities:Array<Community> = [];
+    community:Community = new Community(0,"","",0,0,new Date(),[],[],[],[]);
     constructor(private http:HttpClient){
 
     }
@@ -25,6 +27,18 @@ export class CommunityService {
         this.communities.push(c);
         // console.log(p)
     });
+}
+
+getCommunity(id: number): any {
+  // let community;
+  this.http.get<Community>("http://localhost:8083/community/" + id).subscribe(
+    data => {
+      // console.log(data);
+      this.community = data;
+      // console.log(this.community);
+    }
+  );
+  // return community;
 }
 
 }

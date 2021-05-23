@@ -29,6 +29,8 @@ export class PostService{
 
     postToUpdate:Post;
 
+    post:Post = new Post(0,"","","",new Date,"","",0,[],0,"");
+
     fetchPostById(id: any): Post{
         this.fetchPosts();
         this.postToUpdate = this.getPost(id);
@@ -74,9 +76,16 @@ export class PostService{
         this.postToUpdate = new Post(0,"","","",new Date(),"","",0,[],0,"");
     }
 
-    getPost(id: number): any {
-        let post = this.posts.find(p => p.postId==id);
-        return post;
+    getPost(id: number):any {
+        
+        this.http.get<Post>("http://localhost:8083/post/"+id).subscribe(
+            data=>{
+                this.post = data;
+            }
+            // console.log(data);}
+        );  
+        
+        return this.post;
     }
     fetchPosts(){
         this.http.get<Post[]>("http://localhost:8083/post/all/").subscribe(
