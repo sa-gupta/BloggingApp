@@ -1,0 +1,28 @@
+<!-- <p>community-post works!</p> -->
+<div style="margin-top: 30px; margin-left: 25px;">
+    <p class="post-page-title">
+        Posts
+    </p>
+    
+</div>
+
+<div class="row" *ngFor="let p of postService.communityPosts">
+
+    <div class="col-lg-11 mx-auto mb-4" id="post-tile">
+        <!-- <p>{{p | json}} </p> -->
+        <div class="row text-center "  >
+            <div class="col-lg-10" id="title" >{{p.title}} </div>
+            <div class="col-lg-2" id="flair"><p class="m-auto">{{p.flair}}</p></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <p id="post-meta-data"> Author: {{p.createdBy}} &nbsp;&nbsp;|&nbsp;&nbsp; Date: {{p.createdDateTime | date:'shortDate'}}&nbsp;&nbsp;|&nbsp;&nbsp; Community: {{p.community}} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"  >
+                <p id="post-content">{{p.data}} &nbsp;<a id="read-more-link" (click)="postPageRoute(p.postId)"> Read More</a></p>
+            </div>
+        </div>
+    </div>
+</div>

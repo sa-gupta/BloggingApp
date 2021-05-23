@@ -9,6 +9,8 @@ import { CommentService } from "./comment-service";
     providedIn: 'root'
 })
 export class PostService{
+    communityPosts: Array<Post> = [];
+    
 
     updatePost(post: Post) {
         const headers = { 'content-type': 'application/json'};
@@ -118,5 +120,18 @@ export class PostService{
         );
     }
 
+    getPostsByCommunity(id: any): any {
+        this.http.get<Post[]>("http://localhost:8083/post/all/bycommunity/"+id).subscribe(
+            data=>{this.convertPostsByCommunity(data);}
+        );
+    }
+    convertPostsByCommunity(data: Post[]) {
+        this.communityPosts = [];
+        data.forEach(p => {
+            
+            this.communityPosts.push(p);
+            // console.log(p)
+        });
+    }
 
 }

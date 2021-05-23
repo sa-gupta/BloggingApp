@@ -146,4 +146,12 @@ public class PostController {
 	public List<PostDetails> getPostByBlogger(@PathVariable int id) {
 		return pUtil.postListToPostDetailsList(pService.getPostByBlogger(id));
 	}
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping("/all/bycommunity/{id}")
+	public List<PostDetails> getPostByCommunity(@PathVariable int id) {
+		return pUtil.postListToPostDetailsList(pService.getPostByCommunity(id));
+	}
+	
+	
 }

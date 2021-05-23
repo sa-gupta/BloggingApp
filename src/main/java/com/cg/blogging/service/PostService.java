@@ -143,4 +143,10 @@ public class PostService implements IPostService {
 		return opt.get();
 	}
 
+	@Override
+	public List<Post> getPostByCommunity(int id) {
+		
+		return pRepo.getPostByCommunity(id);
+	}
+
 }

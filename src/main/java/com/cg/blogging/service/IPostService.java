@@ -33,4 +33,6 @@ public interface IPostService {
 
 	public Post getPostById(int id);
 
+	public List<Post> getPostByCommunity(int id);
+
 }

@@ -1,1 +1,43 @@
-<p>{{communityServ.community | json}}</p>
+<!-- <p>{{communityServ.community | json}}</p> -->
+<div class="container">
+    <div class="row" id="community-title">{{communityServ.community.communityName}}</div>
+
+    <div class="row" id="flairs-row" >
+        <div class="flairs-div" id="flairs" *ngFor="let f of communityServ.community.flairs">{{f}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2" style="width: fit-content; margin: 0; padding: 0;" id="members">
+            {{communityServ.community.totalMembers}} : Members &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 : Posts 
+        </div>
+    </div>
+
+
+    <div class="row" id="desc">{{communityServ.community.communityDescription}}</div>
+
+    <div class="row" id="meta-row">
+        <div class="col-lg-4" style="margin: 0;">
+            POST RULES ALLOWED
+            <ul>
+                <li *ngFor="let p of communityServ.community.postRulesAllowed">{{p}}</li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            POST RULES NOT ALLOWED
+            <ul>
+                <li *ngFor="let p of communityServ.community.postRulesDisAllowed">{{p}}</li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            BANNING POLICY
+            <ul>
+                <li *ngFor="let p of communityServ.community.banningPolicy">{{p}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <app-community-post></app-community-post>
+    </div>
+</div>

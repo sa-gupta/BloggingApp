@@ -25,7 +25,10 @@ public interface IPostRepository extends JpaRepository<Post, Integer> {
 	@Query("from Post where LOWER(title) like %:searchStr%")
 	public List<Post> getPostBySearchString(@Param("searchStr") String searchString);
 
-	@Query(nativeQuery = true, value = "select * from post where blogger_id=:bloggerId")
+	@Query(nativeQuery = true, value = "select * from post where community=:bloggerId")
 	public List<Post> getPostByBlogger(@Param("bloggerId") int blogger_id);
+	
+	@Query(nativeQuery = true, value = "select * from post where community=:communityId")
+	public List<Post> getPostByCommunity(@Param("communityId") int community_id);
 
 }

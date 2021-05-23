@@ -30,6 +30,7 @@ import { UpdatePostComponent } from './components/update-post/update-post.compon
 import { CommunityCardComponent } from './components/community-card/community-card.component';
 import { SinglePageCommunityComponent } from './components/single-page-community/single-page-community.component';
 import { AddCommunityComponent } from './components/add-community/add-community.component';
+import { CommunityPostComponent } from './components/community-post/community-post.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AddCommunityComponent } from './components/add-community/add-community.
     CommunityCardComponent,
     SinglePageCommunityComponent,
     AddCommunityComponent,
+    CommunityPostComponent,
   ],
   imports: [
     BrowserModule,
