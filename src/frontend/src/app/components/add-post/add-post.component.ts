@@ -31,10 +31,10 @@ export class AddPostComponent implements OnInit {
     this.post = new Post(0,f.value.postTitle,f.value.postContent,this.id,new Date(),f.value.postFlair,"",f.value.community,[],this.id,"TEXT");
     console.log(f.value);
     console.log(this.post);
+    this.postService.addPostToDb(this.post);
     setTimeout(() => {
       this.location.back();
     },1000);
-    this.postService.addPostToDb(this.post);
   }
 
 }

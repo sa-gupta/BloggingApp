@@ -40,10 +40,18 @@ export class PostService{
     
     
 
-    fetchPostById(id: any): Post{
+    fetchPostById(id: any){
         this.fetchPosts();
-        this.postToUpdate = this.getPost(id);
-        console.log(this.posts);
+        // setTimeout(()=>{},1000);
+        for (let i = 0; i < this.posts.length; i++) {
+            if(this.posts[i].postId == id){
+
+                this.postToUpdate = this.posts[i];
+            }
+            
+        }
+        // this.postToUpdate = this.getPost(id);
+        // console.log(this.getPost(id));
         console.log(this.postToUpdate);
         
     //   for (let i = 0; i < this.posts.length; i++) {
@@ -55,7 +63,7 @@ export class PostService{
     //         }
             
     //     }
-      return this.postToUpdate;
+    //   return this.postToUpdate;
     }
     addPostToDb(post: any) {
         const headers = { 'content-type': 'application/json'};

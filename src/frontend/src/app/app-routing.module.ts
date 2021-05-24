@@ -66,6 +66,7 @@ const routes: Routes = [
   {
     path:'user/:role/:id', component: UserProfileComponent
   },
+  
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
